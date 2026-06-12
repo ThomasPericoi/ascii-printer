@@ -14,7 +14,6 @@ function getRandomValueFromArray(arrayName) {
 
 function getAsciiStyle(ascii, options = {}) {
   const color = options.color || ascii.color;
-
   return `color: ${color}; font-family: monospace;`;
 }
 
@@ -35,6 +34,16 @@ function listAsciiNames(criteria = "all") {
       : asciis.filter((ascii) => ascii.type === criteria);
 
   return selectedAsciis.map((ascii) => ascii.name);
+}
+
+function listAsciis(criteria = "all") {
+  return asciis
+    .map((ascii, id) => ({
+      id,
+      name: ascii.name,
+      category: ascii.type,
+    }))
+    .filter((ascii) => criteria === "all" || ascii.category === criteria);
 }
 
 function printAsciiById(asciiId, options = {}) {

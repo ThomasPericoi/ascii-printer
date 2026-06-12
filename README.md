@@ -95,6 +95,8 @@ Useful if you want to create your own "random" list of arts for instance.
 Or by narrowing it down with a category.
 
     printRandomAscii("character");
+    printRandomAscii("thing");
+    printRandomAscii("banner");
 
 **Output**
 
@@ -132,7 +134,7 @@ This prints the first ASCII whose name contains the search text.
 
 **Output**
 
-    ["animal", "character", "item"]
+    ["animal", "character", "thing", "banner"]
 
 **Input**
 
@@ -142,6 +144,17 @@ Or only one category:
 
     listAsciiNames("animal");
 
+Use `listAsciis()` when you need the id, name, and category together:
+
+    listAsciis("banner");
+
+**Output**
+
+    [
+      { id: 63, name: "dev", category: "banner" },
+      { id: 64, name: "hello", category: "banner" }
+    ]
+
 ### Options
 
 All print functions accept an optional options object.
@@ -149,6 +162,14 @@ All print functions accept an optional options object.
 **Custom color**
 
     printAsciiByName("frog", { color: "HotPink" });
+
+You can use any CSS color value supported by your browser console:
+
+    printAsciiByName("hello", { color: "rebeccapurple" });
+    printAsciiByName("bomb", { color: "#ff3355" });
+    printAsciiByName("gift", { color: "rgb(255, 180, 0)" });
+
+CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
 
 **Credits**
 
@@ -158,6 +179,24 @@ All print functions accept an optional options object.
 
     printRandomAscii("character", { color: "Gold", credits: true });
     printAsciiSearch("bird", { color: "DodgerBlue" });
+
+### Console things and banners
+
+The library also includes a few utility ASCII arts for console messages.
+
+**Thing examples**
+
+    printAsciiByName("bomb");
+    printAsciiByName("gift");
+    printAsciiByName("rocket");
+
+**Banner examples**
+
+    printAsciiByName("dev");
+    printAsciiByName("hello");
+    printAsciiByName("production");
+    printAsciiByName("staging");
+    printAsciiByName("welcome");
 
 ## What's inside?
 
@@ -218,15 +257,25 @@ All print functions accept an optional options object.
   - tweetieBird
   - yosemiteSam
 
-- **Type:** Items (item)
+- **Type:** Things (thing)
   - alarm
   - boat
+  - bomb
   - camera
   - crown
   - floppyDisk
+  - gift
   - plane
+  - rocket
   - television
   - tombstone
+
+- **Type:** Banners (banner)
+  - dev
+  - hello
+  - production
+  - staging
+  - welcome
 
 ## Credits
 
@@ -237,6 +286,7 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Hayley Jane Wakenshaw (hjw)
   - Joan G. Stark (jgs)
   - Ojoshiro
+  - Laura Brown
   - LGB
   - Randy Ransom
   - Riitta Rasimus

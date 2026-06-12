@@ -970,7 +970,7 @@ f  o|  o|__     "'-.
     author: "",
   },
   {
-    type: "item",
+    type: "thing",
     name: "alarm",
     art: String.raw` 
      .-.-.
@@ -989,7 +989,7 @@ f  o|  o|__     "'-.
     author: "Joan G. Stark",
   },
   {
-    type: "item",
+    type: "thing",
     name: "boat",
     art: String.raw` 
        _    _
@@ -1003,7 +1003,30 @@ f  o|  o|__     "'-.
     author: "Hayley Jane Wakenshaw",
   },
   {
-    type: "item",
+    type: "thing",
+    name: "bomb",
+    art: String.raw`
+                .
+               \'/
+             -=>*<=-
+            .-"/.\
+           /    '
+          _|
+       _.|_|._
+     .'       '.
+    /           \
+   |         #   |
+   |             |
+    \           /
+     '.       .'
+       ''---''
+    `,
+    color: "Grey",
+    height: 14,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
     name: "camera",
     art: String.raw` 
  .-------------------.
@@ -1019,7 +1042,7 @@ f  o|  o|__     "'-.
     author: "Joan G. Stark",
   },
   {
-    type: "item",
+    type: "thing",
     name: "crown",
     art: String.raw` 
        o 
@@ -1035,7 +1058,7 @@ o\*''.\|/.''*/o
     author: "Joan G. Stark",
   },
   {
-    type: "item",
+    type: "thing",
     name: "floppyDisk",
     art: String.raw` 
  _________________
@@ -1054,7 +1077,21 @@ o\*''.\|/.''*/o
     author: "Robert Craggs",
   },
   {
-    type: "item",
+    type: "thing",
+    name: "gift",
+    art: String.raw` 
+    _  _
+ __(_\/_)__
+|____||____|
+|    ||    |
+|____||____|
+    `,
+    color: "Red",
+    height: 5,
+    author: "Laura Brown",
+  },
+  {
+    type: "thing",
     name: "plane",
     art: String.raw` 
             __/\__
@@ -1071,7 +1108,25 @@ o\*''.\|/.''*/o
     author: "Joan G. Stark",
   },
   {
-    type: "item",
+    type: "thing",
+    name: "rocket",
+    art: String.raw`
+       A
+      / \
+      |=|
+      | |
+      | |
+     _|=|_
+    / | | \
+    | \,/ |
+    |/" "\|
+    `,
+    color: "OrangeRed",
+    height: 9,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
     name: "television",
     art: String.raw` 
  ______________
@@ -1088,7 +1143,7 @@ o\*''.\|/.''*/o
     author: "Ojoshiro",
   },
   {
-    type: "item",
+    type: "thing",
     name: "tombstone",
     art: String.raw` 
       ,-=-.
@@ -1100,5 +1155,75 @@ o\*''.\|/.''*/o
     color: "Gray",
     height: 5,
     author: "Hayley Jane Wakenshaw",
+  },
+  {
+    type: "banner",
+    name: "dev",
+    art: String.raw`
+  ____  _______     __
+ |  _ \| ____\ \   / /
+ | | | |  _|  \ \ / / 
+ | |_| | |___  \ V /  
+ |____/|_____|  \_/   
+    `,
+    color: "MediumPurple",
+    height: 5,
+    author: "",
+  },
+  {
+    type: "banner",
+    name: "hello",
+    art: String.raw`
+  _   _      _ _       
+ | | | | ___| | | ___  
+ | |_| |/ _ \ | |/ _ \ 
+ |  _  |  __/ | | (_) |
+ |_| |_|\___|_|_|\___/ 
+    `,
+    color: "DeepSkyBlue",
+    height: 5,
+    author: "ASCII Printer",
+  },
+  {
+    type: "banner",
+    name: "production",
+    art: String.raw`
+  ____  ____   ___  ____  
+ |  _ \|  _ \ / _ \|  _ \ 
+ | |_) | |_) | | | | | | |
+ |  __/|  _ <| |_| | |_| |
+ |_|   |_| \_\\___/|____/ 
+    `,
+    color: "LimeGreen",
+    height: 5,
+    author: "",
+  },
+  {
+    type: "banner",
+    name: "staging",
+    art: String.raw`
+  ____ _____  _    ____ _____ 
+ / ___|_   _|/ \  / ___| ____|
+ \___ \ | | / _ \| |  _|  _|  
+  ___) || |/ ___ \ |_| | |___ 
+ |____/ |_/_/   \_\____|_____|
+    `,
+    color: "DarkOrange",
+    height: 5,
+    author: "",
+  },
+  {
+    type: "banner",
+    name: "welcome",
+    art: String.raw`
+ __        __   _                          
+ \ \      / /__| | ___ ___  _ __ ___   ___ 
+  \ \ /\ / / _ \ |/ __/ _ \| '_ ' _ \ / _ \
+   \ V  V /  __/ | (_| (_) | | | | | |  __/
+    \_/\_/ \___|_|\___\___/|_| |_| |_|\___|
+    `,
+    color: "DeepSkyBlue",
+    height: 5,
+    author: "",
   },
 ];
