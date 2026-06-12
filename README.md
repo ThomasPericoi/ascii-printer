@@ -29,14 +29,38 @@ listAsciiNames("animal");
 listAsciiTypes();
 ```
 
+## Demo
+
+Open `source/demo.html` in your browser, then open the console.
+
+The demo page includes:
+
+- the available public commands;
+- copy-ready examples;
+- the full ASCII catalog with ID, name, category, color, and `printAsciiById(...)` command.
+
 ## Files
 
 - `build/ascii-printer.min.js` is the recommended file to use in a page.
 - `build/ascii-printer.js` is the readable build.
+- `source/demo.html` is the browser demo page.
 - `source/ascii-printer-functions.js` contains the public helper functions.
 - `source/ascii-printer-lib.js` contains the ASCII library.
+- `LICENSE` contains the code license.
 
 The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
+
+## API
+
+| Function | Description |
+|---|---|
+| `listAsciiTypes()` | Returns the available categories. |
+| `listAsciiNames()` | Returns ASCII names, optionally filtered by category. |
+| `listAsciis()` | Returns ASCII metadata with `id`, `name`, and `category`, optionally filtered by category. |
+| `printAsciiById()` | Prints one ASCII by ID. |
+| `printAsciiByName()` | Prints one ASCII by exact name. |
+| `printAsciiSearch()` | Prints the first ASCII whose name contains the search text. |
+| `printRandomAscii()` | Prints a random ASCII, optionally filtered by category. |
 
 ## How does it work?
 
@@ -303,3 +327,23 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 **PS:** Again, I didn't make those arts, I just found them. When I could, I put the talented author in the library.
 
 **PPS:** Everything comes with colors!
+
+## Release notes
+
+### v1.0.0
+
+First stable release of ASCII Printer.
+
+- 72 ASCII arts.
+- Category, name, and ID listing helpers.
+- Random printing by category.
+- Search by partial name.
+- Color override support.
+- Optional credits display.
+- Browser demo page.
+
+## License
+
+The JavaScript code is released under the MIT License. See `LICENSE`.
+
+The ASCII arts are credited in this README when the author is known.
