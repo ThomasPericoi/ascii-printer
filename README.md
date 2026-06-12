@@ -7,7 +7,35 @@
 
 # ASCII Printer
 
-Small script that allows you to easily print colorful ASCII arts in your Javascript console.
+Tiny browser script that prints colorful ASCII art in your JavaScript console.
+
+## Quick start
+
+Use the minified file from `build` in your page:
+
+```html
+<script src="build/ascii-printer.min.js"></script>
+<script>
+  printRandomAscii();
+</script>
+```
+
+Then open your browser console and call one of the helpers:
+
+```js
+printAsciiByName("pinkPanther");
+printAsciiById(18);
+printRandomAscii("character");
+```
+
+## Files
+
+- `build/ascii-printer.min.js` is the recommended file to use in a page.
+- `build/ascii-printer.js` is the readable build.
+- `source/ascii-printer-functions.js` contains the public helper functions.
+- `source/ascii-printer-lib.js` contains the ASCII library.
+
+The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
 
 ## How does it work?
 
@@ -125,9 +153,11 @@ Or by narrowing it down with a category.
 
 - **Type:** Characters (character)
   - bender
+  - bigBird
   - cheshireCat
   - cookieMonster
   - devil
+  - einstein
   - flintstones
   - garfield
   - homer
@@ -175,4 +205,4 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   
 **PS:** Again, I didn't make those arts, I just found them. When I could, I put the talented author in the library.
 
-**PSS:** Everything comes with colors!
+**PPS:** Everything comes with colors!
