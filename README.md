@@ -7,7 +7,7 @@
 
 # ASCII Printer
 
-Tiny browser script that prints colorful ASCII art in your JavaScript console.
+Tiny browser script that prints colorful ASCII arts into your JavaScript console.
 
 ## Quick start
 
@@ -15,9 +15,6 @@ Use the minified file from `build` in your page:
 
 ```html
 <script src="build/ascii-printer.min.js"></script>
-<script>
-  printRandomAscii();
-</script>
 ```
 
 Then open your browser console and call one of the helpers:
@@ -26,6 +23,8 @@ Then open your browser console and call one of the helpers:
 printAsciiByName("pinkPanther");
 printAsciiById(18);
 printRandomAscii("character");
+printAsciiSearch("panther");
+listAsciiNames("animal");
 ```
 
 ## Files
@@ -114,6 +113,51 @@ Or by narrowing it down with a category.
       ' _...-|     |-..._ '
              |     |
              '.___.'
+
+### Search
+
+**Input**
+
+Useful when you remember part of a name, but not the exact camelCase spelling.
+
+    printAsciiSearch("panther");
+
+This prints the first ASCII whose name contains the search text.
+
+### List available ASCII
+
+**Input**
+
+    listAsciiTypes();
+
+**Output**
+
+    ["animal", "character", "item"]
+
+**Input**
+
+    listAsciiNames();
+
+Or only one category:
+
+    listAsciiNames("animal");
+
+### Options
+
+All print functions accept an optional options object.
+
+**Custom color**
+
+    printAsciiByName("frog", { color: "HotPink" });
+
+**Credits**
+
+    printAsciiByName("frog", { credits: true });
+
+**Options also work with random and search**
+
+    printRandomAscii("character", { color: "Gold", credits: true });
+    printAsciiSearch("bird", { color: "DodgerBlue" });
 
 ## What's inside?
 
