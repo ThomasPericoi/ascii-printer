@@ -14,7 +14,6 @@ function getRandomValueFromArray(arrayName) {
 
 function getAsciiStyle(ascii, options = {}) {
   const color = options.color || ascii.color;
-
   return `color: ${color}; font-family: monospace;`;
 }
 
@@ -172,6 +171,24 @@ var asciis = [
   },
   {
     type: "animal",
+    name: "bees",
+    art: String.raw` 
+  ^^      .-=-=-=-.  ^^      ^^
+       ('-=-=-=-=-=-')  ^^         ^^
+^^   ('-=-=-=-=-=-=-=-')
+    ( '-=-=-=-(@)-=-=-' )      ^^
+    ('-=-=-=-=-=-=-=-=-')  ^^ 
+    ('-=-=-=-=-=-=-=-=-')  ^^
+     ('-=-=-=-=-=-=-=-')          ^^
+       ('-=-=-=-=-=-')  ^^
+         '-=-=-=-=-'
+    `,
+    color: "Goldenrod",
+    height: 9,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "animal",
     name: "beaver",
     art: String.raw` 
             ___
@@ -235,6 +252,24 @@ c{{i.}}=oo-^
     color: "Red",
     height: 8,
     author: "",
+  },
+  {
+    type: "animal",
+    name: "crocodile",
+    art: String.raw` 
+            .-._   _ _ _ _ _ _ _ _
+ .-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.
+'.___ '    .   .--_'-' '-' '-' _'-' '._
+ V: V 'vv-'   '_   '.       .'  _..' '.'.
+   '=.____.=_.--'   :_.__.__:_   '.   : :
+           (((____.-'        '-.  /   : :
+                             (((-'\ .' /
+                           _____..'  .'
+                          '-._____.-'
+    `,
+    color: "OliveDrab",
+    height: 9,
+    author: "Shanaka Dias",
   },
   {
     type: "animal",
@@ -506,7 +541,7 @@ c /    \         |  |
   )\ ))__ _\    |___)
  nn-nn'  'nn---'
     `,
-    color: "Grey",
+    color: "Gray",
     height: 5,
     author: "",
   },
@@ -973,6 +1008,30 @@ __|_________\______/
   },
   {
     type: "character",
+    name: "snoopy",
+    art: String.raw`
+          ,-~~-.___.
+         / ()=(()   \
+        (  |         0
+          \_,\, ,----'
+    ##XXXxxxxxxx
+            /  ---'~;
+          /    /~|-
+        =(   ~~  | 
+   /~~~~~~~~~~~~~~~~~~~~~\
+  /_______________________\
+ /_________________________\
+/___________________________\
+   |____________________|
+   |____________________|
+   |____________________|
+    `,
+    color: "Black",
+    height: 15,
+    author: "Win Kang",
+  },
+  {
+    type: "character",
     name: "sonic",
     art: String.raw`
           .,
@@ -1027,7 +1086,7 @@ f  o|  o|__     "'-.
          |     |
          '.___.'
     `,
-    color: "Grey",
+    color: "Gray",
     height: 15,
     author: "LGB",
   },
@@ -1123,8 +1182,27 @@ f  o|  o|__     "'-.
      '.       .'
        ''---''
     `,
-    color: "Grey",
+    color: "DimGray",
     height: 14,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
+    name: "book",
+    art: String.raw`
+,         ,
+|\\\\ ////|
+| \\\V/// |
+|  |~~~|  |
+|  |===|  |
+|  |   |  |
+|  |   |  |
+ \ |   | /
+  \|===|/
+   '---'
+    `,
+    color: "SaddleBrown",
+    height: 10,
     author: "Joan G. Stark",
   },
   {
@@ -1174,7 +1252,7 @@ o\*''.\|/.''*/o
 |    |       |   V|
 |____|_______|____|
     `,
-    color: "DarkSlateGrey",
+    color: "DarkSlateGray",
     height: 10,
     author: "Robert Craggs",
   },
@@ -1240,7 +1318,7 @@ o\*''.\|/.''*/o
 ~~~~~~~~~~~~~~~  /o/
                  ~~
     `,
-    color: "CornSilk",
+    color: "Cornsilk",
     height: 8,
     author: "Ojoshiro",
   },

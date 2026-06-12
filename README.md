@@ -20,11 +20,13 @@ Use the minified file from `build` in your page:
 Then open your browser console and call one of the helpers:
 
 ```js
-printAsciiByName("pinkPanther");
 printAsciiById(18);
-printRandomAscii("character");
+printAsciiByName("pinkPanther");
 printAsciiSearch("panther");
+printRandomAscii("character");
+listAsciis("animal");
 listAsciiNames("animal");
+listAsciiTypes();
 ```
 
 ## Files
@@ -200,102 +202,103 @@ The library also includes a few utility ASCII arts for console messages.
 
 ## What's inside?
 
-- **Type:** Animals (animal)
-
-  - anteater
-  - armadillo
-  - bat
-  - bear
-  - beaver
-  - cat
-  - caterpillar
-  - crab
-  - deer
-  - dog
-  - duck
-  - elephant
-  - flamingo
-  - fox
-  - frog
-  - goldfish
-  - hedgehog
-  - hippo
-  - lion
-  - marbles
-  - marmot
-  - monkey
-  - mouse
-  - parrot
-  - pig
-  - pinguin
-  - snail
-  - teckel
-  - turtle
-  - wasp
-  - whale
-
-- **Type:** Characters (character)
-  - bender
-  - bigBird
-  - cheshireCat
-  - cookieMonster
-  - devil
-  - einstein
-  - flintstones
-  - garfield
-  - homer
-  - kermit
-  - maryPoppins
-  - monaLisa
-  - pinkPanther
-  - r2d2
-  - santaClaus
-  - sherlockHolmes
-  - sonic
-  - spaceInvader
-  - squidward
-  - tweetieBird
-  - yosemiteSam
-
-- **Type:** Things (thing)
-  - alarm
-  - boat
-  - bomb
-  - camera
-  - crown
-  - floppyDisk
-  - gift
-  - plane
-  - rocket
-  - television
-  - tombstone
-
-- **Type:** Banners (banner)
-  - dev
-  - hello
-  - production
-  - staging
-  - welcome
+| ID | Name | Category | Color |
+|---:|---|---|---|
+| 0 | anteater | animal | LightSlateGray |
+| 1 | armadillo | animal | RosyBrown |
+| 2 | bat | animal | DimGray |
+| 3 | bear | animal | Brown |
+| 4 | bees | animal | Goldenrod |
+| 5 | beaver | animal | DarkGoldenrod |
+| 6 | cat | animal | DarkSlateGrey |
+| 7 | caterpillar | animal | Green |
+| 8 | crab | animal | Red |
+| 9 | crocodile | animal | OliveDrab |
+| 10 | deer | animal | Tan |
+| 11 | dog | animal | Tan |
+| 12 | duck | animal | DarkGray |
+| 13 | elephant | animal | Silver |
+| 14 | flamingo | animal | Pink |
+| 15 | fox | animal | DarkOrange |
+| 16 | frog | animal | SpringGreen |
+| 17 | goldfish | animal | Gold |
+| 18 | hippo | animal | DarkGray |
+| 19 | hedgehog | animal | Tan |
+| 20 | lion | animal | Peru |
+| 21 | marbles | animal | Brown |
+| 22 | marmot | animal | DarkGoldenrod |
+| 23 | monkey | animal | Brown |
+| 24 | mouse | animal | Gray |
+| 25 | parrot | animal | DodgerBlue |
+| 26 | pig | animal | Pink |
+| 27 | pinguin | animal | Black |
+| 28 | snail | animal | SeaGreen |
+| 29 | teckel | animal | Chocolate |
+| 30 | turtle | animal | LimeGreen |
+| 31 | wasp | animal | Yellow |
+| 32 | whale | animal | RoyalBlue |
+| 33 | bender | character | Silver |
+| 34 | bigBird | character | Yellow |
+| 35 | cheshireCat | character | Violet |
+| 36 | cookieMonster | character | Blue |
+| 37 | devil | character | Red |
+| 38 | einstein | character | Silver |
+| 39 | flintstones | character | DarkOrange |
+| 40 | garfield | character | Orange |
+| 41 | homer | character | Gold |
+| 42 | kermit | character | SpringGreen |
+| 43 | maryPoppins | character | Black |
+| 44 | monaLisa | character | Sienna |
+| 45 | pinkPanther | character | Pink |
+| 46 | r2d2 | character | Blue |
+| 47 | santaClaus | character | Red |
+| 48 | sherlockHolmes | character | MediumSeaGreen |
+| 49 | snoopy | character | Black |
+| 50 | sonic | character | Blue |
+| 51 | spaceInvader | character | Chartreuse |
+| 52 | squidward | character | Gray |
+| 53 | tweetieBird | character | Orange |
+| 54 | yosemiteSam | character | Red |
+| 55 | alarm | thing | Chocolate |
+| 56 | boat | thing | Aqua |
+| 57 | bomb | thing | DimGray |
+| 58 | book | thing | SaddleBrown |
+| 59 | camera | thing | Gray |
+| 60 | crown | thing | Gold |
+| 61 | floppyDisk | thing | DarkSlateGray |
+| 62 | gift | thing | Red |
+| 63 | plane | thing | Red |
+| 64 | rocket | thing | OrangeRed |
+| 65 | television | thing | Cornsilk |
+| 66 | tombstone | thing | Gray |
+| 67 | dev | banner | MediumPurple |
+| 68 | hello | banner | DeepSkyBlue |
+| 69 | production | banner | LimeGreen |
+| 70 | staging | banner | DarkOrange |
+| 71 | welcome | banner | DeepSkyBlue |
 
 ## Credits
 
 I didn't make the arts. At best, I just tweaked them. Here are the names of the authors (when I could find them):
-  - B.D.S. "Don"McConnell
+  - ASCII Printer
+  - B.D.S. "Don" McConnell
   - Hamilton Furtado
-  - Harry Mason (hjm)
-  - Hayley Jane Wakenshaw (hjw)
-  - Joan G. Stark (jgs)
-  - Ojoshiro
+  - Harry Mason
+  - Hayley Jane Wakenshaw
+  - Joan G. Stark
   - Laura Brown
   - LGB
+  - Ojoshiro
   - Randy Ransom
   - Riitta Rasimus
   - Robert Craggs
   - Seal do Mar
+  - Shanaka Dias
   - Silver Saks
   - snd
   - Stef00
   - Veronica Karlsson
+  - Win Kang
   
 **PS:** Again, I didn't make those arts, I just found them. When I could, I put the talented author in the library.
 
