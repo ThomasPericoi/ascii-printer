@@ -37,7 +37,7 @@ The demo page includes:
 
 - the available public commands;
 - copy-ready examples;
-- the full ASCII catalog with ID, name, category, color, and `printAsciiById(...)` command.
+- the full ASCII catalog with ID, name, category, color, height, author, and `printAsciiById(...)` command.
 
 ## Files
 
@@ -177,8 +177,8 @@ Use `listAsciis()` when you need the id, name, and category together:
 **Output**
 
     [
-      { id: 63, name: "dev", category: "banner" },
-      { id: 64, name: "hello", category: "banner" }
+      { id: 69, name: "dev", category: "banner" },
+      { id: 70, name: "hello", category: "banner" }
     ]
 
 ### Options
@@ -226,80 +226,82 @@ The library also includes a few utility ASCII arts for console messages.
 
 ## What's inside?
 
-| ID | Name | Category | Color |
-|---:|---|---|---|
-| 0 | anteater | animal | LightSlateGray |
-| 1 | armadillo | animal | RosyBrown |
-| 2 | bat | animal | DimGray |
-| 3 | bear | animal | Brown |
-| 4 | bees | animal | Goldenrod |
-| 5 | beaver | animal | DarkGoldenrod |
-| 6 | cat | animal | DarkSlateGrey |
-| 7 | caterpillar | animal | Green |
-| 8 | crab | animal | Red |
-| 9 | crocodile | animal | OliveDrab |
-| 10 | deer | animal | Tan |
-| 11 | dog | animal | Tan |
-| 12 | duck | animal | DarkGray |
-| 13 | elephant | animal | Silver |
-| 14 | flamingo | animal | Pink |
-| 15 | fox | animal | DarkOrange |
-| 16 | frog | animal | SpringGreen |
-| 17 | goldfish | animal | Gold |
-| 18 | hippo | animal | DarkGray |
-| 19 | hedgehog | animal | Tan |
-| 20 | lion | animal | Peru |
-| 21 | marbles | animal | Brown |
-| 22 | marmot | animal | DarkGoldenrod |
-| 23 | monkey | animal | Brown |
-| 24 | mouse | animal | Gray |
-| 25 | parrot | animal | DodgerBlue |
-| 26 | pig | animal | Pink |
-| 27 | pinguin | animal | Black |
-| 28 | snail | animal | SeaGreen |
-| 29 | teckel | animal | Chocolate |
-| 30 | turtle | animal | LimeGreen |
-| 31 | wasp | animal | Yellow |
-| 32 | whale | animal | RoyalBlue |
-| 33 | bender | character | Silver |
-| 34 | bigBird | character | Yellow |
-| 35 | cheshireCat | character | Violet |
-| 36 | cookieMonster | character | Blue |
-| 37 | devil | character | Red |
-| 38 | einstein | character | Silver |
-| 39 | flintstones | character | DarkOrange |
-| 40 | garfield | character | Orange |
-| 41 | homer | character | Gold |
-| 42 | kermit | character | SpringGreen |
-| 43 | maryPoppins | character | Black |
-| 44 | monaLisa | character | Sienna |
-| 45 | pinkPanther | character | Pink |
-| 46 | r2d2 | character | Blue |
-| 47 | santaClaus | character | Red |
-| 48 | sherlockHolmes | character | MediumSeaGreen |
-| 49 | snoopy | character | Black |
-| 50 | sonic | character | Blue |
-| 51 | spaceInvader | character | Chartreuse |
-| 52 | squidward | character | Gray |
-| 53 | tweetieBird | character | Orange |
-| 54 | yosemiteSam | character | Red |
-| 55 | alarm | thing | Chocolate |
-| 56 | boat | thing | Aqua |
-| 57 | bomb | thing | DimGray |
-| 58 | book | thing | SaddleBrown |
-| 59 | camera | thing | Gray |
-| 60 | crown | thing | Gold |
-| 61 | floppyDisk | thing | DarkSlateGray |
-| 62 | gift | thing | Red |
-| 63 | plane | thing | Red |
-| 64 | rocket | thing | OrangeRed |
-| 65 | television | thing | Cornsilk |
-| 66 | tombstone | thing | Gray |
-| 67 | dev | banner | MediumPurple |
-| 68 | hello | banner | DeepSkyBlue |
-| 69 | production | banner | LimeGreen |
-| 70 | staging | banner | DarkOrange |
-| 71 | welcome | banner | DeepSkyBlue |
+| ID | Name | Category | Color | Height | Author |
+|---:|---|---|---|---:|---|
+| 0 | anteater | animal | LightSlateGray | 7 | Veronica Karlsson |
+| 1 | armadillo | animal | RosyBrown | 7 | Seal do Mar |
+| 2 | bat | animal | DimGray | 7 | Joan G. Stark |
+| 3 | bear | animal | Brown | 10 | Joan G. Stark |
+| 4 | bees | animal | Goldenrod | 9 | Joan G. Stark |
+| 5 | beaver | animal | DarkGoldenrod | 7 | Joan G. Stark |
+| 6 | cat | animal | DarkSlateGrey | 12 | Unknown |
+| 7 | caterpillar | animal | Green | 3 | Joan G. Stark |
+| 8 | crab | animal | Red | 8 | Unknown |
+| 9 | crocodile | animal | OliveDrab | 9 | Shanaka Dias |
+| 10 | deer | animal | Tan | 15 | Unknown |
+| 11 | dog | animal | Tan | 8 | Unknown |
+| 12 | duck | animal | DarkGray | 7 | Unknown |
+| 13 | elephant | animal | Silver | 11 | Hamilton Furtado |
+| 14 | flamingo | animal | Pink | 13 | Unknown |
+| 15 | fox | animal | DarkOrange | 9 | Unknown |
+| 16 | frog | animal | SpringGreen | 6 | Unknown |
+| 17 | goldfish | animal | Gold | 6 | Unknown |
+| 18 | hippo | animal | DarkGray | 7 | Unknown |
+| 19 | hedgehog | animal | Tan | 5 | Unknown |
+| 20 | lion | animal | Peru | 13 | Joan G. Stark |
+| 21 | marbles | animal | Brown | 10 | Unknown |
+| 22 | marmot | animal | DarkGoldenrod | 12 | Hayley Jane Wakenshaw |
+| 23 | monkey | animal | Brown | 12 | Joan G. Stark |
+| 24 | mouse | animal | Gray | 5 | Unknown |
+| 25 | parrot | animal | DodgerBlue | 16 | Unknown |
+| 26 | pig | animal | Pink | 9 | Unknown |
+| 27 | pinguin | animal | Black | 6 | Unknown |
+| 28 | snail | animal | SeaGreen | 5 | Hayley Jane Wakenshaw |
+| 29 | teckel | animal | Chocolate | 8 | Hayley Jane Wakenshaw |
+| 30 | turtle | animal | LimeGreen | 6 | Unknown |
+| 31 | wasp | animal | Yellow | 5 | Stef00 |
+| 32 | whale | animal | RoyalBlue | 6 | Riitta Rasimus |
+| 33 | bender | character | Silver | 16 | Silver Saks |
+| 34 | bigBird | character | Yellow | 16 | Unknown |
+| 35 | cheshireCat | character | Violet | 6 | Randy Ransom |
+| 36 | cookieMonster | character | Blue | 6 | Randy Ransom |
+| 37 | devil | character | Red | 6 | Joan G. Stark |
+| 38 | einstein | character | Silver | 9 | Joan G. Stark |
+| 39 | flintstones | character | DarkOrange | 11 | Unknown |
+| 40 | garfield | character | Orange | 12 | Joan G. Stark |
+| 41 | homer | character | Gold | 14 | Unknown |
+| 42 | kermit | character | SpringGreen | 13 | Joan G. Stark |
+| 43 | maryPoppins | character | Black | 17 | Unknown |
+| 44 | monaLisa | character | Sienna | 17 | Unknown |
+| 45 | pinkPanther | character | Pink | 12 | Unknown |
+| 46 | r2d2 | character | Blue | 8 | snd |
+| 47 | santaClaus | character | Red | 10 | B.D.S. "Don" McConnell |
+| 48 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
+| 49 | snoopy | character | Black | 15 | Win Kang |
+| 50 | sonic | character | Blue | 9 | Unknown |
+| 51 | spaceInvader | character | Chartreuse | 8 | Unknown |
+| 52 | squidward | character | Gray | 15 | LGB |
+| 53 | tweetieBird | character | Orange | 9 | Unknown |
+| 54 | yosemiteSam | character | Red | 13 | Unknown |
+| 55 | alarm | thing | Chocolate | 10 | Joan G. Stark |
+| 56 | boat | thing | Aqua | 5 | Hayley Jane Wakenshaw |
+| 57 | bomb | thing | DimGray | 14 | Joan G. Stark |
+| 58 | book | thing | SaddleBrown | 10 | Joan G. Stark |
+| 59 | cake | thing | Pink | 10 | Laura Brown |
+| 60 | camera | thing | Gray | 10 | Joan G. Stark |
+| 61 | crown | thing | Gold | 10 | Joan G. Stark |
+| 62 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
+| 63 | gift | thing | Red | 5 | Laura Brown |
+| 64 | plane | thing | Red | 8 | Joan G. Stark |
+| 65 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
+| 66 | teapot | thing | Sienna | 11 | Stephane Abello |
+| 67 | television | thing | Cornsilk | 8 | Ojoshiro |
+| 68 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
+| 69 | dev | banner | MediumPurple | 5 | Unknown |
+| 70 | hello | banner | DeepSkyBlue | 5 | ASCII Printer |
+| 71 | production | banner | LimeGreen | 5 | Unknown |
+| 72 | staging | banner | DarkOrange | 5 | Unknown |
+| 73 | welcome | banner | DeepSkyBlue | 5 | Unknown |
 
 ## Credits
 
@@ -321,6 +323,7 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Silver Saks
   - snd
   - Stef00
+  - Stephane Abello
   - Veronica Karlsson
   - Win Kang
   
@@ -334,7 +337,7 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 First stable release of ASCII Printer.
 
-- 72 ASCII arts.
+- 74 ASCII arts.
 - Category, name, and ID listing helpers.
 - Random printing by category.
 - Search by partial name.

@@ -4,7 +4,7 @@ var asciis = [
   {
     type: "animal",
     name: "anteater",
-    art: String.raw` 
+    art: String.raw`
        _.---._    /\\
     ./'       "--'\//
   ./              o \
@@ -20,7 +20,7 @@ var asciis = [
   {
     type: "animal",
     name: "armadillo",
-    art: String.raw` 
+    art: String.raw`
              _.-----__    
           ,:::://///,:::-. 
          /:''/////// \\:::;/|/
@@ -886,7 +886,7 @@ __|_________\______/
     `,
     color: "Red",
     height: 10,
-    author: "B.D.S.`\"Don\"McConnell",
+    author: "B.D.S. \"Don\" McConnell",
   },
   {
     type: "character",
@@ -1106,6 +1106,25 @@ f  o|  o|__     "'-.
   },
   {
     type: "thing",
+    name: "cake",
+    art: String.raw`
+       , , , , , ,
+       |_|_|_|_|_|
+      |~=,=,=,=,=~|
+      |~~~~~~~~~~~|
+    |~=,=,=,=,=,=,=~|
+    |~~~~~~~~~~~~~~~|
+  |~=,=,=,=,=,=,=,=,=~|
+  |~~~~~~~~~~~~~~~~~~~|
+(^^^^^^^^^^^^^^^^^^^^^^^)
+ ''-------------------''
+    `,
+    color: "Pink",
+    height: 10,
+    author: "Laura Brown",
+  },
+  {
+    type: "thing",
     name: "camera",
     art: String.raw` 
  .-------------------.
@@ -1203,6 +1222,27 @@ o\*''.\|/.''*/o
     color: "OrangeRed",
     height: 9,
     author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
+    name: "teapot",
+    art: String.raw`
+                       (
+            _           ) )
+         _,(_)._        ((
+    ___,(_______).        )
+  ,'__.   /       \    /\_
+ /,' /  |""|       \  /  /
+| | |   |__|       |,'  /
+ \'.|                  /
+  '. :           :    /
+    ''.            :.,'
+      '-.________,-'
+
+    `,
+    color: "Sienna",
+    height: 11,
+    author: "Stephane Abello",
   },
   {
     type: "thing",
