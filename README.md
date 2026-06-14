@@ -20,11 +20,11 @@ Use the minified file from `build` in your page:
 Then open your browser console and call the recommended API:
 
 ```js
-AsciiPrinter.printById(18);
+AsciiPrinter.printById(26);
 AsciiPrinter.printByName("pinkPanther");
 AsciiPrinter.printBySearch("panther");
 AsciiPrinter.printRandom("character");
-AsciiPrinter.printRandomFrom(["frog", "rocket", "pinkPanther"]);
+AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
 AsciiPrinter.getById(18);
 AsciiPrinter.getByName("pinkPanther");
 AsciiPrinter.list("animal");
@@ -105,7 +105,7 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
 
 Useful if you want to create your own "random" list of arts for instance.
 
-    AsciiPrinter.printById(18);
+    AsciiPrinter.printById(26);
 
 **Output**
 
@@ -162,13 +162,13 @@ Print a random ASCII from the full catalog, or narrow it down with a category:
 
 Use `printRandomFrom()` when you want to choose the random pool yourself.
 
-    AsciiPrinter.printRandomFrom(["frog", "rocket", "pinkPanther"]);
+    AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
 
 This prints one random ASCII from the names you provide.
 
 You can also pass print options:
 
-    AsciiPrinter.printRandomFrom(["frog", "rocket"], { color: "Gold" });
+    AsciiPrinter.printRandomFrom(["heart", "key"], { color: "Gold" });
 
 If a name does not exist, it is ignored. If no provided names match the catalog, ASCII Printer prints a warning.
 
@@ -207,8 +207,8 @@ Use `AsciiPrinter.list()` when you need the id, name, and category together:
 **Output**
 
     [
-      { id: 69, name: "dev", category: "banner" },
-      { id: 70, name: "hello", category: "banner" }
+      { id: 82, name: "dev", category: "banner" },
+      { id: 83, name: "hello", category: "banner" }
     ]
 
 ### Get without printing
@@ -242,7 +242,7 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 **Options also work with random and search**
 
     AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
-    AsciiPrinter.printRandomFrom(["frog", "rocket"], { color: "Gold" });
+    AsciiPrinter.printRandomFrom(["heart", "key"], { color: "Gold" });
     AsciiPrinter.printBySearch("bird", { color: "DodgerBlue" });
 
 ## What's inside?
@@ -255,80 +255,94 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 | 3 | bear | animal | Brown | 10 | Joan G. Stark |
 | 4 | bees | animal | Goldenrod | 9 | Joan G. Stark |
 | 5 | beaver | animal | DarkGoldenrod | 7 | Joan G. Stark |
-| 6 | cat | animal | DarkSlateGrey | 12 | Unknown |
-| 7 | caterpillar | animal | Green | 3 | Joan G. Stark |
-| 8 | crab | animal | Red | 8 | Unknown |
-| 9 | crocodile | animal | OliveDrab | 9 | Shanaka Dias |
-| 10 | deer | animal | Tan | 15 | Unknown |
-| 11 | dog | animal | Tan | 8 | Unknown |
-| 12 | duck | animal | DarkGray | 7 | Unknown |
-| 13 | elephant | animal | Silver | 11 | Hamilton Furtado |
-| 14 | flamingo | animal | Pink | 13 | Unknown |
-| 15 | fox | animal | DarkOrange | 9 | Unknown |
-| 16 | frog | animal | SpringGreen | 6 | Unknown |
-| 17 | goldfish | animal | Gold | 6 | Unknown |
-| 18 | hippo | animal | DarkGray | 7 | Unknown |
-| 19 | hedgehog | animal | Tan | 5 | Unknown |
-| 20 | lion | animal | Peru | 13 | Joan G. Stark |
-| 21 | marbles | animal | Brown | 10 | Unknown |
-| 22 | marmot | animal | DarkGoldenrod | 12 | Hayley Jane Wakenshaw |
-| 23 | monkey | animal | Brown | 12 | Joan G. Stark |
-| 24 | mouse | animal | Gray | 5 | Unknown |
-| 25 | parrot | animal | DodgerBlue | 16 | Unknown |
-| 26 | pig | animal | Pink | 9 | Unknown |
-| 27 | pinguin | animal | Black | 6 | Unknown |
-| 28 | snail | animal | SeaGreen | 5 | Hayley Jane Wakenshaw |
-| 29 | teckel | animal | Chocolate | 8 | Hayley Jane Wakenshaw |
-| 30 | turtle | animal | LimeGreen | 6 | Unknown |
-| 31 | wasp | animal | Yellow | 5 | Stef00 |
-| 32 | whale | animal | RoyalBlue | 6 | Riitta Rasimus |
-| 33 | bender | character | Silver | 16 | Silver Saks |
-| 34 | bigBird | character | Yellow | 16 | Unknown |
-| 35 | cheshireCat | character | Violet | 6 | Randy Ransom |
-| 36 | cookieMonster | character | Blue | 6 | Randy Ransom |
-| 37 | devil | character | Red | 6 | Joan G. Stark |
-| 38 | einstein | character | Silver | 9 | Joan G. Stark |
-| 39 | flintstones | character | DarkOrange | 11 | Unknown |
-| 40 | garfield | character | Orange | 12 | Joan G. Stark |
-| 41 | homer | character | Gold | 14 | Unknown |
-| 42 | kermit | character | SpringGreen | 13 | Joan G. Stark |
-| 43 | maryPoppins | character | Black | 17 | Unknown |
-| 44 | monaLisa | character | Sienna | 17 | Unknown |
-| 45 | pinkPanther | character | Pink | 12 | Unknown |
-| 46 | r2d2 | character | Blue | 8 | snd |
-| 47 | santaClaus | character | Red | 10 | B.D.S. "Don" McConnell |
-| 48 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
-| 49 | snoopy | character | Black | 15 | Win Kang |
-| 50 | sonic | character | Blue | 9 | Unknown |
-| 51 | spaceInvader | character | Chartreuse | 8 | Unknown |
-| 52 | squidward | character | Gray | 15 | LGB |
-| 53 | tweetieBird | character | Orange | 9 | Unknown |
-| 54 | yosemiteSam | character | Red | 13 | Unknown |
-| 55 | alarm | thing | Chocolate | 10 | Joan G. Stark |
-| 56 | boat | thing | Aqua | 5 | Hayley Jane Wakenshaw |
-| 57 | bomb | thing | DimGray | 14 | Joan G. Stark |
-| 58 | book | thing | SaddleBrown | 10 | Joan G. Stark |
-| 59 | cake | thing | Pink | 10 | Laura Brown |
-| 60 | camera | thing | Gray | 10 | Joan G. Stark |
-| 61 | crown | thing | Gold | 10 | Joan G. Stark |
-| 62 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
-| 63 | gift | thing | Red | 5 | Laura Brown |
-| 64 | plane | thing | Red | 8 | Joan G. Stark |
-| 65 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
-| 66 | teapot | thing | Sienna | 11 | Stephane Abello |
-| 67 | television | thing | Cornsilk | 8 | Ojoshiro |
-| 68 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
-| 69 | dev | banner | MediumPurple | 5 | Unknown |
-| 70 | hello | banner | DeepSkyBlue | 5 | ASCII Printer |
-| 71 | production | banner | LimeGreen | 5 | Unknown |
-| 72 | staging | banner | DarkOrange | 5 | Unknown |
-| 73 | welcome | banner | DeepSkyBlue | 5 | Unknown |
+| 6 | bug | animal | DarkGoldenrod | 6 | Unknown |
+| 7 | cat | animal | DarkSlateGrey | 12 | Unknown |
+| 8 | caterpillar | animal | Green | 3 | Joan G. Stark |
+| 9 | crab | animal | Red | 8 | Unknown |
+| 10 | crocodile | animal | OliveDrab | 9 | Shanaka Dias |
+| 11 | deer | animal | Tan | 15 | Unknown |
+| 12 | dog | animal | Tan | 8 | Unknown |
+| 13 | duck | animal | DarkGray | 7 | Unknown |
+| 14 | elephant | animal | Silver | 11 | Hamilton Furtado |
+| 15 | flamingo | animal | Pink | 13 | Unknown |
+| 16 | fox | animal | DarkOrange | 9 | Unknown |
+| 17 | frog | animal | SpringGreen | 6 | Unknown |
+| 18 | goldfish | animal | Gold | 6 | Unknown |
+| 19 | hippo | animal | DarkGray | 7 | Unknown |
+| 20 | hedgehog | animal | Tan | 5 | Unknown |
+| 21 | lion | animal | Peru | 13 | Joan G. Stark |
+| 22 | marbles | animal | Brown | 10 | Unknown |
+| 23 | marmot | animal | DarkGoldenrod | 12 | Hayley Jane Wakenshaw |
+| 24 | monkey | animal | Brown | 12 | Joan G. Stark |
+| 25 | mouse | animal | Gray | 5 | Unknown |
+| 26 | parrot | animal | DodgerBlue | 16 | Unknown |
+| 27 | pig | animal | Pink | 9 | Unknown |
+| 28 | pinguin | animal | Black | 6 | Unknown |
+| 29 | snail | animal | SeaGreen | 5 | Hayley Jane Wakenshaw |
+| 30 | teckel | animal | Chocolate | 8 | Hayley Jane Wakenshaw |
+| 31 | turtle | animal | LimeGreen | 6 | Unknown |
+| 32 | wasp | animal | Yellow | 5 | Stef00 |
+| 33 | whale | animal | RoyalBlue | 6 | Riitta Rasimus |
+| 34 | bender | character | Silver | 16 | Silver Saks |
+| 35 | bigBird | character | Yellow | 16 | Unknown |
+| 36 | cheshireCat | character | Violet | 6 | Randy Ransom |
+| 37 | cookieMonster | character | Blue | 6 | Randy Ransom |
+| 38 | devil | character | Red | 6 | Joan G. Stark |
+| 39 | einstein | character | Silver | 9 | Joan G. Stark |
+| 40 | flintstones | character | DarkOrange | 11 | Unknown |
+| 41 | garfield | character | Orange | 12 | Joan G. Stark |
+| 42 | homer | character | Gold | 14 | Unknown |
+| 43 | kermit | character | SpringGreen | 13 | Joan G. Stark |
+| 44 | knight | character | Silver | 10 | Joan G. Stark |
+| 45 | maryPoppins | character | Black | 17 | Unknown |
+| 46 | monaLisa | character | Sienna | 17 | Unknown |
+| 47 | pinkPanther | character | Pink | 12 | Unknown |
+| 48 | r2d2 | character | Blue | 8 | snd |
+| 49 | robot | character | Blue | 14 | Joan G. Stark |
+| 50 | santaClaus | character | Red | 10 | B.D.S. "Don" McConnell |
+| 51 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
+| 52 | snoopy | character | Black | 15 | Win Kang |
+| 53 | sonic | character | Blue | 9 | Unknown |
+| 54 | spaceInvader | character | Chartreuse | 8 | Unknown |
+| 55 | squidward | character | Gray | 15 | LGB |
+| 56 | tweetieBird | character | Orange | 9 | Unknown |
+| 57 | yosemiteSam | character | Red | 13 | Unknown |
+| 58 | alarm | thing | Chocolate | 10 | Joan G. Stark |
+| 59 | anchor | thing | SlateGray | 10 | Joan G. Stark |
+| 60 | axe | thing | SlateGray | 10 | Harry Mason |
+| 61 | boat | thing | Aqua | 5 | Hayley Jane Wakenshaw |
+| 62 | bomb | thing | DimGray | 14 | Joan G. Stark |
+| 63 | book | thing | SaddleBrown | 10 | Joan G. Stark |
+| 64 | cake | thing | Pink | 10 | Laura Brown |
+| 65 | camera | thing | Gray | 10 | Joan G. Stark |
+| 66 | crown | thing | Gold | 10 | Joan G. Stark |
+| 67 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
+| 68 | gift | thing | Red | 5 | Laura Brown |
+| 69 | gun | thing | Silver | 6 | Unknown |
+| 70 | heart | thing | Red | 5 | Bungle |
+| 71 | hotAirBalloon | thing | Red | 15 | Joan G. Stark |
+| 72 | key | thing | Gold | 5 | Hayley Jane Wakenshaw |
+| 73 | lightBulb | thing | Goldenrod | 7 | Joan G. Stark |
+| 74 | mailbox | thing | Red | 12 | Joan G. Stark |
+| 75 | plane | thing | Red | 8 | Joan G. Stark |
+| 76 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
+| 77 | stopSign | thing | Red | 8 | Joan G. Stark |
+| 78 | sword | thing | Gold | 7 | Veronica Karlsson |
+| 79 | teapot | thing | Sienna | 11 | Stephane Abello |
+| 80 | television | thing | Cornsilk | 8 | Ojoshiro |
+| 81 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
+| 82 | dev | banner | MediumPurple | 5 | Unknown |
+| 83 | hello | banner | DeepSkyBlue | 5 | ASCII Printer |
+| 84 | production | banner | LimeGreen | 5 | Unknown |
+| 85 | staging | banner | DarkOrange | 5 | Unknown |
+| 86 | welcome | banner | DeepSkyBlue | 5 | Unknown |
 
 ## Credits
 
 I didn't make the arts. At best, I just tweaked them. Here are the names of the authors (when I could find them):
   - ASCII Printer
   - B.D.S. "Don" McConnell
+  - Bungle
   - Hamilton Furtado
   - Harry Mason
   - Hayley Jane Wakenshaw
@@ -358,7 +372,7 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 First stable release of ASCII Printer.
 
-- 74 ASCII arts.
+- 87 ASCII arts.
 - Category, name, and ID listing helpers.
 - Random printing by category.
 - Search by partial name.
