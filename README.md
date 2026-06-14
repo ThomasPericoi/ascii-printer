@@ -33,8 +33,6 @@ AsciiPrinter.version;
 AsciiPrinter.catalog;
 ```
 
-`AsciiPrinter` is the only public API exposed by the script.
-
 ## Demo
 
 Open `demo.html` in your browser, then open the console.
@@ -78,7 +76,7 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
 
 ## How does it work?
 
-### By Name
+### Print By Name
 
 **Input**
 
@@ -99,7 +97,7 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
             '.___.'
               | |
 
-### By ID
+### Print By ID
 
 **Input**
 
@@ -126,7 +124,7 @@ Useful if you want to create your own "random" list of arts for instance.
                        \ \ '.)
                         '-'-'
 
-### Randomly
+### Print Random
 
 **Input**
 
@@ -156,7 +154,7 @@ Or by narrowing it down with a category.
              |     |
              '.___.'
 
-### Search
+### Print by Search
 
 **Input**
 
@@ -226,25 +224,7 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 
     AsciiPrinter.getByName("frog");
 
-This returns the ASCII object without writing anything to the console.
-
-### Console things and banners
-
-The library also includes a few utility ASCII arts for console messages.
-
-**Thing examples**
-
-    AsciiPrinter.printByName("bomb");
-    AsciiPrinter.printByName("gift");
-    AsciiPrinter.printByName("rocket");
-
-**Banner examples**
-
-    AsciiPrinter.printByName("dev");
-    AsciiPrinter.printByName("hello");
-    AsciiPrinter.printByName("production");
-    AsciiPrinter.printByName("staging");
-    AsciiPrinter.printByName("welcome");
+This returns the ASCII object without writing anything to the console, in case you want to use this API dfferently. 
 
 ## What's inside?
 
