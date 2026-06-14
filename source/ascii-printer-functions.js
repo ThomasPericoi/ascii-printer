@@ -50,8 +50,8 @@ function getAsciiStyle(ascii, options = {}) {
 }
 
 function printAsciiCredit(ascii, options = {}) {
-  if (options.credits && ascii.author) {
-    console.log(`ASCII by ${ascii.author}`);
+  if (options.credits) {
+    console.log(`ASCII by ${ascii.author || "Unknown"}`);
   }
 }
 
