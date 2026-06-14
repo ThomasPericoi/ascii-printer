@@ -106,6 +106,25 @@ function printRandomAscii(category = "all", options = {}) {
   printAsciiByName(randomAscii.name, options);
 }
 
+function printRandomAsciiFrom(asciiNames, options = {}) {
+  if (!Array.isArray(asciiNames) || asciiNames.length < 1) {
+    console.warn("ASCII names must be a non-empty array.");
+    return;
+  }
+
+  const selectedAsciis = asciiNames
+    .map((asciiName) => getAsciiByName(asciiName))
+    .filter(Boolean);
+
+  if (selectedAsciis.length < 1) {
+    console.warn("No ASCII found for the provided names.");
+    return;
+  }
+
+  const randomAscii = getRandomValueFromArray(selectedAsciis);
+  printAsciiByName(randomAscii.name, options);
+}
+
 /*____________________________________ ASCII API ____________________________________*/
 
 global.AsciiPrinter = {
@@ -122,6 +141,7 @@ global.AsciiPrinter = {
   printByName: printAsciiByName,
   printBySearch: printAsciiSearch,
   printRandom: printRandomAscii,
+  printRandomFrom: printRandomAsciiFrom,
 };
 })(globalThis);
 

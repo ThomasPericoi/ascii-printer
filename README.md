@@ -24,6 +24,7 @@ AsciiPrinter.printById(18);
 AsciiPrinter.printByName("pinkPanther");
 AsciiPrinter.printBySearch("panther");
 AsciiPrinter.printRandom("character");
+AsciiPrinter.printRandomFrom(["frog", "rocket", "pinkPanther"]);
 AsciiPrinter.getById(18);
 AsciiPrinter.getByName("pinkPanther");
 AsciiPrinter.list("animal");
@@ -73,6 +74,7 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
 | `AsciiPrinter.printByName()` | Prints one ASCII by exact name. |
 | `AsciiPrinter.printBySearch()` | Prints the first ASCII whose name contains the search text. |
 | `AsciiPrinter.printRandom()` | Prints a random ASCII, optionally filtered by category. |
+| `AsciiPrinter.printRandomFrom()` | Prints a random ASCII from a list of names. |
 
 ## How does it work?
 
@@ -130,7 +132,7 @@ Useful if you want to create your own "random" list of arts for instance.
 
     AsciiPrinter.printRandom();
 
-Or by narrowing it down with a category.
+Print a random ASCII from the full catalog, or narrow it down with a category:
 
     AsciiPrinter.printRandom("character");
     AsciiPrinter.printRandom("thing");
@@ -153,6 +155,22 @@ Or by narrowing it down with a category.
       ' _...-|     |-..._ '
              |     |
              '.___.'
+
+### Print Random From
+
+**Input**
+
+Use `printRandomFrom()` when you want to choose the random pool yourself.
+
+    AsciiPrinter.printRandomFrom(["frog", "rocket", "pinkPanther"]);
+
+This prints one random ASCII from the names you provide.
+
+You can also pass print options:
+
+    AsciiPrinter.printRandomFrom(["frog", "rocket"], { color: "Gold" });
+
+If a name does not exist, it is ignored. If no provided names match the catalog, ASCII Printer prints a warning.
 
 ### Print by Search
 
@@ -193,6 +211,14 @@ Use `AsciiPrinter.list()` when you need the id, name, and category together:
       { id: 70, name: "hello", category: "banner" }
     ]
 
+### Get without printing
+
+**Input**
+
+    AsciiPrinter.getByName("frog");
+
+This returns the ASCII object without writing anything to the console, in case you want to use the catalog data differently.
+
 ### Options
 
 All print functions accept an optional options object.
@@ -216,15 +242,8 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 **Options also work with random and search**
 
     AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
+    AsciiPrinter.printRandomFrom(["frog", "rocket"], { color: "Gold" });
     AsciiPrinter.printBySearch("bird", { color: "DodgerBlue" });
-
-### Get without printing
-
-**Input**
-
-    AsciiPrinter.getByName("frog");
-
-This returns the ASCII object without writing anything to the console, in case you want to use this API dfferently. 
 
 ## What's inside?
 
