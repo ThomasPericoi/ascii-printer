@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ASCII Printer Test file</title>
+    <title>ASCII Printer Demo</title>
 </head>
 
 <body>
-    <h1 aria-label="ASCII Printer Test file" style="white-space: pre-wrap;font-family: monospace;">
+    <h1 aria-label="ASCII Printer Demo" style="white-space: pre-wrap;font-family: monospace;">
   ___  _____ _____ _____ _____  ______     _       _            
  / _ \/  ___/  __ \_   _|_   _| | ___ \   (_)     | |           
 / /_\ \ `--.| /  \/ | |   | |   | |_/ / __ _ _ __ | |_ ___ _ __ 
@@ -16,22 +16,27 @@
 | | | /\__/ / \__/\_| |_ _| |_  | |  | |  | | | | | ||  __/ |   
 \_| |_|____/ \____/\___/ \___/  \_|  |_|  |_|_| |_|\__\___|_|
     </h1>
-    <p>This is a test file for the ASCII Printer library.</p>
+    <p>This is a browser demo for the ASCII Printer library.</p>
     <p>Open your browser console to try the commands below.</p>
     <h2>Try it</h2>
-    <pre><code>printAsciiByName("hello");
-printRandomAscii("animal");
-printAsciiSearch("rocket");
-listAsciis("banner");</code></pre>
+    <pre><code>AsciiPrinter.printByName("hello");
+AsciiPrinter.printRandom("animal");
+AsciiPrinter.printBySearch("rocket");
+AsciiPrinter.getByName("pinkPanther");
+AsciiPrinter.list("banner");</code></pre>
     <h2>Available commands</h2>
     <ul>
-        <li><code>listAsciiTypes()</code></li>
-        <li><code>listAsciiNames()</code></li>
-        <li><code>listAsciis()</code></li>
-        <li><code>printAsciiById()</code></li>
-        <li><code>printAsciiByName()</code></li>
-        <li><code>printAsciiSearch()</code></li>
-        <li><code>printRandomAscii()</code></li>
+        <li><code>AsciiPrinter.listTypes()</code></li>
+        <li><code>AsciiPrinter.listNames()</code></li>
+        <li><code>AsciiPrinter.list()</code></li>
+        <li><code>AsciiPrinter.getById()</code></li>
+        <li><code>AsciiPrinter.getByName()</code></li>
+        <li><code>AsciiPrinter.printById()</code></li>
+        <li><code>AsciiPrinter.printByName()</code></li>
+        <li><code>AsciiPrinter.printBySearch()</code></li>
+        <li><code>AsciiPrinter.printRandom()</code></li>
+        <li><code>AsciiPrinter.version</code></li>
+        <li><code>AsciiPrinter.catalog</code></li>
     </ul>
     <h2>Available ASCII</h2>
     <table>
@@ -49,11 +54,11 @@ listAsciis("banner");</code></pre>
         <tbody id="ascii-catalog"></tbody>
     </table>
 
-    <script src="../build/ascii-printer.min.js"></script>
+    <script src="./build/ascii-printer.min.js"></script>
     <script>
         const asciiCatalog = document.getElementById("ascii-catalog");
 
-        asciiCatalog.innerHTML = asciis
+        asciiCatalog.innerHTML = AsciiPrinter.catalog
             .map((ascii, id) => `
             <tr>
                 <td>${id}</td>
@@ -62,7 +67,7 @@ listAsciis("banner");</code></pre>
                 <td>${escapeHtml(ascii.color)}</td>
                 <td>${escapeHtml(ascii.height)}</td>
                 <td>${escapeHtml(ascii.author || "Unknown")}</td>
-                <td><code>printAsciiById(${id})</code></td>
+                <td><code>AsciiPrinter.printById(${id})</code></td>
             </tr>`)
             .join("");
 

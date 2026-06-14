@@ -1,16 +1,48 @@
-/*____________________________________ USEFOOL FUNCTIONS (really light) ____________________________________*/
+(function (global) {
+var ASCII_PRINTER_VERSION = "1.0.0";
 
-function getRandomIdFromArray(arrayName) {
-  // Output
-  return Math.floor(Math.random() * arrayName.length);
+/*____________________________________ UTILITY FUNCTIONS ____________________________________*/
+
+function getRandomIdFromArray(array) {
+  return Math.floor(Math.random() * array.length);
 }
 
-function getRandomValueFromArray(arrayName) {
-  // Output
-  return arrayName[getRandomIdFromArray(arrayName)];
+function getRandomValueFromArray(array) {
+  return array[getRandomIdFromArray(array)];
 }
 
-/*____________________________________ ASCIIS FUNCTIONS ____________________________________*/
+/*____________________________________ ASCII FUNCTIONS ____________________________________*/
+
+function getAsciiById(asciiId) {
+  return asciis[asciiId] || null;
+}
+
+function getAsciiByName(asciiName) {
+  return asciis.find((ascii) => ascii.name === asciiName) || null;
+}
+
+function listAsciiTypes() {
+  return [...new Set(asciis.map((ascii) => ascii.type))];
+}
+
+function listAsciiNames(category = "all") {
+  const selectedAsciis =
+    category === "all"
+      ? asciis
+      : asciis.filter((ascii) => ascii.type === category);
+
+  return selectedAsciis.map((ascii) => ascii.name);
+}
+
+function listAsciis(category = "all") {
+  return asciis
+    .map((ascii, id) => ({
+      id,
+      name: ascii.name,
+      category: ascii.type,
+    }))
+    .filter((ascii) => category === "all" || ascii.category === category);
+}
 
 function getAsciiStyle(ascii, options = {}) {
   const color = options.color || ascii.color;
@@ -23,38 +55,14 @@ function printAsciiCredit(ascii, options = {}) {
   }
 }
 
-function listAsciiTypes() {
-  return [...new Set(asciis.map((ascii) => ascii.type))];
-}
-
-function listAsciiNames(criteria = "all") {
-  const selectedAsciis =
-    criteria === "all"
-      ? asciis
-      : asciis.filter((ascii) => ascii.type === criteria);
-
-  return selectedAsciis.map((ascii) => ascii.name);
-}
-
-function listAsciis(criteria = "all") {
-  return asciis
-    .map((ascii, id) => ({
-      id,
-      name: ascii.name,
-      category: ascii.type,
-    }))
-    .filter((ascii) => criteria === "all" || ascii.category === criteria);
-}
-
 function printAsciiById(asciiId, options = {}) {
-  const ascii = asciis[asciiId];
+  const ascii = getAsciiById(asciiId);
 
   if (!ascii) {
     console.warn(`ASCII not found for id: ${asciiId}`);
-    return null;
+    return;
   }
 
-  // Output
   console.log(
     `%c${ascii.art}`,
     getAsciiStyle(ascii, options)
@@ -63,16 +71,18 @@ function printAsciiById(asciiId, options = {}) {
 }
 
 function printAsciiByName(asciiName, options = {}) {
-  // Process
-  const selectedAscii = asciis.findIndex((ascii) => ascii.name === asciiName); // Select ascii according the name
+  const ascii = getAsciiByName(asciiName);
 
-  if (selectedAscii === -1) {
+  if (!ascii) {
     console.warn(`ASCII not found for name: ${asciiName}`);
-    return null;
+    return;
   }
 
-  // Output
-  printAsciiById(selectedAscii, options);
+  console.log(
+    `%c${ascii.art}`,
+    getAsciiStyle(ascii, options)
+  );
+  printAsciiCredit(ascii, options);
 }
 
 function printAsciiSearch(query, options = {}) {
@@ -83,17 +93,34 @@ function printAsciiSearch(query, options = {}) {
 
   if (!selectedAscii) {
     console.warn(`ASCII not found for search: ${query}`);
-    return null;
+    return;
   }
 
   printAsciiByName(selectedAscii.name, options);
 }
 
-function printRandomAscii(criteria = "all", options = {}) {
-  // Process
-  var selectedAsciis = asciis.filter((ascii) => ascii.type === criteria); // Select the asciis matching the criteria
-  selectedAsciis.length < 1 && (selectedAsciis = Object.values(asciis)); // If empty or nothing is matching, select them all
+function printRandomAscii(category = "all", options = {}) {
+  var selectedAsciis = asciis.filter((ascii) => ascii.type === category);
+  selectedAsciis.length < 1 && (selectedAsciis = Object.values(asciis));
   const randomAscii = getRandomValueFromArray(selectedAsciis);
-  // Output
   printAsciiByName(randomAscii.name, options);
 }
+
+/*____________________________________ ASCII API ____________________________________*/
+
+global.AsciiPrinter = {
+  version: ASCII_PRINTER_VERSION,
+  get catalog() {
+    return asciis;
+  },
+  getById: getAsciiById,
+  getByName: getAsciiByName,
+  listTypes: listAsciiTypes,
+  listNames: listAsciiNames,
+  list: listAsciis,
+  printById: printAsciiById,
+  printByName: printAsciiByName,
+  printBySearch: printAsciiSearch,
+  printRandom: printRandomAscii,
+};
+})(globalThis);

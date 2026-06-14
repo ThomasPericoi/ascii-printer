@@ -17,50 +17,64 @@ Use the minified file from `build` in your page:
 <script src="build/ascii-printer.min.js"></script>
 ```
 
-Then open your browser console and call one of the helpers:
+Then open your browser console and call the recommended API:
 
 ```js
-printAsciiById(18);
-printAsciiByName("pinkPanther");
-printAsciiSearch("panther");
-printRandomAscii("character");
-listAsciis("animal");
-listAsciiNames("animal");
-listAsciiTypes();
+AsciiPrinter.printById(18);
+AsciiPrinter.printByName("pinkPanther");
+AsciiPrinter.printBySearch("panther");
+AsciiPrinter.printRandom("character");
+AsciiPrinter.getById(18);
+AsciiPrinter.getByName("pinkPanther");
+AsciiPrinter.list("animal");
+AsciiPrinter.listNames("animal");
+AsciiPrinter.listTypes();
+AsciiPrinter.version;
+AsciiPrinter.catalog;
 ```
+
+`AsciiPrinter` is the only public API exposed by the script.
 
 ## Demo
 
-Open `source/demo.html` in your browser, then open the console.
+Open `demo.html` in your browser, then open the console.
 
 The demo page includes:
 
 - the available public commands;
 - copy-ready examples;
-- the full ASCII catalog with ID, name, category, color, height, author, and `printAsciiById(...)` command.
+- the full ASCII catalog with ID, name, category, color, height, author, and `AsciiPrinter.printById(...)` command.
 
 ## Files
 
 - `build/ascii-printer.min.js` is the recommended file to use in a page.
 - `build/ascii-printer.js` is the readable build.
-- `source/demo.html` is the browser demo page.
-- `source/ascii-printer-functions.js` contains the public helper functions.
+- `demo.html` is the browser demo page.
+- `source/ascii-printer-functions.js` contains the public API and internal helpers.
 - `source/ascii-printer-lib.js` contains the ASCII library.
 - `LICENSE` contains the code license.
 
 The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
 
+## Design choices
+
+ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global exposed by the script. Methods prefixed with `print` write to the console. Methods prefixed with `get` only return catalog data.
+
 ## API
 
-| Function | Description |
+| API | Description |
 |---|---|
-| `listAsciiTypes()` | Returns the available categories. |
-| `listAsciiNames()` | Returns ASCII names, optionally filtered by category. |
-| `listAsciis()` | Returns ASCII metadata with `id`, `name`, and `category`, optionally filtered by category. |
-| `printAsciiById()` | Prints one ASCII by ID. |
-| `printAsciiByName()` | Prints one ASCII by exact name. |
-| `printAsciiSearch()` | Prints the first ASCII whose name contains the search text. |
-| `printRandomAscii()` | Prints a random ASCII, optionally filtered by category. |
+| `AsciiPrinter.version` | Returns the library version. |
+| `AsciiPrinter.catalog` | Returns the full ASCII catalog. |
+| `AsciiPrinter.getById()` | Returns one ASCII by ID without printing it. |
+| `AsciiPrinter.getByName()` | Returns one ASCII by exact name without printing it. |
+| `AsciiPrinter.listTypes()` | Returns the available categories. |
+| `AsciiPrinter.listNames()` | Returns ASCII names, optionally filtered by category. |
+| `AsciiPrinter.list()` | Returns ASCII metadata with `id`, `name`, and `category`, optionally filtered by category. |
+| `AsciiPrinter.printById()` | Prints one ASCII by ID. |
+| `AsciiPrinter.printByName()` | Prints one ASCII by exact name. |
+| `AsciiPrinter.printBySearch()` | Prints the first ASCII whose name contains the search text. |
+| `AsciiPrinter.printRandom()` | Prints a random ASCII, optionally filtered by category. |
 
 ## How does it work?
 
@@ -68,7 +82,7 @@ The build files are generated manually, so update both `source` and `build` when
 
 **Input**
 
-    printAsciiByName("pinkPanther");
+    AsciiPrinter.printByName("pinkPanther");
 
 **Output**
 
@@ -91,7 +105,7 @@ The build files are generated manually, so update both `source` and `build` when
 
 Useful if you want to create your own "random" list of arts for instance.
 
-    printAsciiById(18);
+    AsciiPrinter.printById(18);
 
 **Output**
 
@@ -116,13 +130,13 @@ Useful if you want to create your own "random" list of arts for instance.
 
 **Input**
 
-    printRandomAscii();
+    AsciiPrinter.printRandom();
 
 Or by narrowing it down with a category.
 
-    printRandomAscii("character");
-    printRandomAscii("thing");
-    printRandomAscii("banner");
+    AsciiPrinter.printRandom("character");
+    AsciiPrinter.printRandom("thing");
+    AsciiPrinter.printRandom("banner");
 
 **Output**
 
@@ -148,7 +162,7 @@ Or by narrowing it down with a category.
 
 Useful when you remember part of a name, but not the exact camelCase spelling.
 
-    printAsciiSearch("panther");
+    AsciiPrinter.printBySearch("panther");
 
 This prints the first ASCII whose name contains the search text.
 
@@ -156,7 +170,7 @@ This prints the first ASCII whose name contains the search text.
 
 **Input**
 
-    listAsciiTypes();
+    AsciiPrinter.listTypes();
 
 **Output**
 
@@ -164,15 +178,15 @@ This prints the first ASCII whose name contains the search text.
 
 **Input**
 
-    listAsciiNames();
+    AsciiPrinter.listNames();
 
 Or only one category:
 
-    listAsciiNames("animal");
+    AsciiPrinter.listNames("animal");
 
-Use `listAsciis()` when you need the id, name, and category together:
+Use `AsciiPrinter.list()` when you need the id, name, and category together:
 
-    listAsciis("banner");
+    AsciiPrinter.list("banner");
 
 **Output**
 
@@ -187,24 +201,32 @@ All print functions accept an optional options object.
 
 **Custom color**
 
-    printAsciiByName("frog", { color: "HotPink" });
+    AsciiPrinter.printByName("frog", { color: "HotPink" });
 
 You can use any CSS color value supported by your browser console:
 
-    printAsciiByName("hello", { color: "rebeccapurple" });
-    printAsciiByName("bomb", { color: "#ff3355" });
-    printAsciiByName("gift", { color: "rgb(255, 180, 0)" });
+    AsciiPrinter.printByName("hello", { color: "rebeccapurple" });
+    AsciiPrinter.printByName("bomb", { color: "#ff3355" });
+    AsciiPrinter.printByName("gift", { color: "rgb(255, 180, 0)" });
 
 CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
 
 **Credits**
 
-    printAsciiByName("frog", { credits: true });
+    AsciiPrinter.printByName("frog", { credits: true });
 
 **Options also work with random and search**
 
-    printRandomAscii("character", { color: "Gold", credits: true });
-    printAsciiSearch("bird", { color: "DodgerBlue" });
+    AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
+    AsciiPrinter.printBySearch("bird", { color: "DodgerBlue" });
+
+### Get without printing
+
+**Input**
+
+    AsciiPrinter.getByName("frog");
+
+This returns the ASCII object without writing anything to the console.
 
 ### Console things and banners
 
@@ -212,17 +234,17 @@ The library also includes a few utility ASCII arts for console messages.
 
 **Thing examples**
 
-    printAsciiByName("bomb");
-    printAsciiByName("gift");
-    printAsciiByName("rocket");
+    AsciiPrinter.printByName("bomb");
+    AsciiPrinter.printByName("gift");
+    AsciiPrinter.printByName("rocket");
 
 **Banner examples**
 
-    printAsciiByName("dev");
-    printAsciiByName("hello");
-    printAsciiByName("production");
-    printAsciiByName("staging");
-    printAsciiByName("welcome");
+    AsciiPrinter.printByName("dev");
+    AsciiPrinter.printByName("hello");
+    AsciiPrinter.printByName("production");
+    AsciiPrinter.printByName("staging");
+    AsciiPrinter.printByName("welcome");
 
 ## What's inside?
 
