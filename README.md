@@ -207,8 +207,8 @@ Use `AsciiPrinter.list()` when you need the id, name, and category together:
 **Output**
 
     [
-      { id: 82, name: "dev", category: "banner" },
-      { id: 83, name: "hello", category: "banner" }
+      { id: 86, name: "dev", category: "banner" },
+      { id: 87, name: "error", category: "banner" }
     ]
 
 ### Get without printing
@@ -283,66 +283,71 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 | 31 | turtle | animal | LimeGreen | 6 | Unknown |
 | 32 | wasp | animal | Yellow | 5 | Stef00 |
 | 33 | whale | animal | RoyalBlue | 6 | Riitta Rasimus |
-| 34 | bender | character | Silver | 16 | Silver Saks |
-| 35 | bigBird | character | Yellow | 16 | Unknown |
-| 36 | cheshireCat | character | Violet | 6 | Randy Ransom |
-| 37 | cookieMonster | character | Blue | 6 | Randy Ransom |
-| 38 | devil | character | Red | 6 | Joan G. Stark |
-| 39 | einstein | character | Silver | 9 | Joan G. Stark |
-| 40 | flintstones | character | DarkOrange | 11 | Unknown |
-| 41 | garfield | character | Orange | 12 | Joan G. Stark |
-| 42 | homer | character | Gold | 14 | Unknown |
-| 43 | kermit | character | SpringGreen | 13 | Joan G. Stark |
-| 44 | knight | character | Silver | 10 | Joan G. Stark |
-| 45 | maryPoppins | character | Black | 17 | Unknown |
-| 46 | monaLisa | character | Sienna | 17 | Unknown |
-| 47 | pinkPanther | character | Pink | 12 | Unknown |
-| 48 | r2d2 | character | Blue | 8 | snd |
-| 49 | robot | character | Blue | 14 | Joan G. Stark |
-| 50 | santaClaus | character | Red | 10 | B.D.S. "Don" McConnell |
-| 51 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
-| 52 | snoopy | character | Black | 15 | Win Kang |
-| 53 | sonic | character | Blue | 9 | Unknown |
-| 54 | spaceInvader | character | Chartreuse | 8 | Unknown |
-| 55 | squidward | character | Gray | 15 | LGB |
-| 56 | tweetieBird | character | Orange | 9 | Unknown |
-| 57 | yosemiteSam | character | Red | 13 | Unknown |
-| 58 | alarm | thing | Chocolate | 10 | Joan G. Stark |
-| 59 | anchor | thing | SlateGray | 10 | Joan G. Stark |
-| 60 | axe | thing | SlateGray | 10 | Harry Mason |
-| 61 | boat | thing | Aqua | 5 | Hayley Jane Wakenshaw |
-| 62 | bomb | thing | DimGray | 14 | Joan G. Stark |
-| 63 | book | thing | SaddleBrown | 10 | Joan G. Stark |
-| 64 | cake | thing | Pink | 10 | Laura Brown |
-| 65 | camera | thing | Gray | 10 | Joan G. Stark |
-| 66 | crown | thing | Gold | 10 | Joan G. Stark |
-| 67 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
-| 68 | gift | thing | Red | 5 | Laura Brown |
-| 69 | gun | thing | Silver | 6 | Unknown |
-| 70 | heart | thing | Red | 5 | Bungle |
-| 71 | hotAirBalloon | thing | Red | 15 | Joan G. Stark |
-| 72 | key | thing | Gold | 5 | Hayley Jane Wakenshaw |
-| 73 | lightBulb | thing | Goldenrod | 7 | Joan G. Stark |
-| 74 | mailbox | thing | Red | 12 | Joan G. Stark |
-| 75 | plane | thing | Red | 8 | Joan G. Stark |
-| 76 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
-| 77 | stopSign | thing | Red | 8 | Joan G. Stark |
-| 78 | sword | thing | Gold | 7 | Veronica Karlsson |
-| 79 | teapot | thing | Sienna | 11 | Stephane Abello |
-| 80 | television | thing | Cornsilk | 8 | Ojoshiro |
-| 81 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
-| 82 | dev | banner | MediumPurple | 5 | Unknown |
-| 83 | hello | banner | DeepSkyBlue | 5 | Unknown |
-| 84 | production | banner | LimeGreen | 5 | Unknown |
-| 85 | staging | banner | DarkOrange | 5 | Unknown |
-| 86 | welcome | banner | DeepSkyBlue | 5 | Unknown |
+| 34 | alien | character | Green | 9 | Joan G. Stark |
+| 35 | bender | character | Silver | 16 | Silver Saks |
+| 36 | bigBird | character | Yellow | 16 | Unknown |
+| 37 | cheshireCat | character | Violet | 6 | Randy Ransom |
+| 38 | cookieMonster | character | Blue | 6 | Randy Ransom |
+| 39 | devil | character | Red | 6 | Joan G. Stark |
+| 40 | einstein | character | Silver | 9 | Joan G. Stark |
+| 41 | flintstones | character | DarkOrange | 11 | Unknown |
+| 42 | garfield | character | Orange | 12 | Joan G. Stark |
+| 43 | homer | character | Gold | 14 | Unknown |
+| 44 | kermit | character | SpringGreen | 13 | Joan G. Stark |
+| 45 | knight | character | Silver | 10 | Joan G. Stark |
+| 46 | maryPoppins | character | Black | 17 | Unknown |
+| 47 | monaLisa | character | Sienna | 17 | Unknown |
+| 48 | pinkPanther | character | Pink | 12 | Unknown |
+| 49 | r2d2 | character | Blue | 8 | snd |
+| 50 | robot | character | Blue | 14 | Joan G. Stark |
+| 51 | santaClaus | character | Red | 10 | B.D.S. "Don" McConnell |
+| 52 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
+| 53 | snoopy | character | Black | 15 | Win Kang |
+| 54 | sonic | character | Blue | 9 | Unknown |
+| 55 | spaceInvader | character | Chartreuse | 8 | Unknown |
+| 56 | squidward | character | Gray | 15 | LGB |
+| 57 | tweetieBird | character | Orange | 9 | Unknown |
+| 58 | yosemiteSam | character | Red | 13 | Unknown |
+| 59 | alarm | thing | Chocolate | 10 | Joan G. Stark |
+| 60 | anchor | thing | SlateGray | 10 | Joan G. Stark |
+| 61 | axe | thing | SlateGray | 10 | Harry Mason |
+| 62 | boat | thing | Aqua | 5 | Hayley Jane Wakenshaw |
+| 63 | bomb | thing | DimGray | 14 | Joan G. Stark |
+| 64 | book | thing | SaddleBrown | 10 | Joan G. Stark |
+| 65 | cake | thing | Pink | 10 | Laura Brown |
+| 66 | camera | thing | Gray | 10 | Joan G. Stark |
+| 67 | coffee | thing | Brown | 9 | H.P. Barmario |
+| 68 | crown | thing | Gold | 10 | Joan G. Stark |
+| 69 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
+| 70 | flower | thing | Pink | 7 | Joan G. Stark |
+| 71 | folder | thing | Orange | 7 | Joan G. Stark |
+| 72 | gift | thing | Red | 5 | Laura Brown |
+| 73 | gun | thing | Silver | 6 | Unknown |
+| 74 | heart | thing | Red | 5 | Bungle |
+| 75 | hotAirBalloon | thing | Red | 15 | Joan G. Stark |
+| 76 | key | thing | Gold | 5 | Hayley Jane Wakenshaw |
+| 77 | lightBulb | thing | Goldenrod | 7 | Joan G. Stark |
+| 78 | mailbox | thing | Red | 12 | Joan G. Stark |
+| 79 | plane | thing | Red | 8 | Joan G. Stark |
+| 80 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
+| 81 | stopSign | thing | Red | 8 | Joan G. Stark |
+| 82 | sword | thing | Gold | 7 | Veronica Karlsson |
+| 83 | teapot | thing | Sienna | 11 | Stephane Abello |
+| 84 | television | thing | Cornsilk | 8 | Ojoshiro |
+| 85 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
+| 86 | dev | banner | MediumPurple | 4 | Unknown |
+| 87 | error | banner | Red | 4 | Unknown |
+| 88 | hello | banner | DeepSkyBlue | 4 | Unknown |
+| 89 | production | banner | LimeGreen | 4 | Unknown |
+| 90 | stage | banner | DarkOrange | 4 | Unknown |
+| 91 | welcome | banner | DeepSkyBlue | 4 | Unknown |
 
 ## Credits
 
 I didn't make the arts. At best, I just tweaked them. Here are the names of the authors (when I could find them):
-  - ASCII Printer
   - B.D.S. "Don" McConnell
   - Bungle
+  - H.P. Barmario
   - Hamilton Furtado
   - Harry Mason
   - Hayley Jane Wakenshaw

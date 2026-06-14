@@ -60,9 +60,20 @@ AsciiPrinter.list("banner");</code></pre>
     <script src="./build/ascii-printer.min.js"></script>
     <script>
         const asciiCatalog = document.getElementById("ascii-catalog");
+        let currentCategory = "";
 
         asciiCatalog.innerHTML = AsciiPrinter.catalog
-            .map((ascii, id) => `
+            .map((ascii, id) => {
+                const categorySeparator = ascii.type === currentCategory
+                    ? ""
+                    : `
+            <tr>
+                <th colspan="7">${escapeHtml(formatCategory(ascii.type))}</th>
+            </tr>`;
+
+                currentCategory = ascii.type;
+
+                return `${categorySeparator}
             <tr>
                 <td>${id}</td>
                 <td><code>${escapeHtml(ascii.name)}</code></td>
@@ -71,8 +82,13 @@ AsciiPrinter.list("banner");</code></pre>
                 <td>${escapeHtml(ascii.height)}</td>
                 <td>${escapeHtml(ascii.author || "Unknown")}</td>
                 <td><code>AsciiPrinter.printById(${id})</code></td>
-            </tr>`)
+            </tr>`;
+            })
             .join("");
+
+        function formatCategory(category) {
+            return category.charAt(0).toUpperCase() + category.slice(1);
+        }
 
         function escapeHtml(value) {
             return String(value)

@@ -594,6 +594,24 @@ c /    \         |  |
   },
   {
     type: "character",
+    name: "alien",
+    art: String.raw` 
+ o            o
+  \          /
+   \        /
+    :-'""'-:
+ .-'  ____  '-.
+( (  (_()_)  ) )
+ '-.   ^^   .-'
+    '._==_.'
+     __)(___
+    `,
+    color: "Green",
+    height: 9,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "character",
     name: "bender",
     art: String.raw` 
      ( )
@@ -1233,6 +1251,24 @@ f  o|  o|__     "'-.
   },
   {
     type: "thing",
+    name: "coffee",
+    art: String.raw` 
+      )  (
+     (   ) )
+      ) ( (
+    _______)_
+ .-'---------|
+( C|/\/\/\/\/|
+ '-./\/\/\/\/|
+   '_________'
+    '-------'
+    `,
+    color: "Brown",
+    height: 9,
+    author: "H.P. Barmario",
+  },
+  {
+    type: "thing",
     name: "crown",
     art: String.raw` 
        o 
@@ -1265,6 +1301,38 @@ o\*''.\|/.''*/o
     color: "DarkSlateGray",
     height: 10,
     author: "Robert Craggs",
+  },
+  {
+    type: "thing",
+    name: "flower",
+    art: String.raw` 
+  _  _
+ (_\/_)
+(_>()<_)
+ (_/\_)
+   ||
+ |\||/|
+__\||/__
+    `,
+    color: "Pink",
+    height: 7,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
+    name: "folder",
+    art: String.raw` 
+ _____
+/     \_____
+|            |
+|   _________|__
+|  /           /
+| /           /
+|/___________/
+    `,
+    color: "Orange",
+    height: 7,
+    author: "Joan G. Stark",
   },
   {
     type: "thing",
@@ -1508,70 +1576,78 @@ o\*''.\|/.''*/o
     type: "banner",
     name: "dev",
     art: String.raw`
- ____  _______     __
-|  _ \| ____\ \   / /
-| | | |  _|  \ \ / / 
-| |_| | |___  \ V /  
-|____/|_____|  \_/   
+ ____  ____  _  _ 
+(  _ \( ___)( \/ )
+ )(_) ))__)  \  / 
+(____/(____)  \/  
     `,
     color: "MediumPurple",
-    height: 5,
+    height: 4,
+    author: "",
+  },
+  {
+    type: "banner",
+    name: "error",
+    art: String.raw`
+ ____  ____  ____  _____  ____ 
+( ___)(  _ \(  _ \(  _  )(  _ \
+ )__)  )   / )   / )(_)(  )   /
+(____)(_)\_)(_)\_)(_____)(_)\_)
+    `,
+    color: "Red",
+    height: 4,
     author: "",
   },
   {
     type: "banner",
     name: "hello",
     art: String.raw`
- _   _      _ _       
-| | | | ___| | | ___  
-| |_| |/ _ \ | |/ _ \ 
-|  _  |  __/ | | (_) |
-|_| |_|\___|_|_|\___/ 
+ _   _  ____  __    __    _____ 
+( )_( )( ___)(  )  (  )  (  _  )
+ ) _ (  )__)  )(__  )(__  )(_)( 
+(_) (_)(____)(____)(____)(_____)
     `,
     color: "DeepSkyBlue",
-    height: 5,
+    height: 4,
     author: "",
   },
   {
     type: "banner",
     name: "production",
     art: String.raw`
- ____  ____   ___  ____  
-|  _ \|  _ \ / _ \|  _ \ 
-| |_) | |_) | | | | | | |
-|  __/|  _ <| |_| | |_| |
-|_|   |_| \_\\___/|____/ 
+ ____  ____  _____  ____  
+(  _ \(  _ \(  _  )(  _ \ 
+ )___/ )   / )(_)(  )(_) )
+(__)  (_)\_)(_____)(____/ 
     `,
     color: "LimeGreen",
-    height: 5,
+    height: 4,
     author: "",
   },
   {
     type: "banner",
-    name: "staging",
+    name: "stage",
     art: String.raw`
- ____ _____  _    ____ _____ 
-/ ___|_   _|/ \  / ___| ____|
-\___ \ | | / _ \| |  _|  _|  
- ___) || |/ ___ \ |_| | |___ 
-|____/ |_/_/   \_\____|_____|
+ ___  ____   __    ___  ____ 
+/ __)(_  _) /__\  / __)( ___)
+\__ \  )(  /(__)\( (_-. )__) 
+(___/ (__)(__)(__)\___/(____)
     `,
     color: "DarkOrange",
-    height: 5,
+    height: 4,
     author: "",
   },
   {
     type: "banner",
     name: "welcome",
     art: String.raw`
-__        __   _                          
-\ \      / /__| | ___ ___  _ __ ___   ___ 
- \ \ /\ / / _ \ |/ __/ _ \| '_ ' _ \ / _ \
-  \ V  V /  __/ | (_| (_) | | | | | |  __/
-   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|
+ _    _  ____  __    ___  _____  __  __  ____ 
+( \/\/ )( ___)(  )  / __)(  _  )(  \/  )( ___)
+ )    (  )__)  )(__( (__  )(_)(  )    (  )__) 
+(__/\__)(____)(____)\___)(_____)(_/\/\_)(____)
     `,
     color: "DeepSkyBlue",
-    height: 5,
+    height: 4,
     author: "",
   },
 ];
