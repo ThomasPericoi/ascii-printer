@@ -1530,7 +1530,7 @@ o\*''.\|/.''*/o
     `,
     color: "DeepSkyBlue",
     height: 5,
-    author: "ASCII Printer",
+    author: "",
   },
   {
     type: "banner",

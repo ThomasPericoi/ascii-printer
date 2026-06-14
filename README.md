@@ -332,7 +332,7 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 | 80 | television | thing | Cornsilk | 8 | Ojoshiro |
 | 81 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
 | 82 | dev | banner | MediumPurple | 5 | Unknown |
-| 83 | hello | banner | DeepSkyBlue | 5 | ASCII Printer |
+| 83 | hello | banner | DeepSkyBlue | 5 | Unknown |
 | 84 | production | banner | LimeGreen | 5 | Unknown |
 | 85 | staging | banner | DarkOrange | 5 | Unknown |
 | 86 | welcome | banner | DeepSkyBlue | 5 | Unknown |
@@ -361,24 +361,6 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Stephane Abello
   - Veronica Karlsson
   - Win Kang
-  
-**PS:** Again, I didn't make those arts, I just found them. When I could, I put the talented author in the library.
-
-**PPS:** Everything comes with colors!
-
-## Release notes
-
-### v1.0.0
-
-First stable release of ASCII Printer.
-
-- 87 ASCII arts.
-- Category, name, and ID listing helpers.
-- Random printing by category.
-- Search by partial name.
-- Color override support.
-- Optional credits display.
-- Browser demo page.
 
 ## License
 
