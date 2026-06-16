@@ -25,11 +25,11 @@ AsciiPrinter.printByName("pinkPanther");
 AsciiPrinter.printBySearch("panther");
 AsciiPrinter.printRandom("character");
 AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
-AsciiPrinter.getById(18);
-AsciiPrinter.getByName("pinkPanther");
 AsciiPrinter.list("animal");
 AsciiPrinter.listNames("animal");
 AsciiPrinter.listTypes();
+AsciiPrinter.getById(18);
+AsciiPrinter.getByName("pinkPanther");
 AsciiPrinter.version;
 AsciiPrinter.catalog;
 ```
@@ -63,47 +63,57 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
 
 | API | Description |
 |---|---|
-| `AsciiPrinter.version` | Returns the library version. |
-| `AsciiPrinter.catalog` | Returns the full ASCII catalog. |
-| `AsciiPrinter.getById()` | Returns one ASCII by ID without printing it. |
-| `AsciiPrinter.getByName()` | Returns one ASCII by exact name without printing it. |
-| `AsciiPrinter.listTypes()` | Returns the available categories. |
-| `AsciiPrinter.listNames()` | Returns ASCII names, optionally filtered by category. |
-| `AsciiPrinter.list()` | Returns ASCII metadata with `id`, `name`, and `category`, optionally filtered by category. |
 | `AsciiPrinter.printById()` | Prints one ASCII by ID. |
 | `AsciiPrinter.printByName()` | Prints one ASCII by exact name. |
 | `AsciiPrinter.printBySearch()` | Prints the first ASCII whose name contains the search text. |
 | `AsciiPrinter.printRandom()` | Prints a random ASCII, optionally filtered by category. |
 | `AsciiPrinter.printRandomFrom()` | Prints a random ASCII from a list of names. |
+| `AsciiPrinter.listTypes()` | Returns the available categories. |
+| `AsciiPrinter.listNames()` | Returns ASCII names, optionally filtered by category. |
+| `AsciiPrinter.list()` | Returns ASCII metadata with `id`, `name`, and `category`, optionally filtered by category. |
+| `AsciiPrinter.getById()` | Returns one ASCII by ID without printing it. |
+| `AsciiPrinter.getByName()` | Returns one ASCII by exact name without printing it. |
+| `AsciiPrinter.version` | Returns the library version. |
+| `AsciiPrinter.catalog` | Returns the full ASCII catalog. |
 
 ## How does it work?
 
-### Print By Name
+### Print
+
+Print methods write ASCII art to the browser console. They do not return catalog data.
+
+#### `AsciiPrinter.printByName(name, options)`
+
+**Use**
+
+Print one ASCII by exact name.
 
 **Input**
 
-    AsciiPrinter.printByName("pinkPanther");
+    AsciiPrinter.printByName("bigBird");
 
 **Output**
 
-     .--.             .--.
-    ( ('\\.---------.//') )
-     '-.    __   __    .-'
-      /    /__\ /__\    \
-     |     \ 0/ \ 0/     |
-      \     _/   \_     /
-       '-.  /-"""-\  .-'
-         /  '.___.'  \
-         \     I     /
-          ';--'''--;'
-            '.___.'
-              | |
+       . -- .
+      (      )
+     ( (/oo\) )
+      ( \`'/ )
+       ( \/ )
+      (      )
+     (        )
+    (          )
+     (        )
+       ' -- '
+        =  =
+        =  =
 
-### Print By ID
+#### `AsciiPrinter.printById(id, options)`
+
+**Use**
+
+Print one ASCII by catalog ID.
 
 **Input**
-
-Useful if you want to create your own "random" list of arts for instance.
 
     AsciiPrinter.printById(26);
 
@@ -126,17 +136,41 @@ Useful if you want to create your own "random" list of arts for instance.
                        \ \ '.)
                         '-'-'
 
-### Print Random
+#### `AsciiPrinter.printBySearch(query, options)`
+
+**Use**
+
+Print the first ASCII whose name contains the search text.
+
+**Input**
+
+    AsciiPrinter.printBySearch("panther");
+
+**Output**
+
+     .--.             .--.
+    ( ('\\.---------.//') )
+     '-.    __   __    .-'
+      /    /__\ /__\    \
+     |     \ 0/ \ 0/     |
+      \     _/   \_     /
+       '-.  /-"""-\  .-'
+         /  '.___.'  \
+         \     I     /
+          ';--'''--;'
+            '.___.'
+              | |
+
+#### `AsciiPrinter.printRandom(category, options)`
+
+**Use**
+
+Print one random ASCII from the full catalog, or from one category.
 
 **Input**
 
     AsciiPrinter.printRandom();
-
-Print a random ASCII from the full catalog, or narrow it down with a category:
-
     AsciiPrinter.printRandom("character");
-    AsciiPrinter.printRandom("thing");
-    AsciiPrinter.printRandom("banner");
 
 **Output**
 
@@ -156,33 +190,59 @@ Print a random ASCII from the full catalog, or narrow it down with a category:
              |     |
              '.___.'
 
-### Print Random From
+#### `AsciiPrinter.printRandomFrom(names, options)`
+
+**Use**
+
+Print one random ASCII from a custom list of names.
 
 **Input**
 
-Use `printRandomFrom()` when you want to choose the random pool yourself.
+    AsciiPrinter.printRandomFrom(["heart", "heart", "heart", "devil"]);
 
-    AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
+**Output**
 
-This prints one random ASCII from the names you provide.
+      ,  ,  , , ,
+     <(__)> | | |
+     | \/ | \_|_/
+     \^  ^/   |
+     /\--/\  /|
+    /  \/  \/ |
 
-You can also pass print options:
+**Notes**
 
+Unknown names are ignored. If no provided names match the catalog, ASCII Printer prints a warning.
+
+#### Print Options
+
+All print methods accept the same optional `options` object.
+
+**Input**
+
+    AsciiPrinter.printByName("frog", { color: "HotPink" });
+    AsciiPrinter.printByName("frog", { credits: true });
+    AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
     AsciiPrinter.printRandomFrom(["heart", "key"], { color: "Gold" });
+    AsciiPrinter.printBySearch("bird", { color: "DodgerBlue" });
 
-If a name does not exist, it is ignored. If no provided names match the catalog, ASCII Printer prints a warning.
+**Options**
 
-### Print by Search
+| Option | Description |
+|---|---|
+| `color` | Overrides the catalog color with any CSS color value supported by your browser console. |
+| `credits` | Prints the ASCII author after the art. Unknown authors are displayed as `Unknown`. |
 
-**Input**
+CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
 
-Useful when you remember part of a name, but not the exact camelCase spelling.
+### List And Get
 
-    AsciiPrinter.printBySearch("panther");
+List and get methods return catalog data without printing ASCII art.
 
-This prints the first ASCII whose name contains the search text.
+#### `AsciiPrinter.listTypes()`
 
-### List available ASCII
+**Use**
+
+Return the available categories.
 
 **Input**
 
@@ -192,15 +252,28 @@ This prints the first ASCII whose name contains the search text.
 
     ["animal", "character", "thing", "banner"]
 
+#### `AsciiPrinter.listNames(category)`
+
+**Use**
+
+Return ASCII names from the full catalog, or from one category.
+
 **Input**
 
     AsciiPrinter.listNames();
-
-Or only one category:
-
     AsciiPrinter.listNames("animal");
 
-Use `AsciiPrinter.list()` when you need the id, name, and category together:
+**Output**
+
+    ["anteater", "armadillo", "bat", "..."]
+
+#### `AsciiPrinter.list(category)`
+
+**Use**
+
+Return ASCII metadata with `id`, `name`, and `category`.
+
+**Input**
 
     AsciiPrinter.list("banner");
 
@@ -208,42 +281,51 @@ Use `AsciiPrinter.list()` when you need the id, name, and category together:
 
     [
       { id: 86, name: "dev", category: "banner" },
-      { id: 87, name: "error", category: "banner" }
+      { id: 87, name: "error", category: "banner" },
+      { id: 88, name: "hello", category: "banner" }
     ]
 
-### Get without printing
+#### `AsciiPrinter.getByName(name)`
+
+**Use**
+
+Return one ASCII object by exact name.
 
 **Input**
 
     AsciiPrinter.getByName("frog");
 
-This returns the ASCII object without writing anything to the console, in case you want to use the catalog data differently.
+**Output**
 
-### Options
+    {
+      type: "animal",
+      name: "frog",
+      art: "...",
+      color: "SpringGreen",
+      height: 6,
+      author: ""
+    }
 
-All print functions accept an optional options object.
+#### `AsciiPrinter.getById(id)`
 
-**Custom color**
+**Use**
 
-    AsciiPrinter.printByName("frog", { color: "HotPink" });
+Return one ASCII object by catalog ID.
 
-You can use any CSS color value supported by your browser console:
+**Input**
 
-    AsciiPrinter.printByName("hello", { color: "rebeccapurple" });
-    AsciiPrinter.printByName("bomb", { color: "#ff3355" });
-    AsciiPrinter.printByName("gift", { color: "rgb(255, 180, 0)" });
+    AsciiPrinter.getById(17);
 
-CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+**Output**
 
-**Credits**
-
-    AsciiPrinter.printByName("frog", { credits: true });
-
-**Options also work with random and search**
-
-    AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
-    AsciiPrinter.printRandomFrom(["heart", "key"], { color: "Gold" });
-    AsciiPrinter.printBySearch("bird", { color: "DodgerBlue" });
+    {
+      type: "animal",
+      name: "frog",
+      art: "...",
+      color: "SpringGreen",
+      height: 6,
+      author: ""
+    }
 
 ## What's inside?
 
