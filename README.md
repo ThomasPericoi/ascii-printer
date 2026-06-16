@@ -67,7 +67,9 @@ The demo page includes:
 
 Print methods write ASCII art to the browser console. They do not return catalog data.
 
-#### `AsciiPrinter.printByName(name[, options])`
+#### Print by name
+
+`AsciiPrinter.printByName(name, options)`
 
 **Use**
 
@@ -92,7 +94,9 @@ Print one ASCII by exact name.
         =  =
         =  =
 
-#### `AsciiPrinter.printById(id[, options])`
+#### Print by ID
+
+`AsciiPrinter.printById(id, options)`
 
 **Use**
 
@@ -121,7 +125,9 @@ Print one ASCII by catalog ID.
                        \ \ '.)
                         '-'-'
 
-#### `AsciiPrinter.printBySearch(query[, options])`
+#### Print by search
+
+`AsciiPrinter.printBySearch(query, options)`
 
 **Use**
 
@@ -146,7 +152,9 @@ Print the first ASCII whose name contains the search text.
             '.___.'
               | |
 
-#### `AsciiPrinter.printRandom([category][, options])`
+#### Print random
+
+`AsciiPrinter.printRandom(category, options)`
 
 **Use**
 
@@ -175,7 +183,9 @@ Print one random ASCII from the full catalog, or from one category.
              |     |
              '.___.'
 
-#### `AsciiPrinter.printRandomFrom(names[, options])`
+#### Print random from names
+
+`AsciiPrinter.printRandomFrom(names, options)`
 
 **Use**
 
@@ -198,9 +208,10 @@ Print one random ASCII from a custom list of names.
 
 Unknown names are ignored. If no provided names match the catalog, ASCII Printer prints a warning.
 
-#### Print Options
+#### Options
 
 All print methods accept the same optional `options` object.
+When a `category` parameter is shown, it is optional and defaults to the full catalog.
 
 **Input**
 
@@ -223,7 +234,9 @@ CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs
 
 List methods return catalog summaries without printing ASCII art.
 
-#### `AsciiPrinter.listTypes()`
+#### List types
+
+`AsciiPrinter.listTypes()`
 
 **Use**
 
@@ -237,11 +250,14 @@ Return the available categories.
 
     ["animal", "character", "thing", "banner"]
 
-#### `AsciiPrinter.listNames([category])`
+#### List names
+
+`AsciiPrinter.listNames(category)`
 
 **Use**
 
 Return ASCII names from the full catalog, or from one category.
+The `category` parameter is optional.
 
 **Input**
 
@@ -252,11 +268,14 @@ Return ASCII names from the full catalog, or from one category.
 
     ["anteater", "armadillo", "bat", "..."]
 
-#### `AsciiPrinter.list([category])`
+#### List metadata
+
+`AsciiPrinter.list(category)`
 
 **Use**
 
 Return ASCII metadata with `id`, `name`, and `category`.
+The `category` parameter is optional.
 
 **Input**
 
@@ -274,7 +293,9 @@ Return ASCII metadata with `id`, `name`, and `category`.
 
 Get methods return full ASCII objects without printing ASCII art.
 
-#### `AsciiPrinter.getByName(name)`
+#### Get by name
+
+`AsciiPrinter.getByName(name)`
 
 **Use**
 
@@ -295,7 +316,9 @@ Return one ASCII object by exact name.
       author: ""
     }
 
-#### `AsciiPrinter.getById(id)`
+#### Get by ID
+
+`AsciiPrinter.getById(id)`
 
 **Use**
 
