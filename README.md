@@ -44,21 +44,6 @@ The demo page includes:
 - copy-ready examples;
 - the full ASCII catalog with ID, name, category, color, height, author, and `AsciiPrinter.printById(...)` command.
 
-## Files
-
-- `build/ascii-printer.min.js` is the recommended file to use in a page.
-- `build/ascii-printer.js` is the readable build.
-- `demo.html` is the browser demo page.
-- `source/ascii-printer-functions.js` contains the public API and internal helpers.
-- `source/ascii-printer-lib.js` contains the ASCII library.
-- `LICENSE` contains the code license.
-
-The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
-
-## Design choices
-
-ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global exposed by the script. Methods prefixed with `print` write to the console. Methods prefixed with `get` only return catalog data.
-
 ## API
 
 | API | Description |
@@ -82,7 +67,7 @@ ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global expos
 
 Print methods write ASCII art to the browser console. They do not return catalog data.
 
-#### `AsciiPrinter.printByName(name, options)`
+#### `AsciiPrinter.printByName(name[, options])`
 
 **Use**
 
@@ -107,7 +92,7 @@ Print one ASCII by exact name.
         =  =
         =  =
 
-#### `AsciiPrinter.printById(id, options)`
+#### `AsciiPrinter.printById(id[, options])`
 
 **Use**
 
@@ -136,7 +121,7 @@ Print one ASCII by catalog ID.
                        \ \ '.)
                         '-'-'
 
-#### `AsciiPrinter.printBySearch(query, options)`
+#### `AsciiPrinter.printBySearch(query[, options])`
 
 **Use**
 
@@ -161,7 +146,7 @@ Print the first ASCII whose name contains the search text.
             '.___.'
               | |
 
-#### `AsciiPrinter.printRandom(category, options)`
+#### `AsciiPrinter.printRandom([category][, options])`
 
 **Use**
 
@@ -190,7 +175,7 @@ Print one random ASCII from the full catalog, or from one category.
              |     |
              '.___.'
 
-#### `AsciiPrinter.printRandomFrom(names, options)`
+#### `AsciiPrinter.printRandomFrom(names[, options])`
 
 **Use**
 
@@ -234,9 +219,9 @@ All print methods accept the same optional `options` object.
 
 CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
 
-### List And Get
+### List
 
-List and get methods return catalog data without printing ASCII art.
+List methods return catalog summaries without printing ASCII art.
 
 #### `AsciiPrinter.listTypes()`
 
@@ -252,7 +237,7 @@ Return the available categories.
 
     ["animal", "character", "thing", "banner"]
 
-#### `AsciiPrinter.listNames(category)`
+#### `AsciiPrinter.listNames([category])`
 
 **Use**
 
@@ -267,7 +252,7 @@ Return ASCII names from the full catalog, or from one category.
 
     ["anteater", "armadillo", "bat", "..."]
 
-#### `AsciiPrinter.list(category)`
+#### `AsciiPrinter.list([category])`
 
 **Use**
 
@@ -284,6 +269,10 @@ Return ASCII metadata with `id`, `name`, and `category`.
       { id: 87, name: "error", category: "banner" },
       { id: 88, name: "hello", category: "banner" }
     ]
+
+### Get
+
+Get methods return full ASCII objects without printing ASCII art.
 
 #### `AsciiPrinter.getByName(name)`
 
@@ -327,7 +316,7 @@ Return one ASCII object by catalog ID.
       author: ""
     }
 
-## What's inside?
+## Catalog
 
 | ID | Name | Category | Color | Height | Author |
 |---:|---|---|---|---:|---|
@@ -448,6 +437,21 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Stephane Abello
   - Veronica Karlsson
   - Win Kang
+
+## Files
+
+- `build/ascii-printer.min.js` is the recommended file to use in a page.
+- `build/ascii-printer.js` is the readable build.
+- `demo.html` is the browser demo page.
+- `source/ascii-printer-functions.js` contains the public API and internal helpers.
+- `source/ascii-printer-lib.js` contains the ASCII library.
+- `LICENSE` contains the code license.
+
+The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
+
+## Design choices
+
+ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global exposed by the script. Methods prefixed with `print` write to the console. Methods prefixed with `get` only return catalog data.
 
 ## License
 
