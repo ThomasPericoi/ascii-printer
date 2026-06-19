@@ -22,7 +22,10 @@ function getAsciiByName(asciiName) {
 }
 
 function getAsciiStyle(ascii, options = {}) {
-  const styles = ["font-family: monospace;"];
+  const styles = [
+    "font-family: monospace;",
+    "white-space: pre;",
+  ];
 
   if (options.color !== false) {
     styles.unshift(`color: ${options.color || ascii.color};`);

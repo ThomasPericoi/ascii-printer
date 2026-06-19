@@ -494,6 +494,8 @@ Build sizes are approximate and will move as the catalog grows.
 
 ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global exposed by the script. Methods prefixed with `print` write to the console. Methods prefixed with `get` only return catalog data.
 
+Printed ASCII uses monospace text and preserves whitespace so the art keeps its shape as much as the browser console allows.
+
 ## License
 
 The JavaScript code is released under the MIT License. See `LICENSE`.
