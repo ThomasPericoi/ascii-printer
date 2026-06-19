@@ -21,6 +21,16 @@ function getAsciiByName(asciiName) {
   return asciis.find((ascii) => ascii.name === asciiName) || null;
 }
 
+function getAsciiStyle(ascii, options = {}) {
+  const styles = ["font-family: monospace;"];
+
+  if (options.color !== false) {
+    styles.unshift(`color: ${options.color || ascii.color};`);
+  }
+
+  return styles.join(" ");
+}
+
 function listAsciiTypes() {
   return [...new Set(asciis.map((ascii) => ascii.type))];
 }
@@ -42,11 +52,6 @@ function listAsciis(category = "all") {
       category: ascii.type,
     }))
     .filter((ascii) => category === "all" || ascii.category === category);
-}
-
-function getAsciiStyle(ascii, options = {}) {
-  const color = options.color || ascii.color;
-  return `color: ${color}; font-family: monospace;`;
 }
 
 function printAsciiCredit(ascii, options = {}) {

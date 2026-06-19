@@ -72,10 +72,11 @@ AsciiPrinter.printRandomFrom(["bravo", "warning", "loading"], { credits: true })
     <h3>Print options</h3>
     <p>Every print method accepts the same optional options object.</p>
     <pre><code>AsciiPrinter.printByName("frog", { color: "HotPink" });
+AsciiPrinter.printByName("frog", { color: false });
 AsciiPrinter.printByName("frog", { credits: true });
 AsciiPrinter.printRandom("character", { color: "Gold", credits: true });</code></pre>
     <ul>
-        <li><code>color</code> overrides the catalog color with any valid CSS color value.</li>
+        <li><code>color</code> overrides the catalog color with any valid CSS color value. Use <code>false</code> to keep the browser console default color.</li>
         <li><code>credits</code> prints the ASCII author after the art. Unknown authors are displayed as <code>Unknown</code>.</li>
     </ul>
     <h2 id="list">List</h2>

@@ -218,6 +218,7 @@ When a `category` parameter is shown, it is optional and defaults to the full ca
 **Input**
 
     AsciiPrinter.printByName("frog", { color: "HotPink" });
+    AsciiPrinter.printByName("frog", { color: false });
     AsciiPrinter.printByName("frog", { credits: true });
     AsciiPrinter.printRandom("character", { color: "Gold", credits: true });
     AsciiPrinter.printRandomFrom(["heart", "key"], { color: "Gold" });
@@ -227,7 +228,7 @@ When a `category` parameter is shown, it is optional and defaults to the full ca
 
 | Option | Description |
 |---|---|
-| `color` | Overrides the catalog color with any CSS color value supported by your browser console. |
+| `color` | Overrides the catalog color with any CSS color value supported by your browser console. Use `false` to keep the browser console default color. |
 | `credits` | Prints the ASCII author after the art. Unknown authors are displayed as `Unknown`. |
 
 CSS color values are documented on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
@@ -479,8 +480,8 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 ## Files
 
-- `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~31.1 KB.
-- `build/ascii-printer.js` is the readable build. Current size: ~34.4 KB.
+- `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~31.2 KB.
+- `build/ascii-printer.js` is the readable build. Current size: ~34.5 KB.
 - `demo.html` is the browser demo page.
 - `source/ascii-printer-functions.js` contains the public API and internal helpers.
 - `source/ascii-printer-lib.js` contains the ASCII library.

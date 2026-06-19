@@ -45,8 +45,13 @@ function listAsciis(category = "all") {
 }
 
 function getAsciiStyle(ascii, options = {}) {
-  const color = options.color || ascii.color;
-  return `color: ${color}; font-family: monospace;`;
+  const styles = ["font-family: monospace;"];
+
+  if (options.color !== false) {
+    styles.unshift(`color: ${options.color || ascii.color};`);
+  }
+
+  return styles.join(" ");
 }
 
 function printAsciiCredit(ascii, options = {}) {
@@ -966,7 +971,7 @@ __|_________\______/
     !
    .-.
  __|=|__
-(_/'-'\_)
+(_/${"`"}-${"`"}\_)
 //\___/\\
 <>/   \<>
  \|_._|/
