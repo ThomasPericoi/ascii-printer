@@ -40,8 +40,12 @@ Open `demo.html` in your browser, then open the console.
 
 The demo page includes:
 
-- the available public commands;
-- copy-ready examples;
+- the current library version;
+- a small table of contents;
+- a quick start section;
+- a compact API overview;
+- grouped print, list, and get examples;
+- print options examples;
 - the full ASCII catalog with ID, name, category, color, height, author, and `AsciiPrinter.printById(...)` command.
 
 ## API
@@ -246,7 +250,7 @@ Return the available categories.
 
 **Output**
 
-    ["animal", "character", "thing", "banner"]
+    ["animal", "character", "thing", "message"]
 
 ### List names
 
@@ -277,14 +281,14 @@ The `category` parameter is optional.
 
 **Input**
 
-    AsciiPrinter.list("banner");
+    AsciiPrinter.list("message");
 
 **Output**
 
     [
-      { id: 86, name: "dev", category: "banner" },
-      { id: 87, name: "error", category: "banner" },
-      { id: 88, name: "hello", category: "banner" }
+      { id: 91, name: "bravo", category: "message" },
+      { id: 92, name: "bye", category: "message" },
+      { id: 93, name: "dev", category: "message" }
     ]
 
 ## Get
@@ -407,32 +411,43 @@ Return one ASCII object by catalog ID.
 | 63 | bomb | thing | DimGray | 14 | Joan G. Stark |
 | 64 | book | thing | SaddleBrown | 10 | Joan G. Stark |
 | 65 | cake | thing | Pink | 10 | Laura Brown |
-| 66 | camera | thing | Gray | 10 | Joan G. Stark |
+| 66 | camera | thing | Gray | 7 | Joan G. Stark |
 | 67 | coffee | thing | Brown | 9 | H.P. Barmario |
 | 68 | crown | thing | Gold | 10 | Joan G. Stark |
-| 69 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
-| 70 | flower | thing | Pink | 7 | Joan G. Stark |
-| 71 | folder | thing | Orange | 7 | Joan G. Stark |
-| 72 | gift | thing | Red | 5 | Laura Brown |
-| 73 | gun | thing | Silver | 6 | Unknown |
-| 74 | heart | thing | Red | 5 | Bungle |
-| 75 | hotAirBalloon | thing | Red | 15 | Joan G. Stark |
-| 76 | key | thing | Gold | 5 | Hayley Jane Wakenshaw |
-| 77 | lightBulb | thing | Goldenrod | 7 | Joan G. Stark |
-| 78 | mailbox | thing | Red | 12 | Joan G. Stark |
-| 79 | plane | thing | Red | 8 | Joan G. Stark |
-| 80 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
-| 81 | stopSign | thing | Red | 8 | Joan G. Stark |
-| 82 | sword | thing | Gold | 7 | Veronica Karlsson |
-| 83 | teapot | thing | Sienna | 11 | Stephane Abello |
-| 84 | television | thing | Cornsilk | 8 | Ojoshiro |
-| 85 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
-| 86 | dev | banner | MediumPurple | 4 | Unknown |
-| 87 | error | banner | Red | 4 | Unknown |
-| 88 | hello | banner | DeepSkyBlue | 4 | Unknown |
-| 89 | production | banner | LimeGreen | 4 | Unknown |
-| 90 | stage | banner | DarkOrange | 4 | Unknown |
-| 91 | welcome | banner | DeepSkyBlue | 4 | Unknown |
+| 69 | electricGuitar | thing | Red | 14 | Rowan Crawford |
+| 70 | floppyDisk | thing | DarkSlateGray | 10 | Robert Craggs |
+| 71 | flower | thing | Pink | 7 | Joan G. Stark |
+| 72 | folder | thing | Orange | 7 | Joan G. Stark |
+| 73 | frontDoor | thing | Brown | 12 | Hayley Jane Wakenshaw |
+| 74 | gift | thing | Red | 5 | Laura Brown |
+| 75 | gun | thing | Silver | 6 | Unknown |
+| 76 | heart | thing | Red | 5 | Bungle |
+| 77 | hotAirBalloon | thing | Red | 15 | Joan G. Stark |
+| 78 | impossibleTriangle | thing | Gold | 17 | Ojosh!ro |
+| 79 | impossibleTrident | thing | Gold | 15 | P.J. LaBrocca |
+| 80 | key | thing | Gold | 5 | Hayley Jane Wakenshaw |
+| 81 | lightBulb | thing | Goldenrod | 7 | Joan G. Stark |
+| 82 | mailbox | thing | Red | 12 | Joan G. Stark |
+| 83 | plane | thing | Red | 8 | Joan G. Stark |
+| 84 | rocket | thing | OrangeRed | 9 | Joan G. Stark |
+| 85 | stopSign | thing | Red | 8 | Joan G. Stark |
+| 86 | sword | thing | Gold | 7 | Veronica Karlsson |
+| 87 | teapot | thing | Sienna | 11 | Stephane Abello |
+| 88 | television | thing | SlateGray | 14 | Joan G. Stark |
+| 89 | thumbsUp | thing | Goldenrod | 7 | Sebastian Stöcker |
+| 90 | tombstone | thing | Gray | 5 | Hayley Jane Wakenshaw |
+| 91 | bravo | message | MediumPurple | 4 | Unknown |
+| 92 | bye | message | MediumPurple | 4 | Unknown |
+| 93 | dev | message | MediumPurple | 4 | Unknown |
+| 94 | error | message | Red | 4 | Unknown |
+| 95 | hello | message | DeepSkyBlue | 4 | Unknown |
+| 96 | helloWorld | message | DeepSkyBlue | 4 | Unknown |
+| 97 | info | message | DeepSkyBlue | 4 | Unknown |
+| 98 | loading | message | DeepSkyBlue | 4 | Unknown |
+| 99 | production | message | LimeGreen | 4 | Unknown |
+| 100 | stage | message | DarkOrange | 4 | Unknown |
+| 101 | warning | message | DarkOrange | 4 | Unknown |
+| 102 | welcome | message | DeepSkyBlue | 4 | Unknown |
 
 ## Credits
 
@@ -446,11 +461,14 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Joan G. Stark
   - Laura Brown
   - LGB
-  - Ojoshiro
+  - Ojosh!ro
+  - P.J. LaBrocca
   - Randy Ransom
   - Riitta Rasimus
   - Robert Craggs
+  - Rowan Crawford
   - Seal do Mar
+  - Sebastian Stöcker
   - Shanaka Dias
   - Silver Saks
   - snd
@@ -461,14 +479,15 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 ## Files
 
-- `build/ascii-printer.min.js` is the recommended file to use in a page.
-- `build/ascii-printer.js` is the readable build.
+- `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~31.1 KB.
+- `build/ascii-printer.js` is the readable build. Current size: ~34.4 KB.
 - `demo.html` is the browser demo page.
 - `source/ascii-printer-functions.js` contains the public API and internal helpers.
 - `source/ascii-printer-lib.js` contains the ASCII library.
 - `LICENSE` contains the code license.
 
 The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
+Build sizes are approximate and will move as the catalog grows.
 
 ## Design choices
 

@@ -1,5 +1,5 @@
 (function (global) {
-var ASCII_PRINTER_VERSION = "1.0.0";
+var ASCII_PRINTER_VERSION = "1.1.0";
 
 /*____________________________________ UTILITY FUNCTIONS ____________________________________*/
 
@@ -145,7 +145,6 @@ global.AsciiPrinter = {
 };
 })(globalThis);
 
-
 /*____________________________________ ASCII LIBRARY ____________________________________*/
 
 var asciis = [
@@ -169,13 +168,13 @@ var asciis = [
     type: "animal",
     name: "armadillo",
     art: String.raw`
-             _.-----__    
-          ,:::://///,:::-. 
+             _.-----__
+          ,:::://///,:::-.
          /:''/////// \\:::;/|/
         /'   ||||||     :://''\
       .' ,   ||||||     ./(  e \
 -===~__-'\__X_'''''\_____/~'-.__'0
-           ~~        ~~       
+           ~~        ~~
     `,
     color: "RosyBrown",
     height: 7,
@@ -184,7 +183,7 @@ var asciis = [
   {
     type: "animal",
     name: "bat",
-    art: String.raw` 
+    art: String.raw`
   /\                 /\
  / \'._   (\_/)   _.'/ \
 /_.''._'--('.')--'_.''._\
@@ -200,7 +199,7 @@ var asciis = [
   {
     type: "animal",
     name: "bear",
-    art: String.raw` 
+    art: String.raw`
  .--.              .--.
 : (\ ". _......_ ." /) :
  '.    '        '    .'
@@ -219,12 +218,12 @@ var asciis = [
   {
     type: "animal",
     name: "bees",
-    art: String.raw` 
+    art: String.raw`
   ^^      .-=-=-=-.  ^^      ^^
        ('-=-=-=-=-=-')  ^^
 ^^   ('-=-=-=-=-=-=-=-')
     ( '-=-=-=-(@)-=-=-' )      ^^
-    ('-=-=-=-=-=-=-=-=-')  ^^ 
+    ('-=-=-=-=-=-=-=-=-')  ^^
     ('-=-=-=-=-=-=-=-=-')  ^^
      ('-=-=-=-=-=-=-=-')
        ('-=-=-=-=-=-')  ^^
@@ -237,7 +236,7 @@ var asciis = [
   {
     type: "animal",
     name: "beaver",
-    art: String.raw` 
+    art: String.raw`
             ___
          .="   "=._.---.
        ."         c ' Y' p
@@ -253,7 +252,7 @@ var asciis = [
   {
     type: "animal",
     name: "bug",
-    art: String.raw` 
+    art: String.raw`
   .   .
    \ /
  '/ ! \'
@@ -268,7 +267,7 @@ var asciis = [
   {
     type: "animal",
     name: "cat",
-    art: String.raw` 
+    art: String.raw`
  )\   _,
  | "^" (
  (e  a )
@@ -289,7 +288,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "caterpillar",
-    art: String.raw` 
+    art: String.raw`
 \_/-.--.--.--.--.--.
 (")__)__)__)__)__)__)
  ^ "" "" "" "" "" ""
@@ -301,8 +300,8 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "crab",
-    art: String.raw` 
-   __       __    
+    art: String.raw`
+   __       __
   / <'     '> \
  (  / @   @ \  )
   \(_ _\_/_ _)/
@@ -318,7 +317,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "crocodile",
-    art: String.raw` 
+    art: String.raw`
             .-._   _ _ _ _ _ _ _ _
  .-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.
 '.___ '    .   .--_'-' '-' '-' _'-' '._
@@ -336,7 +335,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "deer",
-    art: String.raw` 
+    art: String.raw`
     (      )
     ))    ((
    //      \\
@@ -360,7 +359,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "dog",
-    art: String.raw` 
+    art: String.raw`
             /)-_-(\
              (o o)
      .-----__/\o/
@@ -377,13 +376,13 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "duck",
-    art: String.raw` 
+    art: String.raw`
       ,~~.
      (  9 )-_,
 (\___ )=='-'
  \ .   ) )
   \ '-' /
-   '~j-'  
+   '~j-'
      "=:
     `,
     color: "DarkGray",
@@ -393,7 +392,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "elephant",
-    art: String.raw` 
+    art: String.raw`
    ___      ___
   /   \____/   \
  /    / __ \    \
@@ -413,7 +412,7 @@ c{{i.}}=oo-^
   {
     type: "animal",
     name: "flamingo",
-    art: String.raw` 
+    art: String.raw`
          __
         /('o
   ,-,  //  \\
@@ -435,7 +434,7 @@ o o
   {
     type: "animal",
     name: "fox",
-    art: String.raw` 
+    art: String.raw`
  /\   /\
 //\\_//\\     __/\
 \_     _/    /   /
@@ -453,7 +452,7 @@ o o
   {
     type: "animal",
     name: "frog",
-    art: String.raw` 
+    art: String.raw`
        _   _
       (o)-(o)
    .-(   "   )-.
@@ -468,7 +467,7 @@ __\ _\ \___/ /_ /__
   {
     type: "animal",
     name: "goldfish",
-    art: String.raw` 
+    art: String.raw`
       /'·.¸
      /¸...¸':·
  ¸.·'  ¸   '·.¸.·°)
@@ -483,7 +482,7 @@ __\ _\ \___/ /_ /__
   {
     type: "animal",
     name: "hippo",
-    art: String.raw` 
+    art: String.raw`
      c~~p ,---------.
 ,---'oo  )           \
 ( O O                  )/
@@ -499,12 +498,12 @@ __\ _\ \___/ /_ /__
   {
     type: "animal",
     name: "hedgehog",
-    art: String.raw` 
+    art: String.raw`
   .|||||||||.
  |||||||||||||
 |||||||||||' .\
 '||||||||||_,__o
-    ''  '' 
+    ''  ''
     `,
     color: "Tan",
     height: 5,
@@ -513,7 +512,7 @@ __\ _\ \___/ /_ /__
   {
     type: "animal",
     name: "lion",
-    art: String.raw` 
+    art: String.raw`
             o00000000o
            o0/\0000/\0o
           o00\c "" J/00o
@@ -535,12 +534,12 @@ o.       0000/ b  d \000
   {
     type: "animal",
     name: "marbles",
-    art: String.raw` 
+    art: String.raw`
          __
         /  \
        / ..|\
       (_\  |_)
-      /  \@' 
+      /  \@'
      /     \
 _   /  '   |
 \\/  \  | _\
@@ -554,7 +553,7 @@ _   /  '   |
   {
     type: "animal",
     name: "marmot",
-    art: String.raw` 
+    art: String.raw`
        (>\---/<)
        ,'     '.
       /  q   p  \
@@ -596,7 +595,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "mouse",
-    art: String.raw` 
+    art: String.raw`
 (q\_/p)
  /. .\.-""""-.      __
 =\_t_/=    /  '\   (
@@ -610,7 +609,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "parrot",
-    art: String.raw` 
+    art: String.raw`
                           .
                           | \/|
   (\   _                  ) )|/|
@@ -635,7 +634,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "pig",
-    art: String.raw` 
+    art: String.raw`
        9
   ,--.-'-,--.
   \  /-~-\  /
@@ -653,7 +652,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "pinguin",
-    art: String.raw` 
+    art: String.raw`
    __
 -=(o '.
    '.-.\
@@ -668,7 +667,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "snail",
-    art: String.raw` 
+    art: String.raw`
     .----.   @   @
    / .-"-.'.  \v/
    | | '\ \ \_/ )
@@ -682,7 +681,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "teckel",
-    art: String.raw` 
+    art: String.raw`
                         __
  ,                    ," e'--o
 ((                   (  | __,'
@@ -699,7 +698,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "turtle",
-    art: String.raw` 
+    art: String.raw`
                 __
      .,-;-;-,. /'_\
    _/_/_/_|_\_\) /
@@ -714,7 +713,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "wasp",
-    art: String.raw` 
+    art: String.raw`
     _  _
    | )/ )
 \\ |//,' __
@@ -728,7 +727,7 @@ c /    \         |  |
   {
     type: "animal",
     name: "whale",
-    art: String.raw` 
+    art: String.raw`
        .
       ":"
     ___:____     |"\/"|
@@ -743,7 +742,7 @@ c /    \         |  |
   {
     type: "character",
     name: "alien",
-    art: String.raw` 
+    art: String.raw`
  o            o
   \          /
    \        /
@@ -761,7 +760,7 @@ c /    \         |  |
   {
     type: "character",
     name: "bender",
-    art: String.raw` 
+    art: String.raw`
      ( )
       H
      _H_
@@ -786,7 +785,7 @@ c /    \         |  |
   {
     type: "character",
     name: "bigBird",
-    art: String.raw` 
+    art: String.raw`
    . -- .
   (      )
  ( (/oo\) )
@@ -807,7 +806,7 @@ c /    \         |  |
   {
     type: "character",
     name: "cheshireCat",
-    art: String.raw` 
+    art: String.raw`
            .'\   /'.
          .'.-.'-'.-.'.
     ..._:   .-. .-.   :_...
@@ -828,7 +827,7 @@ c /    \         |  |
   {
     type: "character",
     name: "cookieMonster",
-    art: String.raw` 
+    art: String.raw`
     (o)(o)
   w"      "w
  W  -====-  W
@@ -843,7 +842,7 @@ W            W
   {
     type: "character",
     name: "devil",
-    art: String.raw` 
+    art: String.raw`
   ,  ,  , , ,
  <(__)> | | |
  | \/ | \_|_/
@@ -858,7 +857,7 @@ W            W
   {
     type: "character",
     name: "einstein",
-    art: String.raw` 
+    art: String.raw`
       -''--.
       _'>   '\.-'/
   _.'     _     '._
@@ -866,7 +865,7 @@ W            W
 >_   / /_\ /_\ \   _<
   / (  \o/\\o/  ) \
   >._\ .-,_)-. /_.<
-      /__/ \__\ 
+      /__/ \__\
         '---'
     `,
     color: "Silver",
@@ -876,13 +875,13 @@ W            W
   {
     type: "character",
     name: "flintstones",
-    art: String.raw` 
-  \/________________ 
+    art: String.raw`
+  \/________________
  /     _____________)
 /     /     /   \ |
 \/\/\/     (O) (O)|
-  |           ------, 
-  |  _       ______/ 
+  |           ------,
+  |  _       ______/
   | (_      /   \  \
   |        /  ___\_ \
   |        \      / /
@@ -896,7 +895,7 @@ __|_________\______/
   {
     type: "character",
     name: "garfield",
-    art: String.raw` 
+    art: String.raw`
      .-.,     ,.-.
     /:::\\   //:::\
    |':':' '"' ':':'|
@@ -918,7 +917,7 @@ __|_________\______/
   {
     type: "character",
     name: "homer",
-    art: String.raw` 
+    art: String.raw`
     ___
    //_\\_
  ."\\    ".
@@ -941,7 +940,7 @@ __|_________\______/
   {
     type: "character",
     name: "kermit",
-    art: String.raw` 
+    art: String.raw`
        .---.     .---.
       ( -o- )---( -o- )
       ;-...-'   '-...-;
@@ -963,11 +962,11 @@ __|_________\______/
   {
     type: "character",
     name: "knight",
-    art: String.raw` 
+    art: String.raw`
     !
    .-.
  __|=|__
-(_/`-`\_)
+(_/'-'\_)
 //\___/\\
 <>/   \<>
  \|_._|/
@@ -982,7 +981,7 @@ __|_________\______/
   {
     type: "character",
     name: "maryPoppins",
-    art: String.raw` 
+    art: String.raw`
          _
       .-' '-.
      /       \
@@ -993,7 +992,7 @@ __|_________\______/
   _\_/_  /)
  / \_/ \//
  |(   )\/
- ||)_( 
+ ||)_(
  |/   \
  n|   |
 / \   |
@@ -1008,23 +1007,23 @@ __|_________\______/
   {
     type: "character",
     name: "monaLisa",
-    art: String.raw` 
-          ____  
-        o8%8888,    
-      o88%8888888.  
-     8'-    -:8888b   
-    8'         8888  
-   d8.-=. ,==-.:888b  
-   >8 '~' :'~' d8888   
-   88         ,88888   
-   88b. '-~  ':88888  
-   888b ~==~ .:88888 
-   88888o--:':::8888      
-   '88888| :::' 8888b  
-   8888^^'       8888b  
-  d888           ,%888b.   
- d88%            %%%8--'-.  
-/88:.__ ,       _%-' ---  -  
+    art: String.raw`
+          ____
+        o8%8888,
+      o88%8888888.
+     8'-    -:8888b
+    8'         8888
+   d8.-=. ,==-.:888b
+   >8 '~' :'~' d8888
+   88         ,88888
+   88b. '-~  ':88888
+   888b ~==~ .:88888
+   88888o--:':::8888
+   '88888| :::' 8888b
+   8888^^'       8888b
+  d888           ,%888b.
+ d88%            %%%8--'-.
+/88:.__ ,       _%-' ---  -
     '''::===..-'   =  --.
     `,
     color: "Sienna",
@@ -1034,7 +1033,7 @@ __|_________\______/
   {
     type: "character",
     name: "pinkPanther",
-    art: String.raw` 
+    art: String.raw`
  .--.             .--.
 ( ('\\.---------.//') )
  '-.    __   __    .-'
@@ -1063,7 +1062,7 @@ __|_________\______/
   |__| I=[|
   / / ____|
  |-/.____.'
-/___\ /___\  
+/___\ /___\
     `,
     color: "Blue",
     height: 8,
@@ -1115,14 +1114,14 @@ __|_________\______/
     type: "character",
     name: "sherlockHolmes",
     art: String.raw`
-   ,_       
- ,'  '\,_   
- |_,-'_)    
- /##c '\  ( 
+   ,_
+ ,'  '\,_
+ |_,-'_)
+ /##c '\  (
 ' |'  -{.  )
   /\__-' \[]
- /'-_'\     
- '     \   
+ /'-_'\
+ '     \
     `,
     color: "MediumSeaGreen",
     height: 8,
@@ -1139,7 +1138,7 @@ __|_________\______/
     ##XXXxxxxxxx
             /  ---'~;
           /    /~|-
-        =(   ~~  | 
+        =(   ~~  |
    /~~~~~~~~~~~~~~~~~~~~~\
   /_______________________\
  /_________________________\
@@ -1191,7 +1190,7 @@ f  o|  o|__     "'-.
   {
     type: "character",
     name: "squidward",
-    art: String.raw` 
+    art: String.raw`
      .--'''''''''--.
    '      .---.      '.
  /    .-----------.    \
@@ -1215,7 +1214,7 @@ f  o|  o|__     "'-.
   {
     type: "character",
     name: "tweetieBird",
-    art: String.raw` 
+    art: String.raw`
     .-"-.
    /  - -\
    \  @ @/
@@ -1233,8 +1232,8 @@ f  o|  o|__     "'-.
   {
     type: "character",
     name: "yosemiteSam",
-    art: String.raw` 
-        ___ 
+    art: String.raw`
+        ___
     .-''   ''-.
   .'           '.
  /               \
@@ -1255,7 +1254,7 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "alarm",
-    art: String.raw` 
+    art: String.raw`
      .-.-.
 ((  (__I__)  ))
   .'_....._'.
@@ -1274,7 +1273,7 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "anchor",
-    art: String.raw` 
+    art: String.raw`
      _
     (_)
   <--|-->
@@ -1290,7 +1289,7 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "axe",
-    art: String.raw` 
+    art: String.raw`
   ,  /\  .
  //'-||-'\\
 (| -=||=- |)
@@ -1309,7 +1308,7 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "boat",
-    art: String.raw` 
+    art: String.raw`
        _    _
     __|_|__|_|__
   _|____________|__
@@ -1384,23 +1383,23 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "camera",
-    art: String.raw` 
- .-------------------.
-/--"--.------.------/|
-|Kodak|__Ll__| [==] ||
-|     | .--. | """" ||
-|     |( () )|      ||
-|     | '--' |      |/
-'-----'------'------'
+    art: String.raw`
+      ____
+ _[]_/____\__n_
+|_____.--.__()_|
+|LI  //# \\    |
+|    \\__//    |
+|     '--'     |
+'--------------'
     `,
     color: "Gray",
-    height: 10,
+    height: 7,
     author: "Joan G. Stark",
   },
   {
     type: "thing",
     name: "coffee",
-    art: String.raw` 
+    art: String.raw`
       )  (
      (   ) )
       ) ( (
@@ -1418,8 +1417,8 @@ f  o|  o|__     "'-.
   {
     type: "thing",
     name: "crown",
-    art: String.raw` 
-       o 
+    art: String.raw`
+       o
     o^/|\^o
  o_^|\/*\/|^_o
 o\*''.\|/.''*/o
@@ -1433,8 +1432,31 @@ o\*''.\|/.''*/o
   },
   {
     type: "thing",
+    name: "electricGuitar",
+    art: String.raw`
+     _
+    / 7
+   /_(
+   |_|
+   |_|
+   |_|
+   |_| /\
+ /\|=|/ /
+ \ |_| /
+  ) _  \
+ / |_|  \
+/  -=-o /
+\  /~\_/
+ \/
+    `,
+    color: "Red",
+    height: 14,
+    author: "Rowan Crawford",
+  },
+  {
+    type: "thing",
     name: "floppyDisk",
-    art: String.raw` 
+    art: String.raw`
  _________________
 | | ___________ |o|
 | | ___________ | |
@@ -1453,7 +1475,7 @@ o\*''.\|/.''*/o
   {
     type: "thing",
     name: "flower",
-    art: String.raw` 
+    art: String.raw`
   _  _
  (_\/_)
 (_>()<_)
@@ -1469,7 +1491,7 @@ __\||/__
   {
     type: "thing",
     name: "folder",
-    art: String.raw` 
+    art: String.raw`
  _____
 /     \_____
 |            |
@@ -1484,8 +1506,29 @@ __\||/__
   },
   {
     type: "thing",
+    name: "frontDoor",
+    art: String.raw`
+   ________
+  / ______ \
+  || _  _ ||
+  ||| || |||
+  |||_||_|||
+  || _  _o||
+  ||| || |||
+  |||_||_|||
+  ||______||
+ /__________\
+ |__________|
+/____________\
+    `,
+    color: "Brown",
+    height: 12,
+    author: "Hayley Jane Wakenshaw",
+  },
+  {
+    type: "thing",
     name: "gift",
-    art: String.raw` 
+    art: String.raw`
     _  _
  __(_\/_)__
 |____||____|
@@ -1514,7 +1557,7 @@ __\||/__
   {
     type: "thing",
     name: "heart",
-    art: String.raw` 
+    art: String.raw`
 ,d88b.d88b,
 88888888888
 'Y8888888Y'
@@ -1528,7 +1571,7 @@ __\||/__
   {
     type: "thing",
     name: "hotAirBalloon",
-    art: String.raw` 
+    art: String.raw`
     _..==--.._
   .'_|:::|' _|:.
  /_|:::|  _|:::|\
@@ -1551,8 +1594,58 @@ __\||/__
   },
   {
     type: "thing",
+    name: "impossibleTriangle",
+    art: String.raw`
+                    .   .xXXXX+.   .
+               .   ..   xXXXX+.-   ..   .
+         .   ..  ... ..xXXXX+. --.. ...  ..   .
+     .   ..  ... .....xXXXX+.  -.-..... ...  ..   .
+   .   ..  ... ......xXXXX+.  . .--...... ...  ..   .
+  .   ..  ... ......xXXXX+.    -.- -...... ...  ..   .
+ .   ..  ... ......xXXXX+.   .-+-.-.-...... ...  ..   .
+ .   ..  ... .....xXXXX+. . --xx+.-.--..... ...  ..   .
+.   ..  ... .....xXXXX+. - .-xxxx+- .-- .... ...  ..   .
+ .   ..  ... ...xXXXX+.  -.-xxxxxx+ .---... ...  ..   .
+ .   ..  ... ..xXXXX+. .---..xxxxxx+-..--.. ...  ..   .
+  .   ..  ... xXXXX+. . --....xxxxxx+  -.- ...  ..   .
+   .   ..  ..xXXXX+. . .-......xxxxxx+-. --..  ..   .
+     .   .. xXXXXXXXXXXXXXXXXXXXxxxxxx+. .-- ..   .
+         . xXXXXXXXXXXXXXXXXXXXXXxxxxxx+.  -- .
+           xxxxxxxxxxxxxxxxxxxxxxxxxxxxx+.--
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxx+-
+    `,
+    color: "Gold",
+    height: 17,
+    author: "Ojosh!ro",
+  },
+  {
+    type: "thing",
+    name: "impossibleTrident",
+    art: String.raw`
+   _______
+ /|       |
+| |       |
+| |  __   |
+| | |_ /| |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+|_| |_| |_|
+(_) (_) (_)
+    `,
+    color: "Gold",
+    height: 15,
+    author: "P.J. LaBrocca",
+  },
+  {
+    type: "thing",
     name: "key",
-    art: String.raw` 
+    art: String.raw`
   .---.
  /    |\________________
 |  () | ________   _   _)
@@ -1566,7 +1659,7 @@ __\||/__
   {
     type: "thing",
     name: "lightBulb",
-    art: String.raw` 
+    art: String.raw`
  .-""-.
 /  __  \
 |  \/  |
@@ -1582,7 +1675,7 @@ __\||/__
   {
     type: "thing",
     name: "mailbox",
-    art: String.raw` 
+    art: String.raw`
         __
        [_ |
     _____||_____
@@ -1603,7 +1696,7 @@ __\||/__
   {
     type: "thing",
     name: "plane",
-    art: String.raw` 
+    art: String.raw`
             __/\__
            '==/\=='
  ____________/__\____________
@@ -1692,24 +1785,46 @@ __\||/__
   {
     type: "thing",
     name: "television",
-    art: String.raw` 
- ______________
-|,----------.  |\
-||           |=| |
-||          || | |
-||       . _o| | | __
-|'-----------' |/ /~/
-~~~~~~~~~~~~~~~  /o/
-                 ~~
+    art: String.raw`
+            o
+        o   |
+         \  |
+          \.|-.
+          (\|  )
+.==================.
+| .--------------. |
+| |--.__.--.__.--| |
+| |--.__.--.__.--| |
+| |--.__.--.__.--| |
+| |--.__.--.__.--| |
+| '--------------'o|
+| LI LI """""""   o|
+'=================='
     `,
-    color: "Cornsilk",
-    height: 8,
-    author: "Ojoshiro",
+    color: "SlateGray",
+    height: 14,
+    author: "Joan G. Stark",
+  },
+  {
+    type: "thing",
+    name: "thumbsUp",
+    art: String.raw`
+      _
+     /(|
+   __\  \  _____
+ (____)  '|
+(____)|   |
+ (____).__|
+  (___)__.|_____
+    `,
+    color: "Goldenrod",
+    height: 7,
+    author: "Sebastian Stöcker",
   },
   {
     type: "thing",
     name: "tombstone",
-    art: String.raw` 
+    art: String.raw`
       ,-=-.
      /  +  \
      | ~~~ |
@@ -1721,23 +1836,49 @@ __\||/__
     author: "Hayley Jane Wakenshaw",
   },
   {
-    type: "banner",
-    name: "dev",
+    type: "message",
+    name: "bravo",
     art: String.raw`
- ____  ____  _  _ 
-(  _ \( ___)( \/ )
- )(_) ))__)  \  / 
-(____/(____)  \/  
+ ____  ____    __  _  _  _____
+(  _ \(  _ \  /__\( \/ )(  _  )
+ ) _ < )   / /(__)\\  /  )(_)(
+(____/(_)\_)(__)(__)\/  (_____)
     `,
     color: "MediumPurple",
     height: 4,
     author: "",
   },
   {
-    type: "banner",
+    type: "message",
+    name: "bye",
+    art: String.raw`
+ ____  _  _  ____
+(  _ \( \/ )( ___)
+ ) _ < \  /  )__)
+(____/ (__) (____)
+    `,
+    color: "MediumPurple",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
+    name: "dev",
+    art: String.raw`
+ ____  ____  _  _
+(  _ \( ___)( \/ )
+ )(_) ))__)  \  /
+(____/(____)  \/
+    `,
+    color: "MediumPurple",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
     name: "error",
     art: String.raw`
- ____  ____  ____  _____  ____ 
+ ____  ____  ____  _____  ____
 ( ___)(  _ \(  _ \(  _  )(  _ \
  )__)  )   / )   / )(_)(  )   /
 (____)(_)\_)(_)\_)(_____)(_)\_)
@@ -1747,12 +1888,12 @@ __\||/__
     author: "",
   },
   {
-    type: "banner",
+    type: "message",
     name: "hello",
     art: String.raw`
- _   _  ____  __    __    _____ 
+ _   _  ____  __    __    _____
 ( )_( )( ___)(  )  (  )  (  _  )
- ) _ (  )__)  )(__  )(__  )(_)( 
+ ) _ (  )__)  )(__  )(__  )(_)(
 (_) (_)(____)(____)(____)(_____)
     `,
     color: "DeepSkyBlue",
@@ -1760,25 +1901,64 @@ __\||/__
     author: "",
   },
   {
-    type: "banner",
+    type: "message",
+    name: "helloWorld",
+    art: String.raw`
+ _   _  ____  __    __    _____    _    _  _____  ____  __    ____
+( )_( )( ___)(  )  (  )  (  _  )  ( \/\/ )(  _  )(  _ \(  )  (  _ \
+ ) _ (  )__)  )(__  )(__  )(_)(    )    (  )(_)(  )   / )(__  )(_) )
+(_) (_)(____)(____)(____)(_____)  (__/\__)(_____)(_)\_)(____)(____/
+    `,
+    color: "DeepSkyBlue",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
+    name: "info",
+    art: String.raw`
+ ____  _  _  ____  _____
+(_  _)( \( )( ___)(  _  )
+ _)(_  )  (  )__)  )(_)(
+(____)(_)\_)(__)  (_____)
+    `,
+    color: "DeepSkyBlue",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
+    name: "loading",
+    art: String.raw`
+ __    _____    __    ____  ____  _  _  ___
+(  )  (  _  )  /__\  (  _ \(_  _)( \( )/ __)
+ )(__  )(_)(  /(__)\  )(_) )_)(_  )  (( (_-.
+(____)(_____)(__)(__)(____/(____)(_)\_)\___/
+    `,
+    color: "DeepSkyBlue",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
     name: "production",
     art: String.raw`
- ____  ____  _____  ____  
-(  _ \(  _ \(  _  )(  _ \ 
+ ____  ____  _____  ____
+(  _ \(  _ \(  _  )(  _ \
  )___/ )   / )(_)(  )(_) )
-(__)  (_)\_)(_____)(____/ 
+(__)  (_)\_)(_____)(____/
     `,
     color: "LimeGreen",
     height: 4,
     author: "",
   },
   {
-    type: "banner",
+    type: "message",
     name: "stage",
     art: String.raw`
- ___  ____   __    ___  ____ 
+ ___  ____   __    ___  ____
 / __)(_  _) /__\  / __)( ___)
-\__ \  )(  /(__)\( (_-. )__) 
+\__ \  )(  /(__)\( (_-. )__)
 (___/ (__)(__)(__)\___/(____)
     `,
     color: "DarkOrange",
@@ -1786,12 +1966,25 @@ __\||/__
     author: "",
   },
   {
-    type: "banner",
+    type: "message",
+    name: "warning",
+    art: String.raw`
+ _    _    __    ____  _  _  ____  _  _  ___
+( \/\/ )  /__\  (  _ \( \( )(_  _)( \( )/ __)
+ )    (  /(__)\  )   / )  (  _)(_  )  (( (_-.
+(__/\__)(__)(__)(_)\_)(_)\_)(____)(_)\_)\___/
+    `,
+    color: "DarkOrange",
+    height: 4,
+    author: "",
+  },
+  {
+    type: "message",
     name: "welcome",
     art: String.raw`
- _    _  ____  __    ___  _____  __  __  ____ 
+ _    _  ____  __    ___  _____  __  __  ____
 ( \/\/ )( ___)(  )  / __)(  _  )(  \/  )( ___)
- )    (  )__)  )(__( (__  )(_)(  )    (  )__) 
+ )    (  )__)  )(__( (__  )(_)(  )    (  )__)
 (__/\__)(____)(____)\___)(_____)(_/\/\_)(____)
     `,
     color: "DeepSkyBlue",

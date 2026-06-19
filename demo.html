@@ -17,31 +17,92 @@
 | | | /\__/ / \__/\_| |_ _| |_  | |  | |  | | | | | ||  __/ |   
 \_| |_|____/ \____/\___/ \___/  \_|  |_|  |_|_| |_|\__\___|_|
     </h1>
-    <p>This is a browser demo for the ASCII Printer library.</p>
-    <p>Open your browser console to try the commands below.</p>
-    <h2>Try it</h2>
-    <pre><code>AsciiPrinter.printByName("hello");
-AsciiPrinter.printRandom("animal");
-AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
-AsciiPrinter.printBySearch("rocket");
-AsciiPrinter.getByName("pinkPanther");
-AsciiPrinter.list("banner");</code></pre>
-    <h2>Available commands</h2>
+    <p>A browser demo for testing ASCII Printer directly from the console.</p>
+    <p>The minified build is already loaded on this page. Open DevTools, paste a command, and use the catalog below for names and IDs.</p>
+    <p><strong>Version:</strong> <code>1.1.0</code></p>
+    <nav aria-label="Demo contents">
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#quick-start">Quick start</a></li>
+            <li><a href="#api">API</a></li>
+            <li><a href="#print">Print</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#get">Get</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+        </ul>
+    </nav>
+    <h2 id="quick-start">Quick start</h2>
+    <p>Use these commands first to check that the library is available.</p>
+    <pre><code>AsciiPrinter.printByName("pinkPanther");
+AsciiPrinter.printRandom("character");
+AsciiPrinter.listNames("animal");
+AsciiPrinter.version;</code></pre>
+    <h2 id="api">API</h2>
+    <p>The public API lives under one global object: <code>AsciiPrinter</code>.</p>
     <ul>
-        <li><code>AsciiPrinter.listTypes()</code></li>
-        <li><code>AsciiPrinter.listNames()</code></li>
-        <li><code>AsciiPrinter.list()</code></li>
-        <li><code>AsciiPrinter.getById()</code></li>
-        <li><code>AsciiPrinter.getByName()</code></li>
-        <li><code>AsciiPrinter.printById()</code></li>
-        <li><code>AsciiPrinter.printByName()</code></li>
-        <li><code>AsciiPrinter.printBySearch()</code></li>
-        <li><code>AsciiPrinter.printRandom()</code></li>
-        <li><code>AsciiPrinter.printRandomFrom()</code></li>
-        <li><code>AsciiPrinter.version</code></li>
-        <li><code>AsciiPrinter.catalog</code></li>
+        <li><code>AsciiPrinter.printById()</code>, <code>AsciiPrinter.printByName()</code>, <code>AsciiPrinter.printBySearch()</code>, <code>AsciiPrinter.printRandom()</code>, and <code>AsciiPrinter.printRandomFrom()</code> print ASCII art to the console.</li>
+        <li><code>AsciiPrinter.listTypes()</code>, <code>AsciiPrinter.listNames()</code>, and <code>AsciiPrinter.list()</code> return catalog summaries.</li>
+        <li><code>AsciiPrinter.getById()</code> and <code>AsciiPrinter.getByName()</code> return one full ASCII entry.</li>
+        <li><code>AsciiPrinter.version</code> and <code>AsciiPrinter.catalog</code> expose library metadata.</li>
     </ul>
-    <h2>Available ASCII</h2>
+    <h2 id="print">Print</h2>
+    <p>Print methods write ASCII art to the browser console. They do not return catalog data.</p>
+    <h3>Print by name</h3>
+    <p>Use an exact catalog name.</p>
+    <pre><code>AsciiPrinter.printByName("hello");
+AsciiPrinter.printByName("thumbsUp");</code></pre>
+    <h3>Print by ID</h3>
+    <p>Use the numeric ID from the catalog table.</p>
+    <pre><code>AsciiPrinter.printById(0);
+AsciiPrinter.printById(0, { credits: true });
+AsciiPrinter.printById(98, { color: "DeepSkyBlue" });</code></pre>
+    <h3>Print by search</h3>
+    <p>Use a partial name. The first matching ASCII is printed.</p>
+    <pre><code>AsciiPrinter.printBySearch("rocket");
+AsciiPrinter.printBySearch("panther", { color: "HotPink" });</code></pre>
+    <h3>Print random</h3>
+    <p>Print from the full catalog, or from one category.</p>
+    <pre><code>AsciiPrinter.printRandom();
+AsciiPrinter.printRandom("animal");
+AsciiPrinter.printRandom("message");</code></pre>
+    <h3>Print random from names</h3>
+    <p>Print from a custom list of names. Unknown names are ignored.</p>
+    <pre><code>AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
+AsciiPrinter.printRandomFrom(["bravo", "warning", "loading"], { credits: true });</code></pre>
+    <h3>Print options</h3>
+    <p>Every print method accepts the same optional options object.</p>
+    <pre><code>AsciiPrinter.printByName("frog", { color: "HotPink" });
+AsciiPrinter.printByName("frog", { credits: true });
+AsciiPrinter.printRandom("character", { color: "Gold", credits: true });</code></pre>
+    <ul>
+        <li><code>color</code> overrides the catalog color with any valid CSS color value.</li>
+        <li><code>credits</code> prints the ASCII author after the art. Unknown authors are displayed as <code>Unknown</code>.</li>
+    </ul>
+    <h2 id="list">List</h2>
+    <p>List methods return catalog summaries without printing ASCII art.</p>
+    <h3>List types</h3>
+    <pre><code>AsciiPrinter.listTypes();
+// ["animal", "character", "thing", "message"]</code></pre>
+    <h3>List names</h3>
+    <pre><code>AsciiPrinter.listNames();
+AsciiPrinter.listNames("animal");</code></pre>
+    <h3>List metadata</h3>
+    <pre><code>AsciiPrinter.list();
+AsciiPrinter.list("message");</code></pre>
+    <h2 id="get">Get</h2>
+    <p>Get methods return one full catalog entry without printing anything.</p>
+    <h3>Get by ID</h3>
+    <pre><code>AsciiPrinter.getById(0);</code></pre>
+    <h3>Get by name</h3>
+    <pre><code>AsciiPrinter.getByName("pinkPanther");</code></pre>
+    <h3>Metadata</h3>
+    <pre><code>AsciiPrinter.version;
+AsciiPrinter.catalog;</code></pre>
+    <h2 id="catalog">Catalog</h2>
+    <p>The table below is generated from <code>AsciiPrinter.catalog</code> when the page loads.</p>
+    <pre><code>AsciiPrinter.listTypes();
+AsciiPrinter.listNames();
+AsciiPrinter.catalog.length;</code></pre>
     <table>
         <thead>
             <tr>
