@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASCII Printer Demo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23111111'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='28' font-weight='700' fill='%23ffffff'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="ASCII Printer home">
+            <span class="brand-mark">&gt;_</span>
+            <span>ASCII Printer</span>
+        </a>
+        <nav class="nav" aria-label="Demo sections">
+            <a href="#quick-start">Start</a>
+            <a href="#docs">Docs</a>
+            <a href="#playground">Playground</a>
+            <a href="#catalog">Catalog</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Tiny console art library</p>
+                <h1 id="hero-title">ASCII art for the JavaScript console.</h1>
+                <p class="hero-text">A small browser script with a deliberately tiny API, a browsable catalog, and copy-ready examples.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#quick-start">Read docs</a>
+                    <a class="button primary" href="#playground">Try it</a>
+                    <a class="button" href="#catalog">Browse catalog</a>
+                </div>
+            </div>
+            <div class="hero-terminal" aria-label="ASCII Printer console preview">
+                <div class="terminal-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <pre id="hero-ascii" class="hero-ascii"></pre>
+                <code id="hero-command">AsciiPrinter.printByName("hello")</code>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Library stats">
+            <article>
+                <span id="version-stat">v-</span>
+                <p>Current version</p>
+            </article>
+            <article>
+                <span id="count-stat">0</span>
+                <p>ASCII arts</p>
+            </article>
+            <article>
+                <span id="category-stat">0</span>
+                <p>Categories</p>
+            </article>
+            <article>
+                <span>31.2 KB</span>
+                <p>Minified build</p>
+            </article>
+        </section>
+
+        <section id="quick-start" class="section doc-section" aria-labelledby="quick-start-title">
+            <div class="section-heading">
+                <p class="eyebrow">Quick start</p>
+                <h2 id="quick-start-title">Load one file. Open DevTools. Print.</h2>
+            </div>
+            <div class="doc-layout">
+                <aside class="doc-note">
+                    <p>The demo loads the minified build first, then the page script. Your own page only needs the build file.</p>
+                </aside>
+                <div class="doc-copy">
+                    <h3>Use the minified build</h3>
+                    <pre><code>&lt;script src="build/ascii-printer.min.js"&gt;&lt;/script&gt;</code></pre>
+                    <h3>Call the API</h3>
+                    <pre><code>AsciiPrinter.printByName("pinkPanther");
+AsciiPrinter.printRandom("character");
+AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
+AsciiPrinter.listNames("animal");
+AsciiPrinter.version;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="section doc-section" aria-labelledby="docs-title">
+            <div class="section-heading">
+                <p class="eyebrow">Documentation</p>
+                <h2 id="docs-title">The whole surface area.</h2>
+            </div>
+
+            <div class="api-table-wrap">
+                <table class="api-table">
+                    <thead>
+                        <tr>
+                            <th>API</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>AsciiPrinter.printById()</code></td><td>Prints one ASCII by ID.</td></tr>
+                        <tr><td><code>AsciiPrinter.printByName()</code></td><td>Prints one ASCII by exact name.</td></tr>
+                        <tr><td><code>AsciiPrinter.printBySearch()</code></td><td>Prints the first ASCII whose name contains the search text.</td></tr>
+                        <tr><td><code>AsciiPrinter.printRandom()</code></td><td>Prints a random ASCII, optionally filtered by category.</td></tr>
+                        <tr><td><code>AsciiPrinter.printRandomFrom()</code></td><td>Prints a random ASCII from a list of names.</td></tr>
+                        <tr><td><code>AsciiPrinter.listTypes()</code></td><td>Returns the available categories.</td></tr>
+                        <tr><td><code>AsciiPrinter.listNames()</code></td><td>Returns ASCII names, optionally filtered by category.</td></tr>
+                        <tr><td><code>AsciiPrinter.list()</code></td><td>Returns ASCII metadata with <code>id</code>, <code>name</code>, and <code>category</code>.</td></tr>
+                        <tr><td><code>AsciiPrinter.getById()</code></td><td>Returns one ASCII by ID without printing it.</td></tr>
+                        <tr><td><code>AsciiPrinter.getByName()</code></td><td>Returns one ASCII by exact name without printing it.</td></tr>
+                        <tr><td><code>AsciiPrinter.version</code></td><td>Returns the library version.</td></tr>
+                        <tr><td><code>AsciiPrinter.catalog</code></td><td>Returns the full ASCII catalog.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="doc-grid">
+                <article class="doc-card">
+                    <p class="eyebrow">Print</p>
+                    <h3>Print by name</h3>
+                    <p>Use an exact catalog name.</p>
+                    <pre><code>AsciiPrinter.printByName("bigBird");</code></pre>
+                    <h3>Print by ID</h3>
+                    <p>Use the numeric ID from the catalog.</p>
+                    <pre><code>AsciiPrinter.printById(26);</code></pre>
+                    <h3>Print by search</h3>
+                    <p>Use a partial name. The first match is printed.</p>
+                    <pre><code>AsciiPrinter.printBySearch("panther");</code></pre>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">Random</p>
+                    <h3>Print random</h3>
+                    <p>Print from the full catalog, or one category.</p>
+                    <pre><code>AsciiPrinter.printRandom();
+AsciiPrinter.printRandom("message");</code></pre>
+                    <h3>Print random from names</h3>
+                    <p>Unknown names are ignored. If none match, the library warns.</p>
+                    <pre><code>AsciiPrinter.printRandomFrom([
+  "heart",
+  "key",
+  "lightBulb"
+]);</code></pre>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">Options</p>
+                    <h3>Print options</h3>
+                    <p>Every print method accepts the same optional object.</p>
+                    <pre><code>AsciiPrinter.printByName("frog", {
+  color: "HotPink"
+});
+
+AsciiPrinter.printByName("frog", {
+  color: false,
+  credits: true
+});</code></pre>
+                    <dl>
+                        <dt><code>color</code></dt>
+                        <dd>Overrides the catalog color. Use <code>false</code> for the browser console default color.</dd>
+                        <dt><code>credits</code></dt>
+                        <dd>Prints the ASCII author after the art. Unknown authors display as <code>Unknown</code>.</dd>
+                    </dl>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">List</p>
+                    <h3>List types</h3>
+                    <pre><code>AsciiPrinter.listTypes();
+// ["animal", "character", "thing", "message"]</code></pre>
+                    <h3>List names</h3>
+                    <pre><code>AsciiPrinter.listNames();
+AsciiPrinter.listNames("animal");</code></pre>
+                    <h3>List metadata</h3>
+                    <pre><code>AsciiPrinter.list("message");</code></pre>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">Get</p>
+                    <h3>Get full entries</h3>
+                    <p>Get methods return data without printing.</p>
+                    <pre><code>AsciiPrinter.getByName("pinkPanther");
+AsciiPrinter.getById(0);</code></pre>
+                    <h3>Metadata</h3>
+                    <pre><code>AsciiPrinter.version;
+AsciiPrinter.catalog;</code></pre>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">Files</p>
+                    <h3>Build files</h3>
+                    <p>The readable and minified builds are generated manually from <code>source</code>.</p>
+                    <pre><code>build/ascii-printer.js
+build/ascii-printer.min.js</code></pre>
+                    <h3>Design choice</h3>
+                    <p><code>AsciiPrinter</code> is the only exposed global. Printed ASCII uses monospace text and preserves whitespace as much as the console allows.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="playground" class="section playground-section" aria-labelledby="playground-title">
+            <div class="section-heading">
+                <p class="eyebrow">Playground</p>
+                <h2 id="playground-title">Pick one. Print it. Move on.</h2>
+            </div>
+
+            <div class="playground">
+                <div class="preview-panel">
+                    <div class="preview-head">
+                        <div>
+                            <h3 id="selected-name">hello</h3>
+                            <p id="selected-meta">message · 4 lines · Unknown</p>
+                        </div>
+                        <button class="button primary" type="button" id="print-selected">Print</button>
+                    </div>
+                    <pre id="ascii-preview" class="ascii-preview"></pre>
+                    <code id="active-command" class="active-command"></code>
+                </div>
+
+                <form class="control-panel" aria-label="ASCII controls">
+                    <label>
+                        <span>ASCII</span>
+                        <select id="ascii-select"></select>
+                    </label>
+                    <label>
+                        <span>Category</span>
+                        <select id="category-select"></select>
+                    </label>
+                    <label>
+                        <span>Search</span>
+                        <input id="search-input" type="search" placeholder="rocket, frog, warning">
+                    </label>
+                    <label>
+                        <span>Color</span>
+                        <input id="color-input" type="text" placeholder="Black, White, Gray">
+                    </label>
+                    <label class="check-row">
+                        <input id="default-color-input" type="checkbox">
+                        <span>Use console default color</span>
+                    </label>
+                    <label class="check-row">
+                        <input id="credits-input" type="checkbox">
+                        <span>Print credits</span>
+                    </label>
+                    <div class="button-grid">
+                        <button class="button" type="button" id="random-selected">Random category</button>
+                        <button class="button" type="button" id="random-set">Random set</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="commands" class="section commands-section" aria-labelledby="commands-title">
+            <div class="section-heading">
+                <p class="eyebrow">Commands</p>
+                <h2 id="commands-title">Copy-ready console calls.</h2>
+            </div>
+            <div class="command-board">
+                <button type="button" data-command='AsciiPrinter.printByName("pinkPanther");'><code>AsciiPrinter.printByName("pinkPanther");</code></button>
+                <button type="button" data-command='AsciiPrinter.printById(0, { credits: true });'><code>AsciiPrinter.printById(0, { credits: true });</code></button>
+                <button type="button" data-command='AsciiPrinter.printBySearch("rocket", { color: "cyan" });'><code>AsciiPrinter.printBySearch("rocket", { color: "cyan" });</code></button>
+                <button type="button" data-command='AsciiPrinter.printRandom("message");'><code>AsciiPrinter.printRandom("message");</code></button>
+                <button type="button" data-command='AsciiPrinter.printRandomFrom(["bravo", "warning", "loading"], { color: false });'><code>AsciiPrinter.printRandomFrom(["bravo", "warning", "loading"], { color: false });</code></button>
+                <button type="button" data-command='AsciiPrinter.list("thing");'><code>AsciiPrinter.list("thing");</code></button>
+                <button type="button" data-command='AsciiPrinter.listTypes();'><code>AsciiPrinter.listTypes();</code></button>
+                <button type="button" data-command='AsciiPrinter.getByName("thumbsUp");'><code>AsciiPrinter.getByName("thumbsUp");</code></button>
+            </div>
+            <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="catalog" class="section catalog-section" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <p class="eyebrow">Catalog</p>
+                <h2 id="catalog-title">All the noisy little pieces.</h2>
+            </div>
+            <div class="catalog-tools">
+                <input id="catalog-search" type="search" placeholder="Filter by name">
+                <select id="catalog-category"></select>
+                <span id="catalog-count">0 shown</span>
+            </div>
+            <div class="catalog-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Color</th>
+                            <th>Height</th>
+                            <th>Author</th>
+                            <th>Command</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalog-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../build/ascii-printer.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

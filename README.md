@@ -36,16 +36,17 @@ AsciiPrinter.catalog;
 
 ## Demo
 
-Open `demo.html` in your browser, then open the console.
+Open `demo/demo.html` in your browser, then open the console.
 
 The demo page includes:
 
 - the current library version;
-- a small table of contents;
+- a black and white documentation site;
 - a quick start section;
-- a compact API overview;
-- grouped print, list, and get examples;
-- print options examples;
+- a full API overview;
+- detailed print, random, list, get, options, files, and design notes;
+- an interactive playground;
+- copy-ready console commands;
 - the full ASCII catalog with ID, name, category, color, height, author, and `AsciiPrinter.printById(...)` command.
 
 ## API
@@ -482,7 +483,9 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 - `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~31.2 KB.
 - `build/ascii-printer.js` is the readable build. Current size: ~34.5 KB.
-- `demo.html` is the browser demo page.
+- `demo/demo.html` is the browser demo page.
+- `demo/styles.css` contains the demo styling.
+- `demo/main.js` contains the demo interactions.
 - `source/ascii-printer-functions.js` contains the public API and internal helpers.
 - `source/ascii-printer-lib.js` contains the ASCII library.
 - `LICENSE` contains the code license.
