@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ascii-printer.thomaspericoi.com/sitemap.xml

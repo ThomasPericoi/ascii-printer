@@ -36,7 +36,7 @@ AsciiPrinter.catalog;
 
 ## Demo
 
-Open `demo/demo.html` in your browser, then open the console.
+Open `demo/index.html` in your browser, then open the console.
 
 The demo page includes:
 
@@ -483,7 +483,7 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 - `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~31.2 KB.
 - `build/ascii-printer.js` is the readable build. Current size: ~34.5 KB.
-- `demo/demo.html` is the browser demo page.
+- `demo/index.html` is the browser demo page.
 - `demo/styles.css` contains the demo styling.
 - `demo/main.js` contains the demo interactions.
 - `source/ascii-printer-functions.js` contains the public API and internal helpers.

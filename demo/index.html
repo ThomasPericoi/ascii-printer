@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ASCII Printer - Tiny console art library</title>
+    <meta name="description" content="ASCII Printer is a tiny browser library for printing colorful ASCII art in the JavaScript console, with a searchable catalog, playground, and copy-ready API examples.">
+    <meta name="author" content="Thomas Pericoi">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="notranslate">
+    <meta name="theme-color" content="#f7f7f2">
+    <link rel="canonical" href="https://ascii-printer.thomaspericoi.com/">
+    <link rel="sitemap" type="application/xml" href="https://ascii-printer.thomaspericoi.com/sitemap.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=IBM+Plex+Mono:wght@400;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23111111'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='DynaPuff,system-ui,sans-serif' font-size='28' font-weight='700' fill='%23ffffff'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ASCII Printer">
+    <meta property="og:description" content="A tiny browser library for printing colorful ASCII art in the JavaScript console.">
+    <meta property="og:url" content="https://ascii-printer.thomaspericoi.com/">
+    <meta property="og:site_name" content="ASCII Printer">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://ascii-printer.thomaspericoi.com/social-card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="ASCII Printer, a tiny console art library.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ASCII Printer">
+    <meta name="twitter:description" content="A tiny browser library for printing colorful ASCII art in the JavaScript console.">
+    <meta name="twitter:image" content="https://ascii-printer.thomaspericoi.com/social-card.png">
+    <meta name="twitter:image:alt" content="ASCII Printer, a tiny console art library.">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareSourceCode",
+            "name": "ASCII Printer",
+            "description": "A tiny browser library for printing colorful ASCII art in the JavaScript console.",
+            "programmingLanguage": "JavaScript",
+            "codeRepository": "https://github.com/thomaspericoi/ascii-printer",
+            "author": {
+                "@type": "Person",
+                "name": "Thomas Pericoi",
+                "url": "https://thomaspericoi.com/"
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <noscript>
+        <p class="noscript-message">ASCII Printer demo needs JavaScript for the playground and catalog.</p>
+    </noscript>
+
+    <header class="site-header">
+        <a class="brand" href="#main" aria-label="ASCII Printer home">
+            <span class="brand-mark">&gt;_</span>
+            <span>ASCII Printer</span>
+        </a>
+        <nav class="nav" aria-label="Demo sections">
+            <a href="#get-started">Get started</a>
+            <a href="#docs">Docs</a>
+            <a href="#playground">Playground</a>
+            <a href="#catalog">Catalog</a>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+            <div>
+                <p class="eyebrow">The tiny useless art console library</p>
+                <h1 id="hero-title">ASCII Printer</h1>
+                <p class="hero-text">Print colorful ASCII arts in the JavaScript console.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#get-started">Get started</a>
+                    <a class="button primary" href="#playground">Try it</a>
+                    <a class="button" href="#catalog">Browse catalog</a>
+                </div>
+            </div>
+            <div class="hero-terminal" aria-label="ASCII Printer console preview">
+                <div class="terminal-bar" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <pre id="hero-ascii" class="hero-ascii" role="img" aria-label="ASCII art console preview"></pre>
+                <code id="hero-command" class="language-js">AsciiPrinter.printByName("hello")</code>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Library stats">
+            <article>
+                <span id="version-stat">v-</span>
+                <p>Current version</p>
+            </article>
+            <article>
+                <span id="count-stat">0</span>
+                <p>ASCII arts</p>
+            </article>
+            <article>
+                <span id="category-stat">0</span>
+                <p>Categories</p>
+            </article>
+            <article>
+                <span>31.2 KB</span>
+                <p>Minified build</p>
+            </article>
+        </section>
+
+        <section id="get-started" class="section" aria-labelledby="get-started-title">
+            <div class="section-heading">
+                <p class="eyebrow">Get started</p>
+                <h2 id="get-started-title">Load one file and start printing</h2>
+                <p class="section-lede">This demo page loads the minified build first, then the page script. Your own page only needs the build file.</p>
+            </div>
+            <div class="doc-copy">
+                <h3>Use the minified build</h3>
+                <pre><code class="language-html">&lt;script src="build/ascii-printer.min.js"&gt;&lt;/script&gt;</code></pre>
+                <h3>Call the API</h3>
+                <pre><code class="language-js">AsciiPrinter.printByName("pinkPanther");
+AsciiPrinter.printRandom("character");
+AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
+AsciiPrinter.listNames("animal");
+AsciiPrinter.version;</code></pre>
+            </div>
+        </section>
+
+        <section id="docs" class="section" aria-labelledby="docs-title">
+            <div class="section-heading">
+                <p class="eyebrow">Documentation</p>
+                <h2 id="docs-title">What's inside?</h2>
+                <p class="section-lede">Print methods write ASCII art to the console. List methods return collections. Get methods return one catalog entry without printing.</p>
+            </div>
+
+            <div class="api-table-wrap">
+                <table class="api-table">
+                    <caption class="sr-only">ASCII Printer API overview</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">API</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code class="language-js">AsciiPrinter.printById()</code></td><td>Prints one ASCII by ID.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.printByName()</code></td><td>Prints one ASCII by exact name.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.printBySearch()</code></td><td>Prints the first ASCII whose name contains the search text.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.printRandom()</code></td><td>Prints a random ASCII, optionally filtered by category.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.printRandomFrom()</code></td><td>Prints a random ASCII from a list of names.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.listTypes()</code></td><td>Returns the available categories.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.listNames()</code></td><td>Returns ASCII names, optionally filtered by category.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.list()</code></td><td>Returns ASCII metadata with <code>id</code>, <code>name</code>, and <code>category</code>.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.getById()</code></td><td>Returns one ASCII by ID without printing it.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.getByName()</code></td><td>Returns one ASCII by exact name without printing it.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.version</code></td><td>Returns the library version.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.catalog</code></td><td>Returns the full ASCII catalog.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="doc-grid">
+                <article class="doc-card doc-card-wide">
+                    <p class="eyebrow">Print</p>
+                    <div class="method-grid">
+                        <div>
+                            <h3>Print one</h3>
+                            <p>Use an ID, an exact name, or the first matching search result.</p>
+                            <pre><code class="language-js">AsciiPrinter.printByName("bigBird");
+AsciiPrinter.printById(26);
+AsciiPrinter.printBySearch("panther");</code></pre>
+                        </div>
+                        <div>
+                            <h3>Print random</h3>
+                            <p>Print from the full catalog, one category, or a curated list of names.</p>
+                            <pre><code class="language-js">AsciiPrinter.printRandom();
+AsciiPrinter.printRandom("message");</code></pre>
+                            <pre><code class="language-js">AsciiPrinter.printRandomFrom([
+  "heart",
+  "key",
+  "lightBulb"
+]);</code></pre>
+                        </div>
+                        <div>
+                            <h3>Print options</h3>
+                            <p>Every print method accepts the same optional object.</p>
+                            <pre><code class="language-js">AsciiPrinter.printByName("frog", {
+  color: "HotPink"
+});
+
+AsciiPrinter.printByName("frog", {
+  color: false,
+  credits: true
+});</code></pre>
+                            <dl>
+                                <dt><code>color</code></dt>
+                                <dd>Overrides the catalog color. Use <code>false</code> for the browser console default color.</dd>
+                                <dt><code>credits</code></dt>
+                                <dd>Prints the ASCII author after the art. Unknown authors display as <code>Unknown</code>.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">List</p>
+                    <h3>List types</h3>
+                    <pre><code class="language-js">AsciiPrinter.listTypes();
+// ["animal", "character", "thing", "message"]</code></pre>
+                    <h3>List names</h3>
+                    <pre><code class="language-js">AsciiPrinter.listNames();
+AsciiPrinter.listNames("animal");</code></pre>
+                    <h3>List metadata</h3>
+                    <pre><code class="language-js">AsciiPrinter.list("message");</code></pre>
+                </article>
+
+                <article class="doc-card">
+                    <p class="eyebrow">Get</p>
+                    <h3>Get full entries</h3>
+                    <p>Get methods return data without printing.</p>
+                    <pre><code class="language-js">AsciiPrinter.getByName("pinkPanther");
+AsciiPrinter.getById(0);</code></pre>
+                    <h3>Metadata</h3>
+                    <pre><code class="language-js">AsciiPrinter.version;
+AsciiPrinter.catalog;</code></pre>
+                </article>
+
+                <article class="doc-card doc-card-wide">
+                    <p class="eyebrow">Project files</p>
+                    <h3>Build files</h3>
+                    <p>The readable and minified builds are generated manually from <code>source</code>. <code class="language-js">AsciiPrinter</code> is the only exposed global.</p>
+                    <pre><code class="language-text">build/ascii-printer.js
+build/ascii-printer.min.js</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section id="playground" class="section" aria-labelledby="playground-title">
+            <div class="section-heading">
+                <p class="eyebrow">Playground</p>
+                <h2 id="playground-title">Pick one and print it</h2>
+            </div>
+
+            <div class="playground">
+                <div class="preview-panel">
+                    <div class="preview-head">
+                        <div>
+                            <h3 id="selected-name">hello</h3>
+                            <p id="selected-meta">message · 4 lines · Unknown</p>
+                        </div>
+                        <button class="button primary" type="button" id="print-selected">Print</button>
+                    </div>
+                    <pre id="ascii-preview" class="ascii-preview" role="img" aria-label="Selected ASCII art preview"></pre>
+                    <div class="active-command-bar">
+                        <code id="active-command" class="active-command language-js"></code>
+                        <button class="command-copy" type="button" id="copy-active-command">Copy</button>
+                    </div>
+                    <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+                </div>
+
+                <form class="control-panel" aria-label="ASCII controls">
+                    <label>
+                        <span>ASCII</span>
+                        <select id="ascii-select"></select>
+                    </label>
+                    <label>
+                        <span>Category</span>
+                        <select id="category-select"></select>
+                    </label>
+                    <label>
+                        <span>Search</span>
+                        <input id="search-input" type="search" placeholder="rocket, frog, warning">
+                    </label>
+                    <label>
+                        <span>Color</span>
+                        <span class="color-field">
+                            <input id="color-picker" type="color" value="#080808" aria-label="Pick a custom color">
+                            <input id="color-input" type="text" placeholder="Black, White, Gray">
+                        </span>
+                    </label>
+                    <label class="check-row">
+                        <input id="default-color-input" type="checkbox">
+                        <span>Use console default color</span>
+                    </label>
+                    <label class="check-row">
+                        <input id="credits-input" type="checkbox">
+                        <span>Print credits</span>
+                    </label>
+                    <div class="button-grid">
+                        <button class="button" type="button" id="random-selected">Random</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="catalog" class="section" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <p class="eyebrow">Catalog</p>
+                <h2 id="catalog-title">All the arts contained in the file</h2>
+            </div>
+            <div class="catalog-tools">
+                <label class="sr-only" for="catalog-search">Filter catalog by name</label>
+                <input id="catalog-search" type="search" placeholder="Filter by name">
+                <label class="sr-only" for="catalog-category">Filter catalog by category</label>
+                <select id="catalog-category"></select>
+                <span id="catalog-count" role="status" aria-live="polite">0 shown</span>
+            </div>
+            <div class="catalog-table-wrap">
+                <table>
+                    <caption class="sr-only">Full ASCII catalog</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Command</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalog-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <a
+            class="signature"
+            href="https://thomaspericoi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Thomas was here - Go to thomaspericoi.com"
+        >
+            <svg
+                class="signature-logo"
+                width="32"
+                height="32"
+                viewBox="0 0 1080 1080"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <defs>
+                    <mask id="signature-fox-eye-mask">
+                        <rect width="1080" height="1080" fill="#fff" />
+                        <path
+                            fill="#000"
+                            d="M499.73,580.81c-1.27,10.56-26.5,67.23-96.85,70.76-70.34,3.52-97.29-80.1-97.29-80.1,0,0,9.96-49.53,39.72-78.45.01-.01.03-.03.04-.04,13.28-12.89,30.5-21.67,52.53-20.11,19.9,1.41,36.72,9.58,50.6,20.88.01.01.03.02.04.03,35.91,29.27,52.12,79.42,51.21,87.03Z"
+                        />
+                        <path
+                            fill="#000"
+                            d="M784.07,571.47s-26.95,83.62-97.29,80.1c-70.34-3.53-95.58-60.2-96.85-70.76-.91-7.61,15.31-57.75,51.21-87.02,0-.01.03-.02.04-.03,13.88-11.31,30.7-19.48,50.6-20.89,22.03-1.56,39.26,7.23,52.53,20.12l.04.04c29.76,28.91,39.72,78.44,39.72,78.44Z"
+                        />
+                    </mask>
+                </defs>
+                <path
+                    mask="url(#signature-fox-eye-mask)"
+                    fill="currentColor"
+                    d="M626.42,772.45c5.12-4.74,17.28-5.27,24.25-4.94,67.7,3.16,157.51-12.55,247.59-28.49,8.59-21.46,31.29-81.55,8.39-137.35-22.89-55.8-34.27-71.15-33.59-97.81,0,0,60.61-249.05-45.07-379.46,0,0-79.41,10.7-160.35,79.2-80.95,68.5-118.07,127.05-118.07,127.05,0,0-40.66-9.4-60.69,2.04,0,0-82.99-201.73-218.91-224.63,0,0-113.03,107.31-104.44,263.26,7.15,108.74,48.64,147.37,48.64,147.37,0,0-21.46,18.6-28.61,45.78-7.16,27.19-28.12,120.19-20.5,140.22,7.62,20.03,136.39,65.81,252.28,50.07,0,0,3.48,25.66,11.35,59.43l-73.91-9.02c-4.39-.53-8.38,2.59-8.91,6.97-.54,4.39,2.58,8.38,6.97,8.91l79.93,9.75c.75,2.89,1.52,5.82,2.34,8.78l-81.79,15.71c-4.34.84-7.18,5.03-6.35,9.37.74,3.83,4.09,6.49,7.85,6.49.5,0,1.01-.05,1.52-.14l83.21-15.99c.84,2.8,1.72,5.6,2.62,8.41l-60.34,47.22c-3.48,2.72-4.09,7.75-1.37,11.23,1.58,2.02,3.93,3.07,6.31,3.07,1.72,0,3.46-.55,4.92-1.7l55.94-43.78c4.57,12.67,9.72,25.07,15.48,36.5-5.11,5.93-8.2,13.65-8.2,22.1,0,18.7,15.16,33.87,33.87,33.87s33.87-15.17,33.87-33.87c0-3.55-.55-6.98-1.56-10.2,15.31-13.73,33.55-32.36,49.08-54.6l63.86,49.98c1.46,1.15,3.2,1.7,4.92,1.7,2.38,0,4.73-1.05,6.31-3.07,2.72-3.48,2.11-8.51-1.37-11.23l-64.96-50.83c1.11-1.83,2.2-3.69,3.25-5.56l87.2,16.75c.51.09,1.02.14,1.52.14,3.76,0,7.11-2.66,7.84-6.49.84-4.34-2-8.53-6.34-9.37l-82.6-15.86c1.32-2.86,2.57-5.76,3.74-8.7l79.34-9.68c4.38-.53,7.51-4.52,6.97-8.91-.53-4.38-4.53-7.5-8.91-6.97l-71.09,8.67c12.71-33.07,17.71-33.18,26.57-41.39ZM402.88,651.57c-70.34,3.52-97.29-80.1-97.29-80.1,0,0,9.96-49.53,39.72-78.45.01-.01.03-.03.04-.04-.02-.24-.03-.48-.04-.72,13.29-12.9,30.52-21.7,52.57-20.14,19.92,1.4,36.75,9.6,50.64,20.91,0,.24-.03.48-.04.72.01.01.03.02.04.03,35.91,29.27,52.12,79.42,51.21,87.03-1.27,10.56-26.5,67.23-96.85,70.76ZM589.93,580.81c-.91-7.61,15.31-57.75,51.21-87.02,0-.01.03-.02.04-.03-.01-.24-.03-.48-.04-.72,13.89-11.32,30.72-19.52,50.64-20.92,22.05-1.56,39.29,7.24,52.57,20.15-.01.24-.02.48-.04.72l.04.04c29.76,28.91,39.72,78.44,39.72,78.44,0,0-26.95,83.62-97.29,80.1-70.34-3.53-95.58-60.2-96.85-70.76Z"
+                />
+                <path
+                    class="signature-logo-pupil"
+                    fill="currentColor"
+                    d="M770.16,474.71c-.01,.36-.03,.72-.06,1.08-3.82,75.51-37.01,134.49-77.37,134.49s-73.2-58.38-77.32-133.34c-.01-.36-.04-.72-.06-1.08,20.84-16.98,46.08-29.28,75.96-31.38,33.08-2.34,58.94,10.86,78.86,30.22Z"
+                />
+                <path
+                    class="signature-logo-pupil"
+                    fill="currentColor"
+                    d="M474.31,475.85c0,.36-.04,.72-.06,1.08-4.13,74.95-37.17,133.35-77.32,133.35s-73.53-58.98-77.37-134.5c-.03-.36-.04-.72-.06-1.08,19.93-19.35,45.78-32.55,78.86-30.21,29.88,2.1,55.13,14.4,75.96,31.37Z"
+                />
+            </svg>
+            <span class="signature-tagline">Thomas was here</span>
+        </a>
+
+        <a
+            class="icon-link"
+            href="https://github.com/thomaspericoi/ascii-printer"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View ASCII Printer on GitHub"
+        >
+            <svg
+                aria-hidden="true"
+                focusable="false"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    fill="currentColor"
+                    d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.09.68-.22.68-.49v-1.9c-2.78.62-3.37-1.22-3.37-1.22-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.39 9.39 0 0 1 12 6.94c.85 0 1.71.12 2.51.34 1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.59.69.49A10.18 10.18 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"
+                />
+            </svg>
+        </a>
+    </footer>
+
+    <script src="../build/ascii-printer.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

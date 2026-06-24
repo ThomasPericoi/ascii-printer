@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+    <title id="title">ASCII Printer</title>
+    <desc id="desc">A black and white social card for ASCII Printer, a tiny console art library.</desc>
+    <rect width="1200" height="1200" fill="#f7f7f2"/>
+    <rect x="70" y="70" width="1060" height="1060" fill="#fff" stroke="#080808" stroke-width="8"/>
+    <rect x="120" y="120" width="250" height="250" fill="#080808"/>
+    <text x="245" y="280" text-anchor="middle" fill="#f7f7f2" font-family="monospace" font-size="110" font-weight="700">&gt;_</text>
+    <text x="420" y="215" fill="#080808" font-family="Arial, sans-serif" font-size="76" font-weight="800">ASCII Printer</text>
+    <text x="424" y="282" fill="#080808" font-family="monospace" font-size="31" font-weight="700">Tiny console art library</text>
+    <line x1="120" y1="458" x2="1080" y2="458" stroke="#080808" stroke-width="4"/>
+    <text x="120" y="570" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printRandom("message");</text>
+    <text x="120" y="650" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.listNames("animal");</text>
+    <text x="120" y="730" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printByName("hello");</text>
+    <text x="120" y="1000" fill="#080808" font-family="Arial, sans-serif" font-size="30" font-weight="800">103 ASCII arts · 4 categories · 31.2 KB minified</text>
+</svg>

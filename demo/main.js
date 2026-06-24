@@ -1,6 +1,5 @@
 const catalog = AsciiPrinter.catalog.map((ascii, id) => ({ ...ascii, id }));
 const types = AsciiPrinter.listTypes();
-const featuredNames = ["bravo", "warning", "loading", "heart", "key", "thumbsUp"];
 
 const elements = {
     heroAscii: document.getElementById("hero-ascii"),
@@ -12,25 +11,24 @@ const elements = {
     selectedMeta: document.getElementById("selected-meta"),
     asciiPreview: document.getElementById("ascii-preview"),
     activeCommand: document.getElementById("active-command"),
+    copyActiveCommand: document.getElementById("copy-active-command"),
+    copyStatus: document.getElementById("copy-status"),
     asciiSelect: document.getElementById("ascii-select"),
     categorySelect: document.getElementById("category-select"),
     searchInput: document.getElementById("search-input"),
+    colorPicker: document.getElementById("color-picker"),
     colorInput: document.getElementById("color-input"),
     defaultColorInput: document.getElementById("default-color-input"),
     creditsInput: document.getElementById("credits-input"),
     printSelected: document.getElementById("print-selected"),
     randomSelected: document.getElementById("random-selected"),
-    randomSet: document.getElementById("random-set"),
     catalogSearch: document.getElementById("catalog-search"),
     catalogCategory: document.getElementById("catalog-category"),
     catalogCount: document.getElementById("catalog-count"),
     catalogBody: document.getElementById("catalog-body"),
-    copyStatus: document.getElementById("copy-status"),
 };
 
 let selectedId = catalog.find((ascii) => ascii.name === "hello")?.id || 0;
-
-initialize();
 
 function initialize() {
     elements.versionStat.textContent = `v${AsciiPrinter.version}`;
@@ -45,6 +43,8 @@ function initialize() {
     renderCatalog();
     bindEvents();
 }
+
+initialize();
 
 function bindEvents() {
     document.querySelector(".control-panel").addEventListener("submit", (event) => {
@@ -71,13 +71,29 @@ function bindEvents() {
         }
     });
 
-    elements.colorInput.addEventListener("input", () => updatePreview(getSelectedAscii()));
+    elements.colorPicker.addEventListener("input", () => {
+        elements.colorInput.value = elements.colorPicker.value;
+        elements.defaultColorInput.checked = false;
+        updatePreview(getSelectedAscii());
+    });
+
+    elements.colorInput.addEventListener("input", () => {
+        elements.defaultColorInput.checked = false;
+        syncColorPicker(elements.colorInput.value);
+        updatePreview(getSelectedAscii());
+    });
+
     elements.defaultColorInput.addEventListener("change", () => updatePreview(getSelectedAscii()));
     elements.creditsInput.addEventListener("change", () => updateCommand(getSelectedAscii()));
 
     elements.printSelected.addEventListener("click", () => {
         const ascii = getSelectedAscii();
         AsciiPrinter.printByName(ascii.name, getPrintOptions());
+        showFeedback("Check your console.");
+    });
+
+    elements.copyActiveCommand.addEventListener("click", () => {
+        copyText(elements.activeCommand.textContent);
     });
 
     elements.randomSelected.addEventListener("click", () => {
@@ -88,19 +104,7 @@ function bindEvents() {
         const ascii = randomFrom(pool);
         syncSelection(ascii.id);
         AsciiPrinter.printByName(ascii.name, getPrintOptions());
-    });
-
-    elements.randomSet.addEventListener("click", () => {
-        const pool = featuredNames
-            .map((name) => catalog.find((ascii) => ascii.name === name))
-            .filter(Boolean);
-        const ascii = randomFrom(pool);
-        syncSelection(ascii.id);
-        AsciiPrinter.printByName(ascii.name, getPrintOptions());
-    });
-
-    document.querySelectorAll("[data-command]").forEach((button) => {
-        button.addEventListener("click", () => copyCommand(button.dataset.command));
+        showFeedback("Check your console.");
     });
 
     elements.catalogSearch.addEventListener("input", renderCatalog);
@@ -139,6 +143,8 @@ function updatePreview(ascii) {
     elements.selectedName.textContent = ascii.name;
     elements.selectedMeta.textContent = `${formatCategory(ascii.type)} · ${ascii.height} lines · ${ascii.author || "Unknown"}`;
     elements.asciiPreview.textContent = ascii.art.trimEnd();
+    elements.asciiPreview.setAttribute("aria-label", `${ascii.name} ASCII art preview`);
+    syncColorPicker(getPreviewColor(ascii));
     elements.asciiPreview.style.setProperty("--preview-color", getPreviewColor(ascii));
     updateCommand(ascii);
 }
@@ -150,11 +156,13 @@ function updateCommand(ascii) {
         : "";
 
     elements.activeCommand.textContent = `AsciiPrinter.printByName("${ascii.name}"${optionsText})`;
+    elements.copyStatus.textContent = "";
 }
 
 function renderHero() {
     const ascii = catalog.find((item) => item.name === "helloWorld") || catalog[0];
     elements.heroAscii.textContent = ascii.art.trimEnd();
+    elements.heroAscii.setAttribute("aria-label", `${ascii.name} ASCII art console preview`);
     elements.heroCommand.textContent = `AsciiPrinter.printByName("${ascii.name}")`;
 }
 
@@ -172,18 +180,18 @@ function renderCatalog() {
     elements.catalogBody.innerHTML = selected.map((ascii) => {
         const separator = ascii.type === currentCategory
             ? ""
-            : `<tr class="category-row"><th colspan="7">${escapeHtml(formatCategory(ascii.type))}</th></tr>`;
+            : `<tr class="category-row"><th scope="colgroup" colspan="7">${escapeHtml(formatCategory(ascii.type))}</th></tr>`;
         currentCategory = ascii.type;
 
         return `${separator}
             <tr>
-                <td>${ascii.id}</td>
-                <td><button class="name-button" type="button" data-id="${ascii.id}"><code>${escapeHtml(ascii.name)}</code></button></td>
+                <th scope="row">${ascii.id}</th>
+                <td><button class="name-button" type="button" data-id="${ascii.id}" aria-label="Preview ${escapeHtml(ascii.name)} in the playground"><code class="language-text">${escapeHtml(ascii.name)}</code></button></td>
                 <td>${escapeHtml(ascii.type)}</td>
-                <td><span class="color-chip"><span class="color-dot" style="--dot-color: ${escapeHtml(ascii.color)}"></span>${escapeHtml(ascii.color)}</span></td>
+                <td><span class="color-chip"><span class="color-dot" style="--dot-color: ${escapeHtml(ascii.color)}" aria-hidden="true"></span>${escapeHtml(ascii.color)}</span></td>
                 <td>${escapeHtml(ascii.height)}</td>
                 <td>${escapeHtml(ascii.author || "Unknown")}</td>
-                <td><code>AsciiPrinter.printById(${ascii.id})</code></td>
+                <td><code class="language-js">AsciiPrinter.printById(${ascii.id})</code></td>
             </tr>`;
     }).join("");
 
@@ -227,13 +235,23 @@ function getPreviewColor(ascii) {
     return elements.colorInput.value.trim() || ascii.color;
 }
 
-async function copyCommand(command) {
-    try {
-        await navigator.clipboard.writeText(command);
-        elements.copyStatus.textContent = "Copied to clipboard.";
-    } catch {
-        elements.copyStatus.textContent = command;
+function syncColorPicker(color) {
+    if (/^#[0-9a-f]{6}$/i.test(color)) {
+        elements.colorPicker.value = color;
     }
+}
+
+async function copyText(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        showFeedback("Copied.");
+    } catch {
+        showFeedback(text);
+    }
+}
+
+function showFeedback(message) {
+    elements.copyStatus.textContent = message;
 }
 
 function randomFrom(items) {
