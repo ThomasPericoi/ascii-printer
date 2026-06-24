@@ -36,7 +36,7 @@ AsciiPrinter.catalog;
 
 ## Demo
 
-Open `demo/index.html` in your browser, then open the console.
+Open `demo/index.html` in your browser, then open the console. You can see the online version here: [ASCII Printer Demo](https://ascii-printer.thomaspericoi.com/)
 
 The demo page includes:
 
