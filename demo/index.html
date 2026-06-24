@@ -2,27 +2,35 @@
 <html lang="en">
 
 <head>
+    <!-- Basics -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ASCII Printer - Tiny console art library</title>
-    <meta name="description" content="ASCII Printer is a tiny browser library for printing colorful ASCII art in the JavaScript console, with a searchable catalog, playground, and copy-ready API examples.">
-    <meta name="author" content="Thomas Pericoi">
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="google" content="notranslate">
-    <meta name="theme-color" content="#f7f7f2">
-    <link rel="canonical" href="https://ascii-printer.thomaspericoi.com/">
-    <link rel="sitemap" type="application/xml" href="https://ascii-printer.thomaspericoi.com/sitemap.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=IBM+Plex+Mono:wght@400;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23111111'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='DynaPuff,system-ui,sans-serif' font-size='28' font-weight='700' fill='%23ffffff'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://ascii-printer.thomaspericoi.com/">
+
+    <!-- For robots & browsers -->
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="notranslate">
+    <meta name="application-name" content="ASCII Printer" />
+    <link rel="sitemap" type="application/xml" href="https://ascii-printer.thomaspericoi.com/sitemap.xml">
+
+    <!-- Content -->
+    <title>ASCII Printer - Tiny console art library</title>
+    <meta name="author" content="Thomas Pericoi">
+    <meta name="description" content="ASCII Printer is a tiny browser library for printing colorful ASCII art in the JavaScript console, with a searchable catalog, playground, and copy-ready API examples.">
+
+    <!-- Open Graph Protocol -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ASCII Printer">
     <meta property="og:title" content="ASCII Printer">
     <meta property="og:description" content="A tiny browser library for printing colorful ASCII art in the JavaScript console.">
     <meta property="og:url" content="https://ascii-printer.thomaspericoi.com/">
-    <meta property="og:site_name" content="ASCII Printer">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://ascii-printer.thomaspericoi.com/social-card.png">
     <meta property="og:image:type" content="image/png">
@@ -34,6 +42,11 @@
     <meta name="twitter:description" content="A tiny browser library for printing colorful ASCII art in the JavaScript console.">
     <meta name="twitter:image" content="https://ascii-printer.thomaspericoi.com/social-card.png">
     <meta name="twitter:image:alt" content="ASCII Printer, a tiny console art library.">
+    
+    <!-- Chrome Theme -->
+    <meta name="theme-color" content="#f7f7f2">
+
+    <!-- JSON-LD -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -49,7 +62,6 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
