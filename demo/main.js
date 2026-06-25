@@ -160,7 +160,7 @@ function updateCommand(ascii) {
 }
 
 function renderHero() {
-    const ascii = catalog.find((item) => item.name === "helloWorld") || catalog[0];
+    const ascii = catalog.find((item) => item.name === "fox") || catalog[0];
     elements.heroAscii.textContent = ascii.art.trimEnd();
     elements.heroAscii.setAttribute("aria-label", `${ascii.name} ASCII art console preview`);
     elements.heroCommand.textContent = `AsciiPrinter.printByName("${ascii.name}")`;
