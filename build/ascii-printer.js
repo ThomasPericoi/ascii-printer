@@ -43,27 +43,9 @@ function hasAsciiTag(ascii, tag) {
 }
 
 function listAsciiTags() {
-  const preferredOrder = ["animal", "character", "item", "message"];
   const tags = [...new Set(asciis.flatMap(getAsciiTags))];
 
-  return tags.sort((firstTag, secondTag) => {
-    const firstIndex = preferredOrder.indexOf(firstTag);
-    const secondIndex = preferredOrder.indexOf(secondTag);
-
-    if (firstIndex === -1 && secondIndex === -1) {
-      return firstTag.localeCompare(secondTag);
-    }
-
-    if (firstIndex === -1) {
-      return 1;
-    }
-
-    if (secondIndex === -1) {
-      return -1;
-    }
-
-    return firstIndex - secondIndex;
-  });
+  return tags.sort((firstTag, secondTag) => firstTag.localeCompare(secondTag));
 }
 
 function listAsciiNames(tag = "all") {
@@ -180,7 +162,6 @@ global.AsciiPrinter = {
   printRandomFrom: printRandomAsciiFrom,
 };
 })(globalThis);
-
 
 /*____________________________________ ASCII LIBRARY ____________________________________*/
 
@@ -360,7 +341,7 @@ var asciis = [
   },
   {
     name: "bender",
-    tags: ["cartoon","character","space"],
+    tags: ["cartoon","character","futurama","space"],
     art: String.raw`
      ( )
       H
@@ -385,7 +366,7 @@ var asciis = [
   },
   {
     name: "bigBird",
-    tags: ["bird","cartoon","character"],
+    tags: ["bird","cartoon","character","sesameStreet"],
     art: String.raw`
    . -- .
   (      )
@@ -571,7 +552,7 @@ c{{i.}}=oo-^
   },
   {
     name: "cheshireCat",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","disney"],
     art: String.raw`
            .'\   /'.
          .'.-.'-'.-.'.
@@ -610,7 +591,7 @@ c{{i.}}=oo-^
   },
   {
     name: "cookieMonster",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","sesameStreet"],
     art: String.raw`
     (o)(o)
   w"      "w
@@ -745,7 +726,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "duck",
-    tags: ["animal","bird"],
+    tags: ["animal","bird","pet"],
     art: String.raw`
       ,~~.
      (  9 )-_,
@@ -1118,7 +1099,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "homer",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","simpsons"],
     art: String.raw`
     ___
    //_\\_
@@ -1227,7 +1208,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "kermit",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","sesameStreet"],
     art: String.raw`
        .---.     .---.
       ( -o- )---( -o- )
@@ -1394,7 +1375,7 @@ c /    \         |  |
   },
   {
     name: "maryPoppins",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","cinema","disney"],
     art: String.raw`
          _
       .-' '-.
@@ -1608,7 +1589,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "r2d2",
-    tags: ["character","space"],
+    tags: ["character","cinema","space","starWars"],
     art: String.raw`
     .---.
   .'_:___".
@@ -1763,7 +1744,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "snoopy",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","pet"],
     art: String.raw`
           ,-~~-.___.
          / ()=(()   \
@@ -1787,7 +1768,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "sonic",
-    tags: ["character","video game"],
+    tags: ["character","videoGame"],
     art: String.raw`
           .,
 .      _,'f----.._
@@ -1805,7 +1786,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "spaceInvader",
-    tags: ["character","space","video game"],
+    tags: ["character","space","videoGame"],
     art: String.raw`
          __
        _|  |_
@@ -1823,7 +1804,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "squidward",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","spongeBob"],
     art: String.raw`
      .--'''''''''--.
    '      .---.      '.
@@ -1999,7 +1980,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "tweetieBird",
-    tags: ["bird","cartoon","character"],
+    tags: ["bird","cartoon","character","looneyTunes","pet"],
     art: String.raw`
     .-"-.
    /  - -\
@@ -2072,7 +2053,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "yosemiteSam",
-    tags: ["cartoon","character"],
+    tags: ["cartoon","character","looneyTunes"],
     art: String.raw`
         ___
     .-''   ''-.

@@ -43,27 +43,9 @@ function hasAsciiTag(ascii, tag) {
 }
 
 function listAsciiTags() {
-  const preferredOrder = ["animal", "character", "item", "message"];
   const tags = [...new Set(asciis.flatMap(getAsciiTags))];
 
-  return tags.sort((firstTag, secondTag) => {
-    const firstIndex = preferredOrder.indexOf(firstTag);
-    const secondIndex = preferredOrder.indexOf(secondTag);
-
-    if (firstIndex === -1 && secondIndex === -1) {
-      return firstTag.localeCompare(secondTag);
-    }
-
-    if (firstIndex === -1) {
-      return 1;
-    }
-
-    if (secondIndex === -1) {
-      return -1;
-    }
-
-    return firstIndex - secondIndex;
-  });
+  return tags.sort((firstTag, secondTag) => firstTag.localeCompare(secondTag));
 }
 
 function listAsciiNames(tag = "all") {

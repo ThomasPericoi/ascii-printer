@@ -357,8 +357,8 @@ Return one ASCII object by catalog ID.
 | 7 | bear | animal | Brown | 10 | Joan G. Stark |
 | 8 | beaver | animal | DarkGoldenrod | 7 | Joan G. Stark |
 | 9 | bees | animal, insect | Goldenrod | 9 | Joan G. Stark |
-| 10 | bender | cartoon, character, space | Silver | 16 | Silver Saks |
-| 11 | bigBird | bird, cartoon, character | Yellow | 16 | Unknown |
+| 10 | bender | cartoon, character, futurama, space | Silver | 16 | Silver Saks |
+| 11 | bigBird | bird, cartoon, character, sesameStreet | Yellow | 16 | Unknown |
 | 12 | boat | sea, vehicle | Aqua | 5 | Hayley Jane Wakenshaw |
 | 13 | bomb | item, weapon | DimGray | 14 | Joan G. Stark |
 | 14 | book | item | SaddleBrown | 10 | Joan G. Stark |
@@ -369,9 +369,9 @@ Return one ASCII object by catalog ID.
 | 19 | camera | item, retro | Gray | 7 | Joan G. Stark |
 | 20 | cat | animal, pet | DarkSlateGrey | 12 | Unknown |
 | 21 | caterpillar | animal, insect | Green | 3 | Joan G. Stark |
-| 22 | cheshireCat | cartoon, character | Violet | 6 | Randy Ransom |
+| 22 | cheshireCat | cartoon, character, disney | Violet | 6 | Randy Ransom |
 | 23 | coffee | drink, item | Brown | 9 | H.P. Barmario |
-| 24 | cookieMonster | cartoon, character | Blue | 6 | Randy Ransom |
+| 24 | cookieMonster | cartoon, character, sesameStreet | Blue | 6 | Randy Ransom |
 | 25 | crab | animal, sea | Red | 8 | Unknown |
 | 26 | crocodile | animal | OliveDrab | 9 | Shanaka Dias |
 | 27 | crown | item, medieval, symbol | Gold | 10 | Joan G. Stark |
@@ -379,7 +379,7 @@ Return one ASCII object by catalog ID.
 | 29 | dev | message | MediumPurple | 4 | Unknown |
 | 30 | devil | character, halloween | Red | 6 | Joan G. Stark |
 | 31 | dog | animal, pet | Tan | 8 | Unknown |
-| 32 | duck | animal, bird | DarkGray | 7 | Unknown |
+| 32 | duck | animal, bird, pet | DarkGray | 7 | Unknown |
 | 33 | einstein | character, history | Silver | 9 | Joan G. Stark |
 | 34 | electricGuitar | item, music | Red | 14 | Rowan Crawford |
 | 35 | elephant | animal | Silver | 11 | Hamilton Furtado |
@@ -401,12 +401,12 @@ Return one ASCII object by catalog ID.
 | 51 | hello | message | DeepSkyBlue | 4 | Unknown |
 | 52 | helloWorld | message | DeepSkyBlue | 4 | Unknown |
 | 53 | hippo | animal | DarkGray | 7 | Unknown |
-| 54 | homer | cartoon, character | Gold | 14 | Unknown |
+| 54 | homer | cartoon, character, simpsons | Gold | 14 | Unknown |
 | 55 | hotAirBalloon | flying, vehicle | Red | 15 | Joan G. Stark |
 | 56 | impossibleTriangle | symbol | Gold | 16 | Ojosh!ro |
 | 57 | impossibleTrident | symbol | Gold | 15 | P.J. LaBrocca |
 | 58 | info | message | DeepSkyBlue | 4 | Unknown |
-| 59 | kermit | cartoon, character | SpringGreen | 13 | Joan G. Stark |
+| 59 | kermit | cartoon, character, sesameStreet | SpringGreen | 13 | Joan G. Stark |
 | 60 | key | item | Gold | 5 | Hayley Jane Wakenshaw |
 | 61 | knight | character, medieval | Silver | 10 | Joan G. Stark |
 | 62 | lightBulb | item | Goldenrod | 7 | Joan G. Stark |
@@ -415,7 +415,7 @@ Return one ASCII object by catalog ID.
 | 65 | mailbox | item | Red | 12 | Joan G. Stark |
 | 66 | marbles | animal, pet | Brown | 10 | Unknown |
 | 67 | marmot | animal | DarkGoldenrod | 12 | Hayley Jane Wakenshaw |
-| 68 | maryPoppins | cartoon, character | Black | 17 | Unknown |
+| 68 | maryPoppins | cartoon, character, cinema, disney | Black | 17 | Unknown |
 | 69 | monaLisa | art, character | Sienna | 17 | Unknown |
 | 70 | monkey | animal | Brown | 12 | Joan G. Stark |
 | 71 | mountain | christmas, nature | SlateGray | 9 | Unknown |
@@ -426,7 +426,7 @@ Return one ASCII object by catalog ID.
 | 76 | pinkPanther | cartoon, character | Pink | 12 | Unknown |
 | 77 | plane | flying, vehicle | Red | 8 | Joan G. Stark |
 | 78 | production | message | LimeGreen | 4 | Unknown |
-| 79 | r2d2 | character, space | Blue | 8 | snd |
+| 79 | r2d2 | character, cinema, space, starWars | Blue | 8 | snd |
 | 80 | rain | nature, weather | DodgerBlue | 6 | Unknown |
 | 81 | rainbow | nature, weather | MediumPurple | 6 | Brian T. Odom |
 | 82 | robot | character, space | Blue | 14 | Joan G. Stark |
@@ -435,10 +435,10 @@ Return one ASCII object by catalog ID.
 | 85 | sherlockHolmes | character | MediumSeaGreen | 8 | Harry Mason |
 | 86 | shield | item, medieval, weapon | Gold | 8 | Joan G. Stark |
 | 87 | snail | animal | SeaGreen | 5 | Hayley Jane Wakenshaw |
-| 88 | snoopy | cartoon, character | Black | 15 | Win Kang |
-| 89 | sonic | character, video game | Blue | 9 | Unknown |
-| 90 | spaceInvader | character, space, video game | Chartreuse | 8 | Unknown |
-| 91 | squidward | cartoon, character | Gray | 15 | LGB |
+| 88 | snoopy | cartoon, character, pet | Black | 15 | Win Kang |
+| 89 | sonic | character, videoGame | Blue | 9 | Unknown |
+| 90 | spaceInvader | character, space, videoGame | Chartreuse | 8 | Unknown |
+| 91 | squidward | cartoon, character, spongeBob | Gray | 15 | LGB |
 | 92 | stage | message | DarkOrange | 4 | Unknown |
 | 93 | stopSign | item | Red | 8 | Joan G. Stark |
 | 94 | sword | item, medieval, weapon | Gold | 7 | Veronica Karlsson |
@@ -448,12 +448,12 @@ Return one ASCII object by catalog ID.
 | 98 | thumbsUp | symbol | Goldenrod | 7 | Sebastian Stöcker |
 | 99 | tombstone | halloween, item | Gray | 5 | Hayley Jane Wakenshaw |
 | 100 | turtle | animal | LimeGreen | 6 | Unknown |
-| 101 | tweetieBird | bird, cartoon, character | Orange | 9 | Unknown |
+| 101 | tweetieBird | bird, cartoon, character, looneyTunes, pet | Orange | 9 | Unknown |
 | 102 | warning | message | DarkOrange | 4 | Unknown |
 | 103 | wasp | animal, flying, insect | Yellow | 5 | Stef00 |
 | 104 | welcome | message | DeepSkyBlue | 4 | Unknown |
 | 105 | whale | animal, sea | RoyalBlue | 6 | Riitta Rasimus |
-| 106 | yosemiteSam | cartoon, character | Red | 13 | Unknown |
+| 106 | yosemiteSam | cartoon, character, looneyTunes | Red | 13 | Unknown |
 
 ## Credits
 
@@ -483,11 +483,10 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
   - Stephane Abello
   - Veronica Karlsson
   - Win Kang
-
 ## Files
 
-- `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~32.9 KB.
-- `build/ascii-printer.js` is the readable build. Current size: ~36.6 KB.
+- `build/ascii-printer.min.js` is the recommended file to use in a page. Current size: ~32.8 KB.
+- `build/ascii-printer.js` is the readable build. Current size: ~36.3 KB.
 - `demo/index.html` is the browser demo page.
 - `demo/styles.css` contains the demo styling.
 - `demo/main.js` contains the demo interactions.
@@ -497,12 +496,6 @@ I didn't make the arts. At best, I just tweaked them. Here are the names of the 
 
 The build files are generated manually, so update both `source` and `build` when changing the library or helpers.
 Build sizes are approximate and will move as the catalog grows.
-
-## Design choices
-
-ASCII Printer keeps a tiny surface area: `AsciiPrinter` is the only global exposed by the script. Methods prefixed with `print` write to the console. Methods prefixed with `get` only return catalog data.
-
-Printed ASCII uses monospace text and preserves whitespace so the art keeps its shape as much as the browser console allows.
 
 ## License
 

@@ -1,5 +1,5 @@
 const catalog = AsciiPrinter.catalog.map((ascii, id) => ({ ...ascii, id }));
-const tags = AsciiPrinter.listTags();
+const tags = AsciiPrinter.listTags().sort((firstTag, secondTag) => firstTag.localeCompare(secondTag));
 
 const elements = {
     heroAscii: document.getElementById("hero-ascii"),
