@@ -2,23 +2,8 @@
 
 var asciis = [
   {
-    name: "airplane",
-    type: "thing",
-    art: String.raw`
- __
- \  \     _ _
-  \**\ ___\/ \
-X*#####*+^^\_\
-  o/\  \
-     \__\
-`,
-    color: "SteelBlue",
-    height: 6,
-    author: "",
-  },
-  {
     name: "alarm",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
      .-.-.
 ((  (__I__)  ))
@@ -37,7 +22,7 @@ X*#####*+^^\_\
   },
   {
     name: "alien",
-    type: "character",
+    tags: ["character","space"],
     art: String.raw`
  o            o
   \          /
@@ -55,7 +40,7 @@ X*#####*+^^\_\
   },
   {
     name: "anchor",
-    type: "thing",
+    tags: ["item","sea"],
     art: String.raw`
      _
     (_)
@@ -71,7 +56,7 @@ X*#####*+^^\_\
   },
   {
     name: "anteater",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
        _.---._    /\\
     ./'       "--'\//
@@ -87,7 +72,7 @@ X*#####*+^^\_\
   },
   {
     name: "armadillo",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
              _.-----__
           ,:::://///,:::-.
@@ -103,7 +88,7 @@ X*#####*+^^\_\
   },
   {
     name: "axe",
-    type: "thing",
+    tags: ["item","medieval","tool","weapon"],
     art: String.raw`
   ,  /\  .
  //'-||-'\\
@@ -122,7 +107,7 @@ X*#####*+^^\_\
   },
   {
     name: "bat",
-    type: "animal",
+    tags: ["animal","flying"],
     art: String.raw`
   /\                 /\
  / \'._   (\_/)   _.'/ \
@@ -138,7 +123,7 @@ X*#####*+^^\_\
   },
   {
     name: "bear",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
  .--.              .--.
 : (\ ". _......_ ." /) :
@@ -157,7 +142,7 @@ X*#####*+^^\_\
   },
   {
     name: "beaver",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
             ___
          .="   "=._.---.
@@ -173,7 +158,7 @@ X*#####*+^^\_\
   },
   {
     name: "bees",
-    type: "animal",
+    tags: ["animal","insect"],
     art: String.raw`
   ^^      .-=-=-=-.  ^^      ^^
        ('-=-=-=-=-=-')  ^^
@@ -191,7 +176,7 @@ X*#####*+^^\_\
   },
   {
     name: "bender",
-    type: "character",
+    tags: ["cartoon","character","futurama","space"],
     art: String.raw`
      ( )
       H
@@ -216,7 +201,7 @@ X*#####*+^^\_\
   },
   {
     name: "bigBird",
-    type: "character",
+    tags: ["bird","cartoon","character","sesameStreet"],
     art: String.raw`
    . -- .
   (      )
@@ -237,7 +222,7 @@ X*#####*+^^\_\
   },
   {
     name: "boat",
-    type: "thing",
+    tags: ["sea","vehicle"],
     art: String.raw`
        _    _
     __|_|__|_|__
@@ -251,7 +236,7 @@ X*#####*+^^\_\
   },
   {
     name: "bomb",
-    type: "thing",
+    tags: ["item","weapon"],
     art: String.raw`
              .
             \'/
@@ -274,7 +259,7 @@ X*#####*+^^\_\
   },
   {
     name: "book",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
 ,         ,
 |\\\\ ////|
@@ -293,7 +278,7 @@ X*#####*+^^\_\
   },
   {
     name: "bravo",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  ____    __  _  _  _____
 (  _ \(  _ \  /__\( \/ )(  _  )
@@ -306,7 +291,7 @@ X*#####*+^^\_\
   },
   {
     name: "bug",
-    type: "animal",
+    tags: ["animal","insect"],
     art: String.raw`
   .   .
    \ /
@@ -321,7 +306,7 @@ X*#####*+^^\_\
   },
   {
     name: "bye",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  _  _  ____
 (  _ \( \/ )( ___)
@@ -334,7 +319,7 @@ X*#####*+^^\_\
   },
   {
     name: "cake",
-    type: "thing",
+    tags: ["food"],
     art: String.raw`
        , , , , , ,
        |_|_|_|_|_|
@@ -353,7 +338,7 @@ X*#####*+^^\_\
   },
   {
     name: "camera",
-    type: "thing",
+    tags: ["item","retro"],
     art: String.raw`
       ____
  _[]_/____\__n_
@@ -369,7 +354,7 @@ X*#####*+^^\_\
   },
   {
     name: "cat",
-    type: "animal",
+    tags: ["animal","pet"],
     art: String.raw`
  )\   _,
  | "^" (
@@ -390,7 +375,7 @@ c{{i.}}=oo-^
   },
   {
     name: "caterpillar",
-    type: "animal",
+    tags: ["animal","insect"],
     art: String.raw`
 \_/-.--.--.--.--.--.
 (")__)__)__)__)__)__)
@@ -402,7 +387,7 @@ c{{i.}}=oo-^
   },
   {
     name: "cheshireCat",
-    type: "character",
+    tags: ["cartoon","character","disney"],
     art: String.raw`
            .'\   /'.
          .'.-.'-'.-.'.
@@ -423,7 +408,7 @@ c{{i.}}=oo-^
   },
   {
     name: "coffee",
-    type: "thing",
+    tags: ["drink","item"],
     art: String.raw`
       )  (
      (   ) )
@@ -441,7 +426,7 @@ c{{i.}}=oo-^
   },
   {
     name: "cookieMonster",
-    type: "character",
+    tags: ["cartoon","character","sesameStreet"],
     art: String.raw`
     (o)(o)
   w"      "w
@@ -456,7 +441,7 @@ W            W
   },
   {
     name: "crab",
-    type: "animal",
+    tags: ["animal","sea"],
     art: String.raw`
    __       __
   / <'     '> \
@@ -473,7 +458,7 @@ W            W
   },
   {
     name: "crocodile",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
             .-._   _ _ _ _ _ _ _ _
  .-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.
@@ -491,7 +476,7 @@ W            W
   },
   {
     name: "crown",
-    type: "thing",
+    tags: ["item","medieval","symbol"],
     art: String.raw`
        o
     o^/|\^o
@@ -507,7 +492,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "deer",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
     (      )
     ))    ((
@@ -531,7 +516,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "dev",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  ____  _  _
 (  _ \( ___)( \/ )
@@ -544,7 +529,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "devil",
-    type: "character",
+    tags: ["character","halloween"],
     art: String.raw`
   ,  ,  , , ,
  <(__)> | | |
@@ -559,7 +544,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "dog",
-    type: "animal",
+    tags: ["animal","pet"],
     art: String.raw`
             /)-_-(\
              (o o)
@@ -576,7 +561,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "duck",
-    type: "animal",
+    tags: ["animal","bird","pet"],
     art: String.raw`
       ,~~.
      (  9 )-_,
@@ -592,7 +577,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "einstein",
-    type: "character",
+    tags: ["character","history"],
     art: String.raw`
       -''--.
       _'>   '\.-'/
@@ -610,7 +595,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "electricGuitar",
-    type: "thing",
+    tags: ["item","music"],
     art: String.raw`
      _
     / 7
@@ -633,7 +618,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "elephant",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
    ___      ___
   /   \____/   \
@@ -653,7 +638,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "error",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  ____  ____  _____  ____
 ( ___)(  _ \(  _ \(  _  )(  _ \
@@ -666,7 +651,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "flamingo",
-    type: "animal",
+    tags: ["animal","bird"],
     art: String.raw`
          __
         /('o
@@ -688,7 +673,7 @@ o o
   },
   {
     name: "flintstones",
-    type: "character",
+    tags: ["cartoon","character"],
     art: String.raw`
   \/________________
  /     _____________)
@@ -708,7 +693,7 @@ __|_________\______/
   },
   {
     name: "floppyDisk",
-    type: "thing",
+    tags: ["item","retro"],
     art: String.raw`
  _________________
 | | ___________ |o|
@@ -727,7 +712,7 @@ __|_________\______/
   },
   {
     name: "flower",
-    type: "thing",
+    tags: ["nature","plant"],
     art: String.raw`
   _  _
  (_\/_)
@@ -743,7 +728,7 @@ __\||/__
   },
   {
     name: "folder",
-    type: "thing",
+    tags: ["item","retro"],
     art: String.raw`
  _____
 /     \_____
@@ -759,7 +744,7 @@ __\||/__
   },
   {
     name: "fox",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
  /\   /\
 //\\_//\\     __/\
@@ -777,7 +762,7 @@ __\||/__
   },
   {
     name: "frog",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
        _   _
       (o)-(o)
@@ -792,7 +777,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "frontDoor",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
    ________
   / ______ \
@@ -813,7 +798,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "garfield",
-    type: "character",
+    tags: ["cartoon","character","pet"],
     art: String.raw`
      .-.,     ,.-.
     /:::\\   //:::\
@@ -835,7 +820,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "gift",
-    type: "thing",
+    tags: ["christmas","item"],
     art: String.raw`
     _  _
  __(_\/_)__
@@ -849,7 +834,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "goldfish",
-    type: "animal",
+    tags: ["animal","sea"],
     art: String.raw`
       /'·..
      /,....':·
@@ -864,7 +849,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "gun",
-    type: "thing",
+    tags: ["item","weapon"],
     art: String.raw`
     _  ___________=__
     \\@([____]______()
@@ -879,7 +864,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "heart",
-    type: "thing",
+    tags: ["symbol"],
     art: String.raw`
 ,d88b.d88b,
 88888888888
@@ -893,7 +878,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "hedgehog",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
   .|||||||||.
  |||||||||||||
@@ -907,7 +892,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "hello",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  _   _  ____  __    __    _____
 ( )_( )( ___)(  )  (  )  (  _  )
@@ -920,7 +905,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "helloWorld",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  _   _  ____  __    __    _____    _    _  _____  ____  __    ____
 ( )_( )( ___)(  )  (  )  (  _  )  ( \/\/ )(  _  )(  _ \(  )  (  _ \
@@ -933,7 +918,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "hippo",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
      c~~p ,---------.
 ,---'oo  )           \
@@ -949,7 +934,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "homer",
-    type: "character",
+    tags: ["cartoon","character","simpsons"],
     art: String.raw`
     ___
    //_\\_
@@ -972,7 +957,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "hotAirBalloon",
-    type: "thing",
+    tags: ["flying","vehicle"],
     art: String.raw`
     _..==--.._
   .'_|:::|' _|:.
@@ -996,7 +981,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "impossibleTriangle",
-    type: "thing",
+    tags: ["symbol"],
     art: String.raw`
                     .   .xXXXX+.   .
                .   ..   xXXXX+.-   ..   .
@@ -1021,7 +1006,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "impossibleTrident",
-    type: "thing",
+    tags: ["symbol"],
     art: String.raw`
    _______
  /|       |
@@ -1045,7 +1030,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "info",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  _  _  ____  _____
 (_  _)( \( )( ___)(  _  )
@@ -1058,7 +1043,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "kermit",
-    type: "character",
+    tags: ["cartoon","character","sesameStreet"],
     art: String.raw`
        .---.     .---.
       ( -o- )---( -o- )
@@ -1080,7 +1065,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "key",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
   .---.
  /    |\________________
@@ -1094,7 +1079,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "knight",
-    type: "character",
+    tags: ["character","medieval"],
     art: String.raw`
     !
    .-.
@@ -1113,7 +1098,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "lightBulb",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
  .-""-.
 /  __  \
@@ -1129,7 +1114,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "lion",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
             o00000000o
            o0/\0000/\0o
@@ -1151,7 +1136,7 @@ o.       0000/ b  d \000
   },
   {
     name: "loading",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  __    _____    __    ____  ____  _  _  ___
 (  )  (  _  )  /__\  (  _ \(_  _)( \( )/ __)
@@ -1164,7 +1149,7 @@ o.       0000/ b  d \000
   },
   {
     name: "mailbox",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
         __
        [_ |
@@ -1185,7 +1170,7 @@ o.       0000/ b  d \000
   },
   {
     name: "marbles",
-    type: "animal",
+    tags: ["animal","pet"],
     art: String.raw`
          __
         /  \
@@ -1204,7 +1189,7 @@ _   /  '   |
   },
   {
     name: "marmot",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
        (>\---/<)
        ,'     '.
@@ -1225,7 +1210,7 @@ c /    \         |  |
   },
   {
     name: "maryPoppins",
-    type: "character",
+    tags: ["cartoon","character","cinema","disney"],
     art: String.raw`
          _
       .-' '-.
@@ -1251,7 +1236,7 @@ c /    \         |  |
   },
   {
     name: "monaLisa",
-    type: "character",
+    tags: ["art","character"],
     art: String.raw`
           ____
         o8%8888,
@@ -1277,7 +1262,7 @@ c /    \         |  |
   },
   {
     name: "monkey",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
       .="=.
     _/.-.-.\_     _
@@ -1298,7 +1283,7 @@ c /    \         |  |
   },
   {
     name: "mountain",
-    type: "thing",
+    tags: ["christmas","nature"],
     art: String.raw`
           /\
          /**\
@@ -1316,7 +1301,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "mouse",
-    type: "animal",
+    tags: ["animal","pet"],
     art: String.raw`
 (q\_/p)
  /. .\.-""""-.      __
@@ -1330,7 +1315,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "parrot",
-    type: "animal",
+    tags: ["animal","bird","flying","pet"],
     art: String.raw`
                           .
                           | \/|
@@ -1355,7 +1340,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "pig",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
        9
   ,--.-'-,--.
@@ -1373,7 +1358,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "pinguin",
-    type: "animal",
+    tags: ["animal","bird"],
     art: String.raw`
    __
 -=(o '.
@@ -1388,7 +1373,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "pinkPanther",
-    type: "character",
+    tags: ["cartoon","character"],
     art: String.raw`
  .--.             .--.
 ( ('\\.---------.//') )
@@ -1409,7 +1394,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "plane",
-    type: "thing",
+    tags: ["flying","vehicle"],
     art: String.raw`
             __/\__
            '==/\=='
@@ -1426,7 +1411,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "production",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ____  ____  _____  ____
 (  _ \(  _ \(  _  )(  _ \
@@ -1439,7 +1424,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "r2d2",
-    type: "character",
+    tags: ["character","cinema","space","starWars"],
     art: String.raw`
     .---.
   .'_:___".
@@ -1456,7 +1441,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rain",
-    type: "thing",
+    tags: ["nature","weather"],
     art: String.raw`
       __   _
     _(  )_( )_
@@ -1471,7 +1456,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rainbow",
-    type: "thing",
+    tags: ["nature","weather"],
     art: String.raw`
      _.-""""'-._
    ,' _-""""'-_ '.
@@ -1486,7 +1471,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "robot",
-    type: "character",
+    tags: ["character","space"],
     art: String.raw`
        .-T-.
       /     \
@@ -1509,7 +1494,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rocket",
-    type: "thing",
+    tags: ["space","vehicle"],
     art: String.raw`
    A
   / \
@@ -1527,7 +1512,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "santaClaus",
-    type: "character",
+    tags: ["character","christmas"],
     art: String.raw`
    ,--.
   ()   \
@@ -1546,7 +1531,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "sherlockHolmes",
-    type: "character",
+    tags: ["character"],
     art: String.raw`
    ,_
  ,'  '\,_
@@ -1563,7 +1548,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "shield",
-    type: "thing",
+    tags: ["item","medieval","weapon"],
     art: String.raw`
 |'-._/\_.-'|
 |    ||    |
@@ -1580,7 +1565,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "snail",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
     .----.   @   @
    / .-"-.'.  \v/
@@ -1594,7 +1579,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "snoopy",
-    type: "character",
+    tags: ["cartoon","character","pet"],
     art: String.raw`
           ,-~~-.___.
          / ()=(()   \
@@ -1618,7 +1603,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "sonic",
-    type: "character",
+    tags: ["character","videoGame"],
     art: String.raw`
           .,
 .      _,'f----.._
@@ -1636,7 +1621,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "spaceInvader",
-    type: "character",
+    tags: ["character","space","videoGame"],
     art: String.raw`
          __
        _|  |_
@@ -1654,7 +1639,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "squidward",
-    type: "character",
+    tags: ["cartoon","character","spongeBob"],
     art: String.raw`
      .--'''''''''--.
    '      .---.      '.
@@ -1678,7 +1663,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "stage",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  ___  ____   __    ___  ____
 / __)(_  _) /__\  / __)( ___)
@@ -1691,7 +1676,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "stopSign",
-    type: "thing",
+    tags: ["item"],
     art: String.raw`
     .-------,
   .'         '.
@@ -1708,7 +1693,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "sword",
-    type: "thing",
+    tags: ["item","medieval","weapon"],
     art: String.raw`
 ( \
  \ \/)
@@ -1724,7 +1709,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "teapot",
-    type: "thing",
+    tags: ["drink","item"],
     art: String.raw`
                        (
             _           ) )
@@ -1745,7 +1730,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "teckel",
-    type: "animal",
+    tags: ["animal","pet"],
     art: String.raw`
                         __
  ,                    ," e'--o
@@ -1762,7 +1747,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "television",
-    type: "thing",
+    tags: ["item","retro"],
     art: String.raw`
             o
         o   |
@@ -1785,7 +1770,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "thumbsUp",
-    type: "thing",
+    tags: ["symbol"],
     art: String.raw`
       _
      /(|
@@ -1801,7 +1786,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "tombstone",
-    type: "thing",
+    tags: ["halloween","item"],
     art: String.raw`
       ,-=-.
      /  +  \
@@ -1815,7 +1800,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "turtle",
-    type: "animal",
+    tags: ["animal"],
     art: String.raw`
                 __
      .,-;-;-,. /'_\
@@ -1830,7 +1815,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "tweetieBird",
-    type: "character",
+    tags: ["bird","cartoon","character","looneyTunes","pet"],
     art: String.raw`
     .-"-.
    /  - -\
@@ -1848,7 +1833,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "warning",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  _    _    __    ____  _  _  ____  _  _  ___
 ( \/\/ )  /__\  (  _ \( \( )(_  _)( \( )/ __)
@@ -1861,7 +1846,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "wasp",
-    type: "animal",
+    tags: ["animal","flying","insect"],
     art: String.raw`
     _  _
    | )/ )
@@ -1875,7 +1860,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "welcome",
-    type: "message",
+    tags: ["message"],
     art: String.raw`
  _    _  ____  __    ___  _____  __  __  ____
 ( \/\/ )( ___)(  )  / __)(  _  )(  \/  )( ___)
@@ -1888,7 +1873,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "whale",
-    type: "animal",
+    tags: ["animal","sea"],
     art: String.raw`
        .
       ":"
@@ -1903,7 +1888,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "yosemiteSam",
-    type: "character",
+    tags: ["cartoon","character","looneyTunes"],
     art: String.raw`
         ___
     .-''   ''-.

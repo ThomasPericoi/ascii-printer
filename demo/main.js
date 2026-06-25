@@ -1,12 +1,12 @@
 const catalog = AsciiPrinter.catalog.map((ascii, id) => ({ ...ascii, id }));
-const types = AsciiPrinter.listTypes();
+const tags = AsciiPrinter.listTags();
 
 const elements = {
     heroAscii: document.getElementById("hero-ascii"),
     heroCommand: document.getElementById("hero-command"),
     versionStat: document.getElementById("version-stat"),
     countStat: document.getElementById("count-stat"),
-    categoryStat: document.getElementById("category-stat"),
+    tagStat: document.getElementById("tag-stat"),
     selectedName: document.getElementById("selected-name"),
     selectedMeta: document.getElementById("selected-meta"),
     asciiPreview: document.getElementById("ascii-preview"),
@@ -14,7 +14,7 @@ const elements = {
     copyActiveCommand: document.getElementById("copy-active-command"),
     copyStatus: document.getElementById("copy-status"),
     asciiSelect: document.getElementById("ascii-select"),
-    categorySelect: document.getElementById("category-select"),
+    tagSelect: document.getElementById("tag-select"),
     searchInput: document.getElementById("search-input"),
     colorPicker: document.getElementById("color-picker"),
     colorInput: document.getElementById("color-input"),
@@ -23,7 +23,7 @@ const elements = {
     printSelected: document.getElementById("print-selected"),
     randomSelected: document.getElementById("random-selected"),
     catalogSearch: document.getElementById("catalog-search"),
-    catalogCategory: document.getElementById("catalog-category"),
+    catalogTag: document.getElementById("catalog-tag"),
     catalogCount: document.getElementById("catalog-count"),
     catalogBody: document.getElementById("catalog-body"),
 };
@@ -33,10 +33,10 @@ let selectedId = catalog.find((ascii) => ascii.name === "hello")?.id || 0;
 function initialize() {
     elements.versionStat.textContent = `v${AsciiPrinter.version}`;
     elements.countStat.textContent = String(catalog.length);
-    elements.categoryStat.textContent = String(types.length);
+    elements.tagStat.textContent = String(tags.length);
 
-    fillCategorySelect(elements.categorySelect, "all");
-    fillCategorySelect(elements.catalogCategory, "all");
+    fillTagSelect(elements.tagSelect, "all");
+    fillTagSelect(elements.catalogTag, "all");
     fillAsciiSelect();
     syncSelection(selectedId);
     renderHero();
@@ -55,7 +55,7 @@ function bindEvents() {
         syncSelection(Number(elements.asciiSelect.value));
     });
 
-    elements.categorySelect.addEventListener("change", () => {
+    elements.tagSelect.addEventListener("change", () => {
         fillAsciiSelect();
         syncSelection(Number(elements.asciiSelect.value));
     });
@@ -65,7 +65,7 @@ function bindEvents() {
         const match = catalog.find((ascii) => ascii.name.toLowerCase().includes(query));
 
         if (query && match) {
-            elements.categorySelect.value = "all";
+            elements.tagSelect.value = "all";
             fillAsciiSelect();
             syncSelection(match.id);
         }
@@ -97,10 +97,10 @@ function bindEvents() {
     });
 
     elements.randomSelected.addEventListener("click", () => {
-        const category = elements.categorySelect.value;
-        const pool = category === "all"
+        const tag = elements.tagSelect.value;
+        const pool = tag === "all"
             ? catalog
-            : catalog.filter((ascii) => ascii.type === category);
+            : catalog.filter((ascii) => ascii.tags.includes(tag));
         const ascii = randomFrom(pool);
         syncSelection(ascii.id);
         AsciiPrinter.printByName(ascii.name, getPrintOptions());
@@ -108,27 +108,27 @@ function bindEvents() {
     });
 
     elements.catalogSearch.addEventListener("input", renderCatalog);
-    elements.catalogCategory.addEventListener("change", renderCatalog);
+    elements.catalogTag.addEventListener("change", renderCatalog);
 }
 
-function fillCategorySelect(select, selectedValue) {
+function fillTagSelect(select, selectedValue) {
     select.innerHTML = [
-        `<option value="all">All categories</option>`,
-        ...types.map((type) => `<option value="${escapeHtml(type)}">${escapeHtml(formatCategory(type))}</option>`),
+        `<option value="all">All tags</option>`,
+        ...tags.map((tag) => `<option value="${escapeHtml(tag)}">${escapeHtml(formatTag(tag))}</option>`),
     ].join("");
     select.value = selectedValue;
 }
 
 function fillAsciiSelect() {
-    const category = elements.categorySelect.value;
+    const tag = elements.tagSelect.value;
     const selected = getSelectedAscii();
     const options = catalog
-        .filter((ascii) => category === "all" || ascii.type === category)
+        .filter((ascii) => tag === "all" || ascii.tags.includes(tag))
         .map((ascii) => `<option value="${ascii.id}">${escapeHtml(ascii.name)}</option>`);
 
     elements.asciiSelect.innerHTML = options.join("");
 
-    if (selected && (category === "all" || selected.type === category)) {
+    if (selected && (tag === "all" || selected.tags.includes(tag))) {
         elements.asciiSelect.value = String(selected.id);
     }
 }
@@ -141,7 +141,7 @@ function syncSelection(id) {
 
 function updatePreview(ascii) {
     elements.selectedName.textContent = ascii.name;
-    elements.selectedMeta.textContent = `${formatCategory(ascii.type)} · ${ascii.height} lines · ${ascii.author || "Unknown"}`;
+    elements.selectedMeta.textContent = `${formatTags(ascii.tags)} · ${ascii.height} lines · ${ascii.author || "Unknown"}`;
     elements.asciiPreview.textContent = ascii.art.trimEnd();
     elements.asciiPreview.setAttribute("aria-label", `${ascii.name} ASCII art preview`);
     syncColorPicker(getPreviewColor(ascii));
@@ -168,11 +168,11 @@ function renderHero() {
 
 function renderCatalog() {
     const query = elements.catalogSearch.value.trim().toLowerCase();
-    const category = elements.catalogCategory.value;
+    const tag = elements.catalogTag.value;
     const selected = catalog.filter((ascii) => {
-        const matchesCategory = category === "all" || ascii.type === category;
+        const matchesTag = tag === "all" || ascii.tags.includes(tag);
         const matchesQuery = !query || ascii.name.toLowerCase().includes(query);
-        return matchesCategory && matchesQuery;
+        return matchesTag && matchesQuery;
     });
 
     elements.catalogCount.textContent = `${selected.length} shown`;
@@ -180,7 +180,7 @@ function renderCatalog() {
         <tr>
             <th scope="row">${ascii.id}</th>
             <td><button class="name-button" type="button" data-id="${ascii.id}" aria-label="Preview ${escapeHtml(ascii.name)} in the playground"><code class="language-text">${escapeHtml(ascii.name)}</code></button></td>
-            <td>${escapeHtml(ascii.type)}</td>
+            <td>${escapeHtml(formatTags(ascii.tags))}</td>
             <td><span class="color-chip"><span class="color-dot" style="--dot-color: ${escapeHtml(ascii.color)}" aria-hidden="true"></span>${escapeHtml(ascii.color)}</span></td>
             <td>${escapeHtml(ascii.height)}</td>
             <td>${escapeHtml(ascii.author || "Unknown")}</td>
@@ -189,7 +189,7 @@ function renderCatalog() {
 
     elements.catalogBody.querySelectorAll("[data-id]").forEach((button) => {
         button.addEventListener("click", () => {
-            elements.categorySelect.value = "all";
+            elements.tagSelect.value = "all";
             fillAsciiSelect();
             syncSelection(Number(button.dataset.id));
             document.getElementById("playground").scrollIntoView({ behavior: "smooth" });
@@ -250,8 +250,12 @@ function randomFrom(items) {
     return items[Math.floor(Math.random() * items.length)];
 }
 
-function formatCategory(category) {
-    return category.charAt(0).toUpperCase() + category.slice(1);
+function formatTags(tags) {
+    return tags.map(formatTag).join(", ");
+}
+
+function formatTag(tag) {
+    return tag.charAt(0).toUpperCase() + tag.slice(1);
 }
 
 function escapeHtml(value) {

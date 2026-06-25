@@ -8,8 +8,8 @@
     <text x="420" y="215" fill="#080808" font-family="Arial, sans-serif" font-size="76" font-weight="800">ASCII Printer</text>
     <text x="424" y="282" fill="#080808" font-family="monospace" font-size="31" font-weight="700">Tiny console art library</text>
     <line x1="120" y1="458" x2="1080" y2="458" stroke="#080808" stroke-width="4"/>
-    <text x="120" y="570" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printRandom("message");</text>
+    <text x="120" y="570" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printRandom("bird");</text>
     <text x="120" y="650" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.listNames("animal");</text>
     <text x="120" y="730" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printByName("hello");</text>
-    <text x="120" y="1000" fill="#080808" font-family="Arial, sans-serif" font-size="30" font-weight="800">103 ASCII arts · 4 categories · 31.2 KB minified</text>
+    <text x="120" y="1000" fill="#080808" font-family="Arial, sans-serif" font-size="30" font-weight="800">107 ASCII arts · 28 tags · 32.9 KB minified</text>
 </svg>

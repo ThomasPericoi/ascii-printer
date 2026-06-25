@@ -34,16 +34,24 @@ function getAsciiStyle(ascii, options = {}) {
   return styles.join(" ");
 }
 
-function listAsciiTypes() {
-  const preferredOrder = ["animal", "character", "thing", "message"];
-  const types = [...new Set(asciis.map((ascii) => ascii.type))];
+function getAsciiTags(ascii) {
+  return ascii.tags || [];
+}
 
-  return types.sort((firstType, secondType) => {
-    const firstIndex = preferredOrder.indexOf(firstType);
-    const secondIndex = preferredOrder.indexOf(secondType);
+function hasAsciiTag(ascii, tag) {
+  return tag === "all" || getAsciiTags(ascii).includes(tag);
+}
+
+function listAsciiTags() {
+  const preferredOrder = ["animal", "character", "item", "message"];
+  const tags = [...new Set(asciis.flatMap(getAsciiTags))];
+
+  return tags.sort((firstTag, secondTag) => {
+    const firstIndex = preferredOrder.indexOf(firstTag);
+    const secondIndex = preferredOrder.indexOf(secondTag);
 
     if (firstIndex === -1 && secondIndex === -1) {
-      return firstType.localeCompare(secondType);
+      return firstTag.localeCompare(secondTag);
     }
 
     if (firstIndex === -1) {
@@ -58,23 +66,23 @@ function listAsciiTypes() {
   });
 }
 
-function listAsciiNames(category = "all") {
+function listAsciiNames(tag = "all") {
   const selectedAsciis =
-    category === "all"
+    tag === "all"
       ? asciis
-      : asciis.filter((ascii) => ascii.type === category);
+      : asciis.filter((ascii) => hasAsciiTag(ascii, tag));
 
   return selectedAsciis.map((ascii) => ascii.name);
 }
 
-function listAsciis(category = "all") {
+function listAsciis(tag = "all") {
   return asciis
     .map((ascii, id) => ({
       id,
       name: ascii.name,
-      category: ascii.type,
+      tags: getAsciiTags(ascii),
     }))
-    .filter((ascii) => category === "all" || ascii.category === category);
+    .filter((ascii) => tag === "all" || ascii.tags.includes(tag));
 }
 
 function printAsciiCredit(ascii, options = {}) {
@@ -127,8 +135,8 @@ function printAsciiSearch(query, options = {}) {
   printAsciiByName(selectedAscii.name, options);
 }
 
-function printRandomAscii(category = "all", options = {}) {
-  var selectedAsciis = asciis.filter((ascii) => ascii.type === category);
+function printRandomAscii(tag = "all", options = {}) {
+  var selectedAsciis = asciis.filter((ascii) => hasAsciiTag(ascii, tag));
   selectedAsciis.length < 1 && (selectedAsciis = Object.values(asciis));
   const randomAscii = getRandomValueFromArray(selectedAsciis);
   printAsciiByName(randomAscii.name, options);
@@ -162,7 +170,7 @@ global.AsciiPrinter = {
   },
   getById: getAsciiById,
   getByName: getAsciiByName,
-  listTypes: listAsciiTypes,
+  listTags: listAsciiTags,
   listNames: listAsciiNames,
   list: listAsciis,
   printById: printAsciiById,

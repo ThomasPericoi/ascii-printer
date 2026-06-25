@@ -115,11 +115,11 @@
                 <p>ASCII arts</p>
             </article>
             <article>
-                <span id="category-stat">0</span>
-                <p>Categories</p>
+                <span id="tag-stat">0</span>
+                <p>Tags</p>
             </article>
             <article>
-                <span>31.2 KB</span>
+                <span>32.9 KB</span>
                 <p>Minified build</p>
             </article>
             <article class="stat-github">
@@ -158,9 +158,9 @@
                 <pre><code class="language-html">&lt;script src="build/ascii-printer.min.js"&gt;&lt;/script&gt;</code></pre>
                 <h3>Call the API</h3>
                 <pre><code class="language-js">AsciiPrinter.printByName("pinkPanther");
-AsciiPrinter.printRandom("character");
+AsciiPrinter.printRandom("bird");
 AsciiPrinter.printRandomFrom(["heart", "key", "lightBulb"]);
-AsciiPrinter.listNames("animal");
+AsciiPrinter.listNames("bird");
 AsciiPrinter.version;</code></pre>
             </div>
         </section>
@@ -185,11 +185,11 @@ AsciiPrinter.version;</code></pre>
                         <tr><td><code class="language-js">AsciiPrinter.printById()</code></td><td>Prints one ASCII by ID.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.printByName()</code></td><td>Prints one ASCII by exact name.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.printBySearch()</code></td><td>Prints the first ASCII whose name contains the search text.</td></tr>
-                        <tr><td><code class="language-js">AsciiPrinter.printRandom()</code></td><td>Prints a random ASCII, optionally filtered by category.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.printRandom()</code></td><td>Prints a random ASCII, optionally filtered by tag.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.printRandomFrom()</code></td><td>Prints a random ASCII from a list of names.</td></tr>
-                        <tr><td><code class="language-js">AsciiPrinter.listTypes()</code></td><td>Returns the available categories.</td></tr>
-                        <tr><td><code class="language-js">AsciiPrinter.listNames()</code></td><td>Returns ASCII names, optionally filtered by category.</td></tr>
-                        <tr><td><code class="language-js">AsciiPrinter.list()</code></td><td>Returns ASCII metadata with <code>id</code>, <code>name</code>, and <code>category</code>.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.listTags()</code></td><td>Returns the available tags.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.listNames()</code></td><td>Returns ASCII names, optionally filtered by tag.</td></tr>
+                        <tr><td><code class="language-js">AsciiPrinter.list()</code></td><td>Returns ASCII metadata with <code>id</code>, <code>name</code>, and <code>tags</code>.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.getById()</code></td><td>Returns one ASCII by ID without printing it.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.getByName()</code></td><td>Returns one ASCII by exact name without printing it.</td></tr>
                         <tr><td><code class="language-js">AsciiPrinter.version</code></td><td>Returns the library version.</td></tr>
@@ -201,29 +201,33 @@ AsciiPrinter.version;</code></pre>
             <div class="doc-grid">
                 <article class="doc-card doc-card-wide">
                     <p class="eyebrow">Print</p>
-                    <div class="method-grid">
-                        <div>
-                            <h3>Print one</h3>
-                            <p>Use an ID, an exact name, or the first matching search result.</p>
-                            <pre><code class="language-js">AsciiPrinter.printByName("bigBird");
-AsciiPrinter.printById(74);
-AsciiPrinter.printBySearch("panther");</code></pre>
-                        </div>
-                        <div>
-                            <h3>Print random</h3>
-                            <p>Print from the full catalog, one category, or a curated list of names.</p>
-                            <pre><code class="language-js">AsciiPrinter.printRandom();
-AsciiPrinter.printRandom("message");</code></pre>
-                            <pre><code class="language-js">AsciiPrinter.printRandomFrom([
+                    <h3>Print by name</h3>
+                    <p><code class="language-js">AsciiPrinter.printByName(name, options)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.printByName("bigBird");</code></pre>
+                    <h3>Print by ID</h3>
+                    <p><code class="language-js">AsciiPrinter.printById(id, options)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.printById(73);</code></pre>
+                    <p>IDs are catalog indexes and can change when the library is reordered.</p>
+                    <h3>Print by search</h3>
+                    <p><code class="language-js">AsciiPrinter.printBySearch(query, options)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.printBySearch("panther");</code></pre>
+                    <p>Search prints the first ASCII whose name contains the query.</p>
+                    <h3>Print random</h3>
+                    <p><code class="language-js">AsciiPrinter.printRandom(tag, options)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.printRandom();
+AsciiPrinter.printRandom("bird");</code></pre>
+                    <p>The tag parameter is optional. If no ASCII matches the tag, the full catalog is used.</p>
+                    <h3>Print random from names</h3>
+                    <p><code class="language-js">AsciiPrinter.printRandomFrom(names, options)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.printRandomFrom([
   "heart",
   "key",
   "lightBulb"
 ]);</code></pre>
-                        </div>
-                        <div>
-                            <h3>Print options</h3>
-                            <p>Every print method accepts the same optional object.</p>
-                            <pre><code class="language-js">AsciiPrinter.printByName("frog", {
+                    <p>Unknown names are ignored. If nothing matches, ASCII Printer prints a warning.</p>
+                    <h3>Print options</h3>
+                    <p>All print methods accept the same optional object.</p>
+                    <pre><code class="language-js">AsciiPrinter.printByName("frog", {
   color: "HotPink"
 });
 
@@ -231,40 +235,49 @@ AsciiPrinter.printByName("frog", {
   color: false,
   credits: true
 });</code></pre>
-                            <dl>
-                                <dt><code>color</code></dt>
-                                <dd>Overrides the catalog color. Use <code>false</code> for the browser console default color.</dd>
-                                <dt><code>credits</code></dt>
-                                <dd>Prints the ASCII author after the art. Unknown authors display as <code>Unknown</code>.</dd>
-                            </dl>
-                        </div>
-                    </div>
+                    <dl>
+                        <dt><code>color</code></dt>
+                        <dd>Overrides the catalog color with any browser-supported CSS color. Use <code>false</code> to keep the console default.</dd>
+                        <dt><code>credits</code></dt>
+                        <dd>Prints the ASCII author after the art. Unknown authors display as <code>Unknown</code>.</dd>
+                    </dl>
                 </article>
 
                 <article class="doc-card">
                     <p class="eyebrow">List</p>
-                    <h3>List types</h3>
-                    <pre><code class="language-js">AsciiPrinter.listTypes();
-// ["animal", "character", "thing", "message"]</code></pre>
+                    <h3>List tags</h3>
+                    <p><code class="language-js">AsciiPrinter.listTags()</code></p>
+                    <pre><code class="language-js">AsciiPrinter.listTags();</code></pre>
                     <h3>List names</h3>
+                    <p><code class="language-js">AsciiPrinter.listNames(tag)</code></p>
                     <pre><code class="language-js">AsciiPrinter.listNames();
-AsciiPrinter.listNames("animal");</code></pre>
+AsciiPrinter.listNames("bird");</code></pre>
                     <h3>List metadata</h3>
-                    <pre><code class="language-js">AsciiPrinter.list("message");</code></pre>
+                    <p><code class="language-js">AsciiPrinter.list(tag)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.list();
+AsciiPrinter.list("bird");</code></pre>
                 </article>
 
                 <article class="doc-card">
                     <p class="eyebrow">Get</p>
-                    <h3>Get full entries</h3>
-                    <p>Get methods return data without printing.</p>
-                    <pre><code class="language-js">AsciiPrinter.getByName("pinkPanther");
-AsciiPrinter.getById(44);</code></pre>
-                    <h3>Metadata</h3>
-                    <pre><code class="language-js">AsciiPrinter.version;
-AsciiPrinter.catalog;</code></pre>
+                    <h3>Get by name</h3>
+                    <p><code class="language-js">AsciiPrinter.getByName(name)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.getByName("frog");</code></pre>
+                    <h3>Get by ID</h3>
+                    <p><code class="language-js">AsciiPrinter.getById(id)</code></p>
+                    <pre><code class="language-js">AsciiPrinter.getById(43);</code></pre>
                 </article>
 
-                <article class="doc-card doc-card-wide">
+                <article class="doc-card">
+                    <p class="eyebrow">Catalog data</p>
+                    <h3>Version</h3>
+                    <pre><code class="language-js">AsciiPrinter.version;</code></pre>
+                    <h3>Full catalog</h3>
+                    <pre><code class="language-js">AsciiPrinter.catalog;</code></pre>
+                    <p>Each catalog entry contains <code>name</code>, <code>tags</code>, <code>art</code>, <code>color</code>, <code>height</code>, and <code>author</code>.</p>
+                </article>
+
+                <article class="doc-card">
                     <p class="eyebrow">Project files</p>
                     <h3>Build files</h3>
                     <p>The readable and minified builds are generated manually from <code>source</code>. <code class="language-js">AsciiPrinter</code> is the only exposed global.</p>
@@ -303,8 +316,8 @@ build/ascii-printer.min.js</code></pre>
                         <select id="ascii-select"></select>
                     </label>
                     <label>
-                        <span>Category</span>
-                        <select id="category-select"></select>
+                        <span>Tag</span>
+                        <select id="tag-select"></select>
                     </label>
                     <label>
                         <span>Search</span>
@@ -340,8 +353,8 @@ build/ascii-printer.min.js</code></pre>
             <div class="catalog-tools">
                 <label class="sr-only" for="catalog-search">Filter catalog by name</label>
                 <input id="catalog-search" type="search" placeholder="Filter by name">
-                <label class="sr-only" for="catalog-category">Filter catalog by category</label>
-                <select id="catalog-category"></select>
+                <label class="sr-only" for="catalog-tag">Filter catalog by tag</label>
+                <select id="catalog-tag"></select>
                 <span id="catalog-count" role="status" aria-live="polite">0 shown</span>
             </div>
             <div class="catalog-table-wrap">
@@ -351,7 +364,7 @@ build/ascii-printer.min.js</code></pre>
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Category</th>
+                            <th scope="col">Tags</th>
                             <th scope="col">Color</th>
                             <th scope="col">Height</th>
                             <th scope="col">Author</th>
