@@ -22,7 +22,7 @@ var asciis = [
   },
   {
     name: "alien",
-    tags: ["character","space"],
+    tags: ["character", "space"],
     art: String.raw`
  o            o
   \          /
@@ -40,7 +40,7 @@ var asciis = [
   },
   {
     name: "anchor",
-    tags: ["item","sea"],
+    tags: ["item", "sea"],
     art: String.raw`
      _
     (_)
@@ -88,7 +88,7 @@ var asciis = [
   },
   {
     name: "axe",
-    tags: ["item","medieval","tool","weapon"],
+    tags: ["item", "medieval", "tool", "weapon"],
     art: String.raw`
   ,  /\  .
  //'-||-'\\
@@ -106,8 +106,26 @@ var asciis = [
     author: "Harry Mason",
   },
   {
+    name: "bart",
+    tags: ["cartoon", "character", "simpsons"],
+    art: String.raw`
+ |\/\/\/|
+ |      |
+ |      |
+ | (o)(o)
+ C      _)
+  | ,___|
+  |   /
+ /____\
+/      \
+`,
+    color: "Yellow",
+    height: 9,
+    author: "",
+  },
+  {
     name: "bat",
-    tags: ["animal","flying"],
+    tags: ["animal", "flying"],
     art: String.raw`
   /\                 /\
  / \'._   (\_/)   _.'/ \
@@ -158,7 +176,7 @@ var asciis = [
   },
   {
     name: "bees",
-    tags: ["animal","insect"],
+    tags: ["animal", "insect"],
     art: String.raw`
   ^^      .-=-=-=-.  ^^      ^^
        ('-=-=-=-=-=-')  ^^
@@ -176,7 +194,7 @@ var asciis = [
   },
   {
     name: "bender",
-    tags: ["cartoon","character","futurama","space"],
+    tags: ["cartoon", "character", "futurama", "space"],
     art: String.raw`
      ( )
       H
@@ -201,7 +219,7 @@ var asciis = [
   },
   {
     name: "bigBird",
-    tags: ["bird","cartoon","character","sesameStreet"],
+    tags: ["bird", "cartoon", "character", "sesameStreet"],
     art: String.raw`
    . -- .
   (      )
@@ -221,8 +239,26 @@ var asciis = [
     author: "",
   },
   {
+    name: "bike",
+    tags: ["vehicle"],
+    art: String.raw`
+             __
+  ,--.      <__)
+  '- |________7
+     |'.      |\
+  .--|. \     |.\--.
+ /   j \ '.7__j__\  \
+|   o   | (o)____O)  |
+ \     /   J  \     /
+  '---'        '---'
+`,
+    color: "Yellow",
+    height: 16,
+    author: "Hayley Jane Wakenshaw",
+  },
+  {
     name: "boat",
-    tags: ["sea","vehicle"],
+    tags: ["sea", "vehicle"],
     art: String.raw`
        _    _
     __|_|__|_|__
@@ -236,7 +272,7 @@ var asciis = [
   },
   {
     name: "bomb",
-    tags: ["item","weapon"],
+    tags: ["item", "weapon"],
     art: String.raw`
              .
             \'/
@@ -291,7 +327,7 @@ var asciis = [
   },
   {
     name: "bug",
-    tags: ["animal","insect"],
+    tags: ["animal", "insect"],
     art: String.raw`
   .   .
    \ /
@@ -318,6 +354,27 @@ var asciis = [
     author: "",
   },
   {
+    name: "cactus",
+    tags: ["nature", "plant"],
+    art: String.raw`
+       w
+      /'\
+      |'|
+   _  |'|  _
+  /.\ |'| /,\
+  |'(_|.|_).|
+  \.''.''.''/
+   '--.'.--'
+      |.|
+      |'|
+      |.|
+ ''''''''''''''
+`,
+    color: "Green",
+    height: 12,
+    author: "Joan G. Stark",
+  },
+  {
     name: "cake",
     tags: ["food"],
     art: String.raw`
@@ -338,7 +395,7 @@ var asciis = [
   },
   {
     name: "camera",
-    tags: ["item","retro"],
+    tags: ["item", "retro"],
     art: String.raw`
       ____
  _[]_/____\__n_
@@ -353,8 +410,24 @@ var asciis = [
     author: "Joan G. Stark",
   },
   {
+    name: "candle",
+    tags: ["christmas", "item"],
+    art: String.raw`
+    ..
+ . .  . .
+. . /\ . .
+. . \/. .
+    ||
+ ___||__(~\
+ \______/
+`,
+    color: "Gold",
+    height: 7,
+    author: "",
+  },
+  {
     name: "cat",
-    tags: ["animal","pet"],
+    tags: ["animal", "pet"],
     art: String.raw`
  )\   _,
  | "^" (
@@ -375,7 +448,7 @@ c{{i.}}=oo-^
   },
   {
     name: "caterpillar",
-    tags: ["animal","insect"],
+    tags: ["animal", "insect"],
     art: String.raw`
 \_/-.--.--.--.--.--.
 (")__)__)__)__)__)__)
@@ -386,8 +459,24 @@ c{{i.}}=oo-^
     author: "Joan G. Stark",
   },
   {
+    name: "cheese",
+    tags: ["food"],
+    art: String.raw`
+     ___
+   .'o O'-._
+  / O o_.-'|
+ /O_.-'  O |
+| o   o .-'"
+|o O_.-'
+'--'
+`,
+    color: "Yellow",
+    height: 6,
+    author: "Randy Ransom",
+  },
+  {
     name: "cheshireCat",
-    tags: ["cartoon","character","disney"],
+    tags: ["cartoon", "character", "disney"],
     art: String.raw`
            .'\   /'.
          .'.-.'-'.-.'.
@@ -407,8 +496,24 @@ c{{i.}}=oo-^
     author: "Randy Ransom",
   },
   {
+    name: "chess",
+    tags: ["game", "item"],
+    art: String.raw`
+   |\_
+  /  .\_
+ |   ___)
+ |    \
+ |  =  |
+ /_____\
+[_______]
+`,
+    color: "Black",
+    height: 7,
+    author: "",
+  },
+  {
     name: "coffee",
-    tags: ["drink","item"],
+    tags: ["drink", "item"],
     art: String.raw`
       )  (
      (   ) )
@@ -426,7 +531,7 @@ c{{i.}}=oo-^
   },
   {
     name: "cookieMonster",
-    tags: ["cartoon","character","sesameStreet"],
+    tags: ["cartoon", "character", "sesameStreet"],
     art: String.raw`
     (o)(o)
   w"      "w
@@ -441,7 +546,7 @@ W            W
   },
   {
     name: "crab",
-    tags: ["animal","sea"],
+    tags: ["animal", "sea"],
     art: String.raw`
    __       __
   / <'     '> \
@@ -476,7 +581,7 @@ W            W
   },
   {
     name: "crown",
-    tags: ["item","medieval","symbol"],
+    tags: ["item", "medieval", "symbol"],
     art: String.raw`
        o
     o^/|\^o
@@ -488,6 +593,18 @@ o\*''.\|/.''*/o
 `,
     color: "Gold",
     height: 10,
+    author: "Joan G. Stark",
+  },
+  {
+    name: "dart",
+    tags: ["game", "item", "sport"],
+    art: String.raw`
+____
+\___\_.:::::::.___
+/___/ ':::::::'
+`,
+    color: "Silver",
+    height: 3,
     author: "Joan G. Stark",
   },
   {
@@ -529,7 +646,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "devil",
-    tags: ["character","halloween"],
+    tags: ["character", "halloween"],
     art: String.raw`
   ,  ,  , , ,
  <(__)> | | |
@@ -543,8 +660,24 @@ o\*''.\|/.''*/o
     author: "Joan G. Stark",
   },
   {
+    name: "die",
+    tags: ["game", "item"],
+    art: String.raw`
+    _______
+  /\       \
+ /()\   ()  \
+/    \_______\
+\    /()     /
+ \()/   ()  /
+  \/_____()/
+`,
+    color: "White",
+    height: 7,
+    author: "",
+  },
+  {
     name: "dog",
-    tags: ["animal","pet"],
+    tags: ["animal", "pet"],
     art: String.raw`
             /)-_-(\
              (o o)
@@ -560,8 +693,28 @@ o\*''.\|/.''*/o
     author: "",
   },
   {
+    name: "dragon",
+    tags: ["halloween"],
+    art: String.raw`
+                \||/
+                |  @___oo
+      /\  /\   / (__,,,,|
+     ) /^\) ^\/ _)
+     )   /^\/   _)
+     )   _ /  / _)
+ /\  )/\/ ||  | )_)
+<  >      |(,,) )__)
+ ||      /    \)___)\
+ | \____(      )___) )___
+  \______(_______;;; __;;;
+`,
+    color: "Red",
+    height: 11,
+    author: "",
+  },
+  {
     name: "duck",
-    tags: ["animal","bird","pet"],
+    tags: ["animal", "bird", "pet"],
     art: String.raw`
       ,~~.
      (  9 )-_,
@@ -577,7 +730,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "einstein",
-    tags: ["character","history"],
+    tags: ["character", "history"],
     art: String.raw`
       -''--.
       _'>   '\.-'/
@@ -595,7 +748,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "electricGuitar",
-    tags: ["item","music"],
+    tags: ["item", "music"],
     art: String.raw`
      _
     / 7
@@ -651,7 +804,7 @@ o\*''.\|/.''*/o
   },
   {
     name: "flamingo",
-    tags: ["animal","bird"],
+    tags: ["animal", "bird"],
     art: String.raw`
          __
         /('o
@@ -673,7 +826,7 @@ o o
   },
   {
     name: "flintstones",
-    tags: ["cartoon","character"],
+    tags: ["cartoon", "character"],
     art: String.raw`
   \/________________
  /     _____________)
@@ -693,7 +846,7 @@ __|_________\______/
   },
   {
     name: "floppyDisk",
-    tags: ["item","retro"],
+    tags: ["item", "retro"],
     art: String.raw`
  _________________
 | | ___________ |o|
@@ -712,7 +865,7 @@ __|_________\______/
   },
   {
     name: "flower",
-    tags: ["nature","plant"],
+    tags: ["nature", "plant"],
     art: String.raw`
   _  _
  (_\/_)
@@ -728,7 +881,7 @@ __\||/__
   },
   {
     name: "folder",
-    tags: ["item","retro"],
+    tags: ["item", "retro"],
     art: String.raw`
  _____
 /     \_____
@@ -777,7 +930,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "frontDoor",
-    tags: ["item"],
+    tags: ["city"],
     art: String.raw`
    ________
   / ______ \
@@ -798,7 +951,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "garfield",
-    tags: ["cartoon","character","pet"],
+    tags: ["cartoon", "character", "pet"],
     art: String.raw`
      .-.,     ,.-.
     /:::\\   //:::\
@@ -820,7 +973,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "gift",
-    tags: ["christmas","item"],
+    tags: ["christmas", "item"],
     art: String.raw`
     _  _
  __(_\/_)__
@@ -834,7 +987,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "goldfish",
-    tags: ["animal","sea"],
+    tags: ["animal", "sea"],
     art: String.raw`
       /'·..
      /,....':·
@@ -849,7 +1002,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "gun",
-    tags: ["item","weapon"],
+    tags: ["item", "weapon"],
     art: String.raw`
     _  ___________=__
     \\@([____]______()
@@ -934,7 +1087,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "homer",
-    tags: ["cartoon","character","simpsons"],
+    tags: ["cartoon", "character", "simpsons"],
     art: String.raw`
     ___
    //_\\_
@@ -957,7 +1110,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "hotAirBalloon",
-    tags: ["flying","vehicle"],
+    tags: ["flying", "vehicle"],
     art: String.raw`
     _..==--.._
   .'_|:::|' _|:.
@@ -978,6 +1131,22 @@ __\ _\ \___/ /_ /__
     color: "Red",
     height: 15,
     author: "Joan G. Stark",
+  },
+  {
+    name: "house",
+    tags: ["city"],
+    art: String.raw`
+      ''::::.
+        _____A_
+       /      /\
+    __/__/\__/  \___
+---/__|" '' "| /___/\----
+   |''|"'||'"| |' '||
+   '""'""))""'"'""""'
+`,
+    color: "Brown",
+    height: 7,
+    author: "",
   },
   {
     name: "impossibleTriangle",
@@ -1043,7 +1212,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "kermit",
-    tags: ["cartoon","character","sesameStreet"],
+    tags: ["cartoon", "character", "sesameStreet"],
     art: String.raw`
        .---.     .---.
       ( -o- )---( -o- )
@@ -1079,7 +1248,7 @@ __\ _\ \___/ /_ /__
   },
   {
     name: "knight",
-    tags: ["character","medieval"],
+    tags: ["character", "medieval"],
     art: String.raw`
     !
    .-.
@@ -1170,7 +1339,7 @@ o.       0000/ b  d \000
   },
   {
     name: "marbles",
-    tags: ["animal","pet"],
+    tags: ["animal", "pet"],
     art: String.raw`
          __
         /  \
@@ -1210,7 +1379,7 @@ c /    \         |  |
   },
   {
     name: "maryPoppins",
-    tags: ["cartoon","character","cinema","disney"],
+    tags: ["cartoon", "character", "cinema", "disney"],
     art: String.raw`
          _
       .-' '-.
@@ -1236,7 +1405,7 @@ c /    \         |  |
   },
   {
     name: "monaLisa",
-    tags: ["art","character"],
+    tags: ["art", "character"],
     art: String.raw`
           ____
         o8%8888,
@@ -1283,7 +1452,7 @@ c /    \         |  |
   },
   {
     name: "mountain",
-    tags: ["christmas","nature"],
+    tags: ["christmas", "nature"],
     art: String.raw`
           /\
          /**\
@@ -1301,7 +1470,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "mouse",
-    tags: ["animal","pet"],
+    tags: ["animal", "pet"],
     art: String.raw`
 (q\_/p)
  /. .\.-""""-.      __
@@ -1314,8 +1483,22 @@ __/__/_______/___/__\___\__
     author: "",
   },
   {
+    name: "mushroom",
+    tags: ["nature", "plant"],
+    art: String.raw`
+  .-"""-.
+ /* * * *\
+:_.-:':-._;
+    (_)
+ \|/(_)\|/
+`,
+    color: "Red",
+    height: 5,
+    author: "Donovan Baker",
+  },
+  {
     name: "parrot",
-    tags: ["animal","bird","flying","pet"],
+    tags: ["animal", "bird", "flying", "pet"],
     art: String.raw`
                           .
                           | \/|
@@ -1358,7 +1541,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "pinguin",
-    tags: ["animal","bird"],
+    tags: ["animal", "bird"],
     art: String.raw`
    __
 -=(o '.
@@ -1373,7 +1556,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "pinkPanther",
-    tags: ["cartoon","character"],
+    tags: ["cartoon", "character"],
     art: String.raw`
  .--.             .--.
 ( ('\\.---------.//') )
@@ -1394,7 +1577,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "plane",
-    tags: ["flying","vehicle"],
+    tags: ["flying", "vehicle"],
     art: String.raw`
             __/\__
            '==/\=='
@@ -1424,7 +1607,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "r2d2",
-    tags: ["character","cinema","space","starWars"],
+    tags: ["character", "cinema", "space", "starWars"],
     art: String.raw`
     .---.
   .'_:___".
@@ -1441,7 +1624,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rain",
-    tags: ["nature","weather"],
+    tags: ["nature", "weather"],
     art: String.raw`
       __   _
     _(  )_( )_
@@ -1456,7 +1639,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rainbow",
-    tags: ["nature","weather"],
+    tags: ["nature", "weather"],
     art: String.raw`
      _.-""""'-._
    ,' _-""""'-_ '.
@@ -1471,7 +1654,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "robot",
-    tags: ["character","space"],
+    tags: ["character", "space"],
     art: String.raw`
        .-T-.
       /     \
@@ -1494,7 +1677,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "rocket",
-    tags: ["space","vehicle"],
+    tags: ["space", "vehicle"],
     art: String.raw`
    A
   / \
@@ -1511,8 +1694,23 @@ __/__/_______/___/__\___\__
     author: "Joan G. Stark",
   },
   {
+    name: "rowlf",
+    tags: ["cartoon", "character", "sesameStreet"],
+    art: String.raw`
+    ..----..
+  .': o  o :'.
+ .':   ()   :'.
+.' :-======-: '.
+'-' '.    .' '-'
+   .'      '.
+`,
+    color: "Brown",
+    height: 6,
+    author: "",
+  },
+  {
     name: "santaClaus",
-    tags: ["character","christmas"],
+    tags: ["character", "christmas"],
     art: String.raw`
    ,--.
   ()   \
@@ -1548,7 +1746,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "shield",
-    tags: ["item","medieval","weapon"],
+    tags: ["item", "medieval", "weapon"],
     art: String.raw`
 |'-._/\_.-'|
 |    ||    |
@@ -1562,6 +1760,29 @@ __/__/_______/___/__\___\__
     color: "Gold",
     height: 8,
     author: "Joan G. Stark",
+  },
+  {
+    name: "skeleton",
+    tags: ["character", "halloween"],
+    art: String.raw`
+    .-.
+   (o.o)
+    |=|
+   __|__
+ //.=|=.\\
+// .=|=. \\
+\\ .=|=. //
+ \\(_=_)//
+  (:| |:)
+   || ||
+   () ()
+   || ||
+   || ||
+  ==' '==
+`,
+    color: "White",
+    height: 14,
+    author: "Ultramarine Rain, Lunatic 42",
   },
   {
     name: "snail",
@@ -1579,7 +1800,7 @@ __/__/_______/___/__\___\__
   },
   {
     name: "snoopy",
-    tags: ["cartoon","character","pet"],
+    tags: ["cartoon", "character", "pet"],
     art: String.raw`
           ,-~~-.___.
          / ()=(()   \
@@ -1602,8 +1823,23 @@ __/__/_______/___/__\___\__
     author: "Win Kang",
   },
   {
+    name: "snowman",
+    tags: ["character", "christmas"],
+    art: String.raw`
+     __
+   _|==|_
+    ('')___/
+>--('^^')
+  ('^'^'')
+  '======'
+`,
+    color: "White",
+    height: 6,
+    author: "Laura Brown",
+  },
+  {
     name: "sonic",
-    tags: ["character","videoGame"],
+    tags: ["character", "videoGame"],
     art: String.raw`
           .,
 .      _,'f----.._
@@ -1621,7 +1857,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "spaceInvader",
-    tags: ["character","space","videoGame"],
+    tags: ["character", "space", "videoGame"],
     art: String.raw`
          __
        _|  |_
@@ -1639,7 +1875,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "squidward",
-    tags: ["cartoon","character","spongeBob"],
+    tags: ["cartoon", "character", "spongeBob"],
     art: String.raw`
      .--'''''''''--.
    '      .---.      '.
@@ -1693,7 +1929,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "sword",
-    tags: ["item","medieval","weapon"],
+    tags: ["item", "medieval", "weapon"],
     art: String.raw`
 ( \
  \ \/)
@@ -1709,7 +1945,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "teapot",
-    tags: ["drink","item"],
+    tags: ["drink", "item"],
     art: String.raw`
                        (
             _           ) )
@@ -1730,7 +1966,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "teckel",
-    tags: ["animal","pet"],
+    tags: ["animal", "pet"],
     art: String.raw`
                         __
  ,                    ," e'--o
@@ -1746,8 +1982,26 @@ f  o|  o|__     "'-.
     author: "Hayley Jane Wakenshaw",
   },
   {
+    name: "telescope",
+    tags: ["item", "space"],
+    art: String.raw`
+    _______________
+==c(___(o(______(_()
+        \=\
+         )=\
+        //|\\
+       //|| \\
+      // ||  \\
+     //  ||   \\
+    //         \\
+`,
+    color: "SlateGray",
+    height: 14,
+    author: "David Riley",
+  },
+  {
     name: "television",
-    tags: ["item","retro"],
+    tags: ["item", "retro"],
     art: String.raw`
             o
         o   |
@@ -1785,8 +2039,23 @@ f  o|  o|__     "'-.
     author: "Sebastian Stöcker",
   },
   {
+    name: "toiletPaper",
+    tags: ["item"],
+    art: String.raw`
+ .--""--.___.._
+(  <__>  )     '-.
+|'--..--'|      <|
+|       :|       /
+|       :|--""-./
+'.______;'
+`,
+    color: "White",
+    height: 6,
+    author: "Ojosh!ro",
+  },
+  {
     name: "tombstone",
-    tags: ["halloween","item"],
+    tags: ["halloween", "item"],
     art: String.raw`
       ,-=-.
      /  +  \
@@ -1815,7 +2084,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "tweetieBird",
-    tags: ["bird","cartoon","character","looneyTunes","pet"],
+    tags: ["bird", "cartoon", "character", "looneyTunes", "pet"],
     art: String.raw`
     .-"-.
    /  - -\
@@ -1846,7 +2115,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "wasp",
-    tags: ["animal","flying","insect"],
+    tags: ["animal", "flying", "insect"],
     art: String.raw`
     _  _
    | )/ )
@@ -1873,7 +2142,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "whale",
-    tags: ["animal","sea"],
+    tags: ["animal", "sea"],
     art: String.raw`
        .
       ":"
@@ -1888,7 +2157,7 @@ f  o|  o|__     "'-.
   },
   {
     name: "yosemiteSam",
-    tags: ["cartoon","character","looneyTunes"],
+    tags: ["cartoon", "character", "looneyTunes"],
     art: String.raw`
         ___
     .-''   ''-.
@@ -1907,5 +2176,21 @@ f  o|  o|__     "'-.
     color: "Red",
     height: 13,
     author: "",
+  },
+  {
+    name: "zeppelin",
+    tags: ["flying", "vehicle"],
+    art: String.raw`
+      _..--=--..._
+  .-'            '-.  .-.
+ /.'              '.\/  /
+|=-                -=| (
+ \'.              .'/\  \
+  '-.,_____ _____.-'  '-'
+        [_____]=8
+`,
+    color: "Blue",
+    height: 7,
+    author: "Joan G. Stark",
   },
 ];

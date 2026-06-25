@@ -28,7 +28,7 @@ const elements = {
     catalogBody: document.getElementById("catalog-body"),
 };
 
-let selectedId = catalog.find((ascii) => ascii.name === "hello")?.id || 0;
+let selectedId = catalog.find((ascii) => ascii.name === "impossibleTriangle")?.id || 0;
 
 function initialize() {
     elements.versionStat.textContent = `v${AsciiPrinter.version}`;

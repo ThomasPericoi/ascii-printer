@@ -554,8 +554,8 @@ table,
     height: 100%;
 }
 
-.stat-github a:focus-visible,
-.stat-github a:hover {
+.stats article a:focus-visible,
+.stats article a:hover {
     text-decoration: underline;
     text-decoration-thickness: var(--border-width);
     text-underline-offset: 4px;

@@ -1,5 +1,5 @@
 (function (global) {
-var ASCII_PRINTER_VERSION = "1.1.0";
+var ASCII_PRINTER_VERSION = "1.2.0";
 
 /*____________________________________ UTILITY FUNCTIONS ____________________________________*/
 
