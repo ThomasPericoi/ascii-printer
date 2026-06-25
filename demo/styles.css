@@ -874,13 +874,6 @@ tbody tr:hover th[scope="row"] {
     background: var(--soft);
 }
 
-.category-row th {
-    background: var(--soft);
-    color: var(--ink);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
 .name-button {
     border: 0;
     background: transparent;
@@ -912,8 +905,6 @@ tbody tr:hover th[scope="row"] {
     align-items: center;
     justify-content: center;
     gap: var(--space-xxl);
-    margin-top: var(--space-section);
-    border-top: var(--border);
     padding: var(--space-xxxl) 0 2.125rem;
     text-align: center;
 }

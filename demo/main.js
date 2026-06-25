@@ -175,25 +175,17 @@ function renderCatalog() {
         return matchesCategory && matchesQuery;
     });
 
-    let currentCategory = "";
     elements.catalogCount.textContent = `${selected.length} shown`;
-    elements.catalogBody.innerHTML = selected.map((ascii) => {
-        const separator = ascii.type === currentCategory
-            ? ""
-            : `<tr class="category-row"><th scope="colgroup" colspan="7">${escapeHtml(formatCategory(ascii.type))}</th></tr>`;
-        currentCategory = ascii.type;
-
-        return `${separator}
-            <tr>
-                <th scope="row">${ascii.id}</th>
-                <td><button class="name-button" type="button" data-id="${ascii.id}" aria-label="Preview ${escapeHtml(ascii.name)} in the playground"><code class="language-text">${escapeHtml(ascii.name)}</code></button></td>
-                <td>${escapeHtml(ascii.type)}</td>
-                <td><span class="color-chip"><span class="color-dot" style="--dot-color: ${escapeHtml(ascii.color)}" aria-hidden="true"></span>${escapeHtml(ascii.color)}</span></td>
-                <td>${escapeHtml(ascii.height)}</td>
-                <td>${escapeHtml(ascii.author || "Unknown")}</td>
-                <td><code class="language-js">AsciiPrinter.printById(${ascii.id})</code></td>
-            </tr>`;
-    }).join("");
+    elements.catalogBody.innerHTML = selected.map((ascii) => `
+        <tr>
+            <th scope="row">${ascii.id}</th>
+            <td><button class="name-button" type="button" data-id="${ascii.id}" aria-label="Preview ${escapeHtml(ascii.name)} in the playground"><code class="language-text">${escapeHtml(ascii.name)}</code></button></td>
+            <td>${escapeHtml(ascii.type)}</td>
+            <td><span class="color-chip"><span class="color-dot" style="--dot-color: ${escapeHtml(ascii.color)}" aria-hidden="true"></span>${escapeHtml(ascii.color)}</span></td>
+            <td>${escapeHtml(ascii.height)}</td>
+            <td>${escapeHtml(ascii.author || "Unknown")}</td>
+            <td><code class="language-js">AsciiPrinter.printById(${ascii.id})</code></td>
+        </tr>`).join("");
 
     elements.catalogBody.querySelectorAll("[data-id]").forEach((button) => {
         button.addEventListener("click", () => {

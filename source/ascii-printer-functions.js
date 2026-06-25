@@ -35,7 +35,27 @@ function getAsciiStyle(ascii, options = {}) {
 }
 
 function listAsciiTypes() {
-  return [...new Set(asciis.map((ascii) => ascii.type))];
+  const preferredOrder = ["animal", "character", "thing", "message"];
+  const types = [...new Set(asciis.map((ascii) => ascii.type))];
+
+  return types.sort((firstType, secondType) => {
+    const firstIndex = preferredOrder.indexOf(firstType);
+    const secondIndex = preferredOrder.indexOf(secondType);
+
+    if (firstIndex === -1 && secondIndex === -1) {
+      return firstType.localeCompare(secondType);
+    }
+
+    if (firstIndex === -1) {
+      return 1;
+    }
+
+    if (secondIndex === -1) {
+      return -1;
+    }
+
+    return firstIndex - secondIndex;
+  });
 }
 
 function listAsciiNames(category = "all") {
