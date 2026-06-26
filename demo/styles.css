@@ -599,6 +599,10 @@ table,
     font-size: 1.125rem;
 }
 
+.doc-card p code {
+    overflow-wrap: anywhere;
+}
+
 .doc-copy h3,
 .doc-card h3 {
     margin: 0 0 var(--space-sm);
