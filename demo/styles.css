@@ -235,7 +235,8 @@ table,
 
 .nav a {
     font-size: 0.8125rem;
-    font-weight: 900;
+    font-family: var(--font-bold);
+    font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -348,25 +349,6 @@ table,
     background: var(--ink);
 }
 
-.preview-head .button {
-    padding-inline: 0;
-    color: var(--paper);
-    text-decoration: none;
-    border: 0;
-    background: var(--terminal);
-    box-shadow: none;
-}
-
-.preview-head .button:focus-visible,
-.preview-head .button:hover {
-    text-decoration: underline;
-    text-decoration-thickness: var(--border-width);
-    text-underline-offset: 4px;
-    background: var(--terminal);
-    box-shadow: none;
-    transform: none;
-}
-
 /* Shared panels */
 .hero-terminal,
 .preview-panel,
@@ -444,7 +426,7 @@ table,
     white-space: nowrap;
 }
 
-.command-copy {
+.terminal-button {
     padding: 0 var(--space-xl);
     color: var(--paper);
     font-family: var(--font-bold);
@@ -456,8 +438,12 @@ table,
     cursor: pointer;
 }
 
-.command-copy:focus-visible,
-.command-copy:hover {
+.preview-head .terminal-button {
+    padding-inline: 0;
+}
+
+.terminal-button:focus-visible,
+.terminal-button:hover {
     text-decoration: underline;
     text-decoration-thickness: var(--border-width);
     text-underline-offset: 4px;
@@ -533,7 +519,7 @@ table,
 .stats span {
     display: block;
     font-size: clamp(1.75rem, 4vw, 3.375rem);
-    font-weight: 800;
+    font-family: var(--font-bold);
     line-height: 1;
 }
 
@@ -542,6 +528,7 @@ table,
     font-size: 0.8125rem;
     font-weight: 900;
     text-transform: uppercase;
+    color: var(--muted);
 }
 
 .github-icon {
@@ -878,6 +865,12 @@ thead th {
     font-size: 0.75rem;
     text-transform: uppercase;
     background: var(--ink);
+}
+
+.catalog-table th:nth-child(3),
+.catalog-table td:nth-child(3) {
+    max-width: 14rem;
+    white-space: normal;
 }
 
 tbody tr:hover td,

@@ -341,13 +341,13 @@ build/ascii-printer.min.js</code></pre>
                             <h3 id="selected-name">hello</h3>
                             <p id="selected-meta">message · 4 lines · Unknown</p>
                         </div>
-                        <button class="button primary" type="button" id="print-selected">Print</button>
+                        <button class="terminal-button" type="button" id="print-selected">Print</button>
                     </div>
                     <pre id="ascii-preview" class="ascii-preview" role="img"
                         aria-label="Selected ASCII art preview"></pre>
                     <div class="active-command-bar">
                         <code id="active-command" class="active-command language-js"></code>
-                        <button class="command-copy" type="button" id="copy-active-command">Copy</button>
+                        <button class="terminal-button" type="button" id="copy-active-command">Copy</button>
                     </div>
                     <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
                 </div>
@@ -400,7 +400,7 @@ build/ascii-printer.min.js</code></pre>
                 <span id="catalog-count" role="status" aria-live="polite">0 shown</span>
             </div>
             <div class="catalog-table-wrap">
-                <table>
+                <table class="catalog-table">
                     <caption class="sr-only">Full ASCII catalog</caption>
                     <thead>
                         <tr>
@@ -443,7 +443,6 @@ build/ascii-printer.min.js</code></pre>
             </svg>
             <span class="signature-tagline">Thomas was here</span>
         </a>
-
     </footer>
 
     <script src="../build/ascii-printer.min.js"></script>
