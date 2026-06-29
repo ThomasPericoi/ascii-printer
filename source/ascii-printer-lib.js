@@ -71,6 +71,20 @@ var asciis = [
     author: "Veronica Karlsson",
   },
   {
+    name: "apple",
+    tags: ["food", "nature"],
+    art: String.raw`
+  ,--./,-.
+ / #      \
+|          |
+ \        /
+  '._,._,'
+`,
+    color: "Red",
+    height: 5,
+    author: "Hayley Jane Wakenshaw",
+  },
+  {
     name: "armadillo",
     tags: ["animal"],
     art: String.raw`
@@ -175,6 +189,23 @@ var asciis = [
     author: "Joan G. Stark",
   },
   {
+    name: "beer",
+    tags: ["drink", "item"],
+    art: String.raw`
+  _.._..,_,_
+ (          )
+  ]~,"-.-~~[
+.=])' (;  ([
+| ]:: '    [
+'=]): .)  ([
+  |:: '    |
+   ~~----~~
+`,
+    color: "Goldenrod",
+    height: 8,
+    author: "Paul Martin Howard",
+  },
+  {
     name: "bees",
     tags: ["animal", "insect"],
     art: String.raw`
@@ -191,6 +222,21 @@ var asciis = [
     color: "Goldenrod",
     height: 9,
     author: "Joan G. Stark",
+  },
+  {
+    name: "beetle",
+    tags: ["animal", "insect"],
+    art: String.raw`
+\         /
+ '-.'-'.-'
+ ,:--.--:.
+/ |  |  | \
+ /\  |  /\
+ | '.:.' |
+`,
+    color: "Purple",
+    height: 6,
+    author: "l42",
   },
   {
     name: "bender",
@@ -676,6 +722,21 @@ ____
     author: "",
   },
   {
+    name: "diplodocus",
+    tags: ["animal"],
+    art: String.raw`
+               __
+              / _)
+     _.----._/ /
+    /         /
+ __/ (  | (  |
+/__.-'|_|--|_|
+`,
+    color: "Green",
+    height: 6,
+    author: "",
+  },
+  {
     name: "dog",
     tags: ["animal", "pet"],
     art: String.raw`
@@ -806,23 +867,22 @@ ____
     name: "flamingo",
     tags: ["animal", "bird"],
     art: String.raw`
-         __
-        /('o
-  ,-,  //  \\
- (,,,) ||   V
-(,,,,)\//
-(,,,/w)-'
-\,,/w)
- V/uu
-/ |
-| |
-o o
-\ |
- \|
+        .-.
+       (('-)
+        \\
+         \\
+  .="""=._))
+ /  .,   .'
+/__(,_.-'
+'    /|
+    /_|__
+      | '))
+      |
+     -"==
 `,
     color: "Pink",
-    height: 13,
-    author: "",
+    height: 11,
+    author: "Joan G. Stark",
   },
   {
     name: "flintstones",
@@ -902,9 +962,9 @@ __\||/__
  /\   /\
 //\\_//\\     __/\
 \_     _/    /   /
- / . . \    /^^^]
- \_\ /_/    [   ]
-  / ° \_    [   /
+ / * * \    /^^^]
+ \_\O/_/    [   ]
+  /   \_    [   /
   \     \_  /  /
    [ [ /  \/ _/
   _[ [ \  /_/
@@ -1016,6 +1076,24 @@ __\ _\ \___/ /_ /__
     author: "",
   },
   {
+    name: "hat",
+    tags: ["item"],
+    art: String.raw`
+            _
+          /'_>
+         / /
+         |/
+     ____|    __
+    |    \.-''  )
+    |---''\  _.'
+  .-''---''_.'
+(__...--''
+`,
+    color: "Brown",
+    height: 9,
+    author: "gnv",
+  },
+  {
     name: "heart",
     tags: ["symbol"],
     art: String.raw`
@@ -1068,6 +1146,25 @@ __\ _\ \___/ /_ /__
     color: "DeepSkyBlue",
     height: 4,
     author: "",
+  },
+  {
+    name: "heron",
+    tags: ["animal", "bird"],
+    art: String.raw`
+     _,
+-==<' '\
+    ) /
+   / (_.
+  | ,-,'\
+   \\  \ \
+    '\, \ \
+    ||\ \'|,
+   _|| '='-'
+  ~~'~''
+`,
+    color: "DeepSkyBlue",
+    height: 10,
+    author: "Joan G. Stark",
   },
   {
     name: "hippo",
@@ -1944,6 +2041,19 @@ f  o|  o|__     "'-.
     author: "Veronica Karlsson",
   },
   {
+    name: "tank",
+    tags: ["vehicle", "weapon"],
+    art: String.raw`
+    ___
+ __(   )====::
+/~~~~~~~~~\
+\O.O.O.O.O/
+`,
+    color: "Green",
+    height: 4,
+    author: "Chad Racine",
+  },
+  {
     name: "teapot",
     tags: ["drink", "item"],
     art: String.raw`
@@ -1958,7 +2068,6 @@ f  o|  o|__     "'-.
   '. :           :    /
     ''.            :.,'
       '-.________,-'
-
 `,
     color: "Sienna",
     height: 11,
@@ -2154,6 +2263,26 @@ f  o|  o|__     "'-.
     color: "RoyalBlue",
     height: 6,
     author: "Riitta Rasimus",
+  },
+  {
+    name: "wine",
+    tags: ["drink", "item"],
+    art: String.raw`
+   #
+  :#:
+  : :
+  : :
+.'   '.
+:_____:  .___.
+|     |  |   |
+|     |  '. .'
+|     |    |
+|_____|    |
+:_____:   -'-
+`,
+    color: "Purple",
+    height: 11,
+    author: "John Frick",
   },
   {
     name: "yosemiteSam",
