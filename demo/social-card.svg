@@ -11,5 +11,5 @@
     <text x="120" y="570" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printRandom("bird");</text>
     <text x="120" y="650" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.listNames("animal");</text>
     <text x="120" y="730" fill="#080808" font-family="monospace" font-size="34">AsciiPrinter.printByName("hello");</text>
-    <text x="120" y="1000" fill="#080808" font-family="Arial, sans-serif" font-size="30" font-weight="800">132 ASCII arts · 39 tags · 38.3 KB minified</text>
+    <text x="120" y="1000" fill="#080808" font-family="Arial, sans-serif" font-size="30" font-weight="800">140 ASCII arts · 39 tags · 40.3 KB minified</text>
 </svg>

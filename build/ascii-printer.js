@@ -167,6 +167,19 @@ global.AsciiPrinter = {
 
 var asciis = [
   {
+    name: "404",
+    tags: ["message"],
+    art: String.raw`
+  __    ___    __
+ /. |  / _ \  /. |
+(_  _)( (_) )(_  _)
+  (_)  \___/   (_)
+`,
+    color: "Green",
+    height: 4,
+    author: "",
+  },
+  {
     name: "alarm",
     tags: ["item"],
     art: String.raw`
@@ -756,6 +769,19 @@ W            W
     author: "Randy Ransom",
   },
   {
+    name: "cool",
+    tags: ["message"],
+    art: String.raw`
+  ___  _____  _____  __
+ / __)(  _  )(  _  )(  )
+( (__  )(_)(  )(_)(  )(__
+ \___)(_____)(_____)(____)
+`,
+    color: "Blue",
+    height: 4,
+    author: "",
+  },
+  {
     name: "crab",
     tags: ["animal", "sea"],
     art: String.raw`
@@ -805,6 +831,22 @@ o\*''.\|/.''*/o
     color: "Gold",
     height: 10,
     author: "Joan G. Stark",
+  },
+  {
+    name: "cube",
+    tags: ["symbol"],
+    art: String.raw`
++------+.
+|\     |\
+| +----+-+
+| |    | |
++-+----+ |
+ \|     \|
+  +------+
+`,
+    color: "Gold",
+    height: 7,
+    author: "",
   },
   {
     name: "dart",
@@ -1509,6 +1551,36 @@ __\ _\ \___/ /_ /__
     author: "Hayley Jane Wakenshaw",
   },
   {
+    name: "kingKong",
+    tags: ["character", "cinema"],
+    art: String.raw`
+    /\  ____
+    <> ( oo )
+    <>_| ^^ |_
+    <>   @    \
+   /~~\ . . _ |
+  /~~~~\    | |
+ /~~~~~~\/ _| |
+ |[][][]/ / [m]
+ |[][][[m]
+ |[][][]|
+ |[][][]|
+ |[][][]|
+ |[][][]|
+ |[][][]|
+ |[][][]|
+ |[|--|]|
+ |[|  |]|
+ ========
+==========
+|[[    ]]|
+==========
+`,
+    color: "Silver",
+    height: 21,
+    author: "Cyberfox",
+  },
+  {
     name: "knight",
     tags: ["character", "medieval"],
     art: String.raw`
@@ -1572,7 +1644,7 @@ o.       0000/ b  d \000
  __    _____    __    ____  ____  _  _  ___
 (  )  (  _  )  /__\  (  _ \(_  _)( \( )/ __)
  )(__  )(_)(  /(__)\  )(_) )_)(_  )  (( (_-.
-(____)(_____)(__)(__)(____/(____)(_)\_)\___/
+(____)(_____)(__)(__)(____/(____)(_)\_)\___/()()()
 `,
     color: "DeepSkyBlue",
     height: 4,
@@ -1868,6 +1940,22 @@ __/__/_______/___/__\___\__
     author: "",
   },
   {
+    name: "puzzle",
+    tags: ["game", "item"],
+    art: String.raw`
+   _( )__ _( )__
+ _|     _|     _|
+(_   _ (_   _ (_
+ |__( )_|__( )_|
+ |_     |_     |_
+  _) _   _) _   _)
+ |__( )_|__( )_|
+`,
+    color: "Yellow",
+    height: 7,
+    author: "",
+  },
+  {
     name: "r2d2",
     tags: ["character", "cinema", "space", "starWars"],
     art: String.raw`
@@ -1913,6 +2001,19 @@ __/__/_______/___/__\___\__
     color: "MediumPurple",
     height: 6,
     author: "Brian T. Odom",
+  },
+  {
+    name: "ready",
+    tags: ["message"],
+    art: String.raw`
+ ____  ____    __    ____  _  _ /\
+(  _ \( ___)  /__\  (  _ \( \/ ))(
+ )   / )__)  /(__)\  )(_) )\  / \/
+(_)\_)(____)(__)(__)(____/ (__) ()
+`,
+    color: "DodgerBlue",
+    height: 4,
+    author: "",
   },
   {
     name: "robot",
@@ -2160,6 +2261,24 @@ f  o|  o|__     "'-.
     author: "LGB",
   },
   {
+    name: "squirrel",
+    tags: ["animal"],
+    art: String.raw`
+     !!!!
+  !!!!!!!!
+!!!!!!!!!!!   O_O
+!!!  !!!!!!! /@ @\
+      !!!!!! \ x /
+      !!!!!!/ m  !m
+       !!!!/ __  |
+       !!!!|/  \__
+        !!!\______\
+`,
+    color: "Brown",
+    height: 9,
+    author: "Rowan Crawford",
+  },
+  {
     name: "stage",
     tags: ["message"],
     art: String.raw`
@@ -2187,6 +2306,28 @@ f  o|  o|__     "'-.
 `,
     color: "Red",
     height: 8,
+    author: "Joan G. Stark",
+  },
+  {
+    name: "sunFace",
+    tags: ["character", "space", "symbol"],
+    art: String.raw`
+          .   :   .
+      '.   .  :  .   .'
+  ._   '._.-'''-._.'   _.
+    '-..'         '..-'
+ --._ /.==.     .==.\ _.--
+     ;/_o__\   /_o__\;
+-----|'     ) (     '|-----
+    _: \_) (\_/) (_/ ;_
+ --'  \  '._.=._.'  /  '--
+   _.-''.  '._.'  .''-._
+  '    .''-.(_).-''.    '
+     .'   '  :  '   '.
+         .   :   .
+`,
+    color: "Gold",
+    height: 13,
     author: "Joan G. Stark",
   },
   {
